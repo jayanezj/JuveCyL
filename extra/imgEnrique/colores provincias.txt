@@ -1,0 +1,13 @@
+Tipografía: Raleway semibold
+
+Colores: 
+
+Valladolid:155,120,170
+Salamanca:174,79,101
+Segovia: 100,153,191
+Soria: 195,137,96
+Ávila:91,117,200
+Segovia:115,175,119
+Burgos: 174,173,79
+Palencia: 174,175,115
+León: 91,193,200
