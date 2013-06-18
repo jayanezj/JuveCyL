@@ -1,0 +1,40 @@
+﻿Listado de IDs
+---------------
+
+INDEX
+------
+
+[Logotipo]
+
+logo --> contenedor logotipo
+
+
+[Cuadro de Búsqueda]
+
+search --> botón búsqueda
+textbox --> área texto
+
+
+[Vista de Resultados]
+
+result --> contenedor resultado (clase)
+resultname --> nombre alojamiento (clase)
+
+
+[Provincias] (clases)
+
+avi
+bur
+leo
+pal
+sal
+seg
+sor
+val
+zam
+
+
+[Pie]
+
+footer-container --> el que viene por defecto
+
