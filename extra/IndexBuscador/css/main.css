@@ -156,6 +156,10 @@ body{min-width: 1024px;min-height: 600px;}
     width: 75%;
 }
 
+#texbox input:focus, #texbox input:active { 
+    border: 3px solid rgba(58,168,149,1);
+    border-radius: 1em;; outline: 0; 
+}
 .result p { font-family: 'Raleway'; margin-bottom: 0em; margin-top: 0em; }
 
 .provname { float: right; }
