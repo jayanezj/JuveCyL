@@ -114,7 +114,7 @@ Author's custom styles
 
 body{min-width: 1024px;min-height: 600px;}
 
-#logo>img { display: block; margin-left: auto; margin-right: auto; width: 60%;}
+#logo>img { display: block; margin-left: auto; margin-right: auto;}
 
 #logo div {
     margin-left: auto;
