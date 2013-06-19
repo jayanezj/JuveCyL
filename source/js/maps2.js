@@ -69,7 +69,6 @@ function addMark()
 				{
 				$(xml).find('loc').each(function ()
 					{
-					alert($(this).find('id').text()+"=="+ids[aux]+" - id"+aux);
 					if($(this).find('id').text()==ids[aux])
 						{
 						window.map.addMarker(
