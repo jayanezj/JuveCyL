@@ -200,6 +200,8 @@ input:focus, input:active {
 
 .main-container{margin-bottom: 10%;}
 
+#resultname, #resultprovince{width:100%;}
+
 /*
 Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
 de las mismas. 
