@@ -135,6 +135,7 @@ function searchInn()
 							{
 							var aux = $(this).find('attribute[name="Titulo_es"]').find('string').text().toLowerCase();
 							var aux2 = $(this).find('attribute[name="Provincia"]').find('Provincias').text().toLowerCase();
+							var id = $(this).find('attribute[name="Identificador"]').text();
 							////////////////////////////////////////////////
 							////////////////////////////////////////////////
 							////        ALOJAMIENTOS POR NOMBRE         ////
@@ -143,8 +144,39 @@ function searchInn()
 							if(aux.search(box) != -1) 
 								{
 								shownames=true;
-								var id = $(this).find('attribute[name="Identificador"]').text();
-								$('<div class="result"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+								switch(aux2)
+									{
+									case 'salamanca':
+									$('<div class="result sal"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'ávila':
+									$('<div class="result avi"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'burgos':
+									$('<div class="result bur"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'segovia':
+									$('<div class="result seg"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'soria':
+									$('<div class="result sor"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'valladolid':
+									$('<div class="result val"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'palencia':
+									$('<div class="result pal"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'zamora':
+									$('<div class="result zam"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									case 'león':
+									$('<div class="result leo"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									default:
+									$('<div class="result"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultnames');
+									break;
+									}
 								}
 							////////////////////////////////////////////////
 							////////////////////////////////////////////////
@@ -153,9 +185,40 @@ function searchInn()
 							////////////////////////////////////////////////
 							if(aux2.search(box) != -1) 
 								{
-								showprovinces=true;
-								var id = $(this).find('attribute[name="Identificador"]').text();
-								$('<div class="result"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									showprovinces=true;
+									switch(aux2)
+									{
+									case 'salamanca':
+									$('<div class="result sal"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'ávila':
+									$('<div class="result avi"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'burgos':
+									$('<div class="result bur"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'segovia':
+									$('<div class="result seg"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'soria':
+									$('<div class="result sor"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'valladolid':
+									$('<div class="result val"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'palencia':
+									$('<div class="result pal"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'zamora':
+									$('<div class="result zam"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									case 'león':
+									$('<div class="result leo"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									default:
+									$('<div class="result"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" id="' + id + '" class="linked">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+									break;
+									}
 								}
 							});
 						if (showprovinces==false)
