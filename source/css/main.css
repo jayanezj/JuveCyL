@@ -216,14 +216,32 @@ Media Queries
 ========================================================================== */
 
 @media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
-        #mobile-footer{display:block;text-align:center;font-family: 'RalewaySemiBold'; font-size:1em;}
-        #mobile-footer a{color:black;text-decoration:none;}
-        #mobile-footer a:hover{text-decoration:underline;}
-       .footer-container {display: none;} /* En Chrome y navegadores derivados no va */
-       .footer-container img{display:none;} 
-       .result p {font-size: 1em;}
-        body{min-width: 480px;height: 100%;}
-       .wrapper{width:95%;height:95%;}
+            body { height: 100%; width: 100%;}
+            #mobile-footer {
+                display: block;
+                font-family: 'RalewaySemiBold';
+                font-size: 1em;
+                text-align: center;
+            }
+            #mobile-footer a { color: black; text-decoration: none; }
+            #mobile-footer a:hover { text-decoration: underline; }
+            #mobile-footer p{margin-top: 0;margin-bottom: 0;}
+            
+            .footer-container { display: none; }
+            .footer-container img { display: none; }
+            
+            .result p { font-size: 0.7em; }
+            
+            .wrapper { height: 85%; width: 85%; }
+            #logo>img { width: 75%; }
+            #logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
+            .result {
+                border-radius: 0.5em;
+                display: block;
+                margin-top: 0.5em;
+                padding: 0.6em;
+                width: 65%;
+            }
 }
 
 @media only screen and (min-width: 1140px) {
