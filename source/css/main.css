@@ -143,7 +143,6 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-top: 0.5em;
     padding: 0.5em;
     width: 75%;
-    background-color:black;
 }
 
 input:focus, input:active { 
@@ -184,31 +183,31 @@ de las mismas.
 */
 
 .avi{
-    background: rgba(91,117,200,1);
+    background: rgb(91,117,200);
 }
 .bur{
-    background: rgba(174,173,79,1);
+    background: rgb(174,173,79);
 }
 .leo{
-    background: rgba(91,193,200,1);
+    background: rgb(91,193,200);
 }
 .pal{
-    background: rgba(174,175,115,1);
+    background: rgb(174,175,115);
 }
 .sal{
-    background: rgba(174,79,101,1);
+    background: rgb(174,79,101);
 }
 .seg{
-    background: rgba(100,153,191,1);
+    background: rgb(100,153,191);
 }
 .sor{
-    background: rgba(195,137,96,1);
+    background: rgb(195,137,96);
 }
 .val{
-    background: rgba(155,120,170,1);
+    background: rgb(155,120,170);
 }
 .zam{
-    background: rgba(114,79,174,1);
+    background: rgb(114,79,174);
 }
 
 /* ==========================================================================
