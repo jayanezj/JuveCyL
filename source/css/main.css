@@ -186,6 +186,9 @@ input:focus, input:active {
    font-size: 1em;
 }
 
+.result a:hover{text-decoration:underline;}
+.result a:visited{color:rgba(242,242,242,1);}
+
 .provname { float: right;}
 
 .footer-container img {
