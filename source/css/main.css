@@ -137,7 +137,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 
 .result {
     border-radius: 0.5em;
-    behavior: url('../hack/ie-css3.htc'); 
+    behavior: url('../ie-css3.htc'); 
     display: block;
     margin-left: auto;
     margin-right: auto;
