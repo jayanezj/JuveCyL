@@ -196,6 +196,7 @@ input:focus, input:active {
    margin-top: 0em; 
    color: white;
    font-size: 1.3em;
+   background-color:black;
 }
 
 .result a{color:white;text-decoration:underline;}
