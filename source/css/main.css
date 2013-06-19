@@ -167,7 +167,6 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 .result {
     border-radius: 0.5em;
     display: block;
-    font-size: 1.5em;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
@@ -184,7 +183,7 @@ input:focus, input:active {
    margin-bottom: 0em; 
    margin-top: 0em; 
    color: white;
-   font-size: 0.8em;
+   font-size: 1em;
 }
 
 .provname { float: right;}
