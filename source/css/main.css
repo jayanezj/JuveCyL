@@ -185,6 +185,41 @@ input:focus, input:active {
 
 .main-container{margin-bottom: 10%;}
 
+/*
+Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
+de las mismas. 
+*/
+.avi{
+    background: rgb(91,117,200);
+}
+.bur{
+    background: rgb(174,173,79);
+}
+.leo{
+    background: rgb(91,193,200);
+}
+.pal{
+    background: rgb(174,175,115);
+}
+.sal{
+    background: rgb(174,79,101);
+}
+.seg{
+    background: rgb(100,153,191);
+}
+.sor{
+    background: rgb(195,137,96);
+}
+.val{
+    background: rgb(155,120,170);
+}
+.zam{
+    background: rgb();
+}
+
+
+
+
 /* ==========================================================================
 Media Queries
 ========================================================================== */
