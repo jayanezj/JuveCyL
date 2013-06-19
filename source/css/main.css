@@ -136,10 +136,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 }
 
 .result {
-    -moz-border-radius:0.5em;
-    -webkit-border-radius:0.5em;
-	border-radius: 0.5em;
-	behavior: url(border-radius.htc);
+    border-radius: 0.5em;
     display: block;
     margin-left: auto;
     margin-right: auto;
