@@ -199,9 +199,9 @@ input:focus, input:active {
    background-color:black;
 }
 
-.result a{color:white;text-decoration:underline;}
-.result a:hover{text-decoration:underline;}
-.result a:visited{color:rgba(242,242,242,1);}
+.resultname a{color:white;text-decoration:underline;}
+.resultname a:hover{text-decoration:underline;}
+.resultname a:visited{color:rgba(242,242,242,1);}
 
 .provname { float: right;}
 
