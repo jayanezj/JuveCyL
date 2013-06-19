@@ -121,7 +121,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-right: auto;
     margin-top: 0.5em;
     padding: 1em;
-    width: 60%;
+    width: 80%;
 }
 
 #search {
@@ -138,7 +138,8 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     border-radius: 1em;
     padding: 0.4em;
     padding-left: 1em;
-    width: 95%;
+    width: 70%;
+    margin-left:14%;
 }
 
 #resultnames, #resultprovinces {
@@ -163,7 +164,11 @@ input:focus, input:active {
     border: 3px solid rgba(30,156,203,1);
     border-radius: 1em; outline: 0; 
 }
-.result p { font-family: 'Raleway'; margin-bottom: 0em; margin-top: 0em; }
+.result p { 
+   font-family: 'Raleway'; 
+   margin-bottom: 0em; 
+   margin-top: 0em; 
+}
 
 .provname { float: right; }
 
