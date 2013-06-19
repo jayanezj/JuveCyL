@@ -123,11 +123,11 @@ Author's custom styles
 
 @font-face {
     font-family: 'RalewaySemiBold';
-    src: url('../font/Raleway/RalewaySemibold.eot');
-    src: url('../font/Raleway/RalewaySemibold.eot?#iefix') format('embedded-opentype'),
-         url('../font/Raleway/RalewaySemibold.woff') format('woff'),
-         url('../font/Raleway/RalewaySemibold.ttf') format('truetype'),
-         url('../font/Raleway/RalewaySemibold.svg#RalewaySemiBold') format('svg');
+    src: url('../font/Raleway/RalewaySemiBold.eot');
+    src: url('../font/Raleway/RalewaySemiBold.eot?#iefix') format('embedded-opentype'),
+         url('../font/Raleway/RalewaySemiBold.woff') format('woff'),
+         url('../font/Raleway/RalewaySemiBold.ttf') format('truetype'),
+         url('../font/Raleway/RalewaySemiBold.svg#RalewaySemiBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
