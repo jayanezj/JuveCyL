@@ -198,7 +198,7 @@ input:focus, input:active {
    font-size: 1.3em;
 }
 
-.result a{color:white;}
+.result a{color:white;text-decoration:underline;}
 .result a:hover{text-decoration:underline;}
 .result a:visited{color:rgba(242,242,242,1);}
 
