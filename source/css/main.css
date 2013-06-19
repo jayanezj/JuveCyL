@@ -165,7 +165,13 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 #resultname, #resultprovince{width:100%;!important}
 
 #resultnames h2{
-    width: 60%; 
+    width: 75%; 
+    margin-left:auto;
+    margin-right: auto;
+}
+
+#resultprovinces h2{
+    width: 75%; 
     margin-left:auto;
     margin-right: auto;
 }
@@ -177,7 +183,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-right: auto;
     margin-top: 1em;
     padding: 0.5em;
-    width: 60%;
+    width: 75%;
 }
 
 input:focus, input:active { 
