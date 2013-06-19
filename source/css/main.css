@@ -222,7 +222,7 @@ Media Queries
        .footer-container {display: none;} /* En Chrome y navegadores derivados no va */
        .footer-container img{display:none;} 
        .result p {font-size: 1em;}
-       body{height:100%;width:100%;}
+        body{min-width: 480px;height: 100%;}
        .wrapper{width:95%;height:95%;}
 }
 
