@@ -162,6 +162,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-left:14%;
 }
 
+#resultname, #resultprovince{width:100%;}
 
 .result {
     border-radius: 0.5em;
@@ -185,7 +186,7 @@ input:focus, input:active {
    color: white;
 }
 
-.resultprovince { float: right;}
+.prov { float: right;}
 
 .footer-container img {
     display: block;
@@ -200,7 +201,7 @@ input:focus, input:active {
 
 .main-container{margin-bottom: 10%;}
 
-#resultname, #resultprovince{width:100%;}
+
 
 /*
 Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
