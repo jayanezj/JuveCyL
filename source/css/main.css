@@ -190,31 +190,31 @@ Estas de abajo son los colores de fondo de cada provincia, para identificarlas u
 de las mismas. 
 */
 .avi{
-    background: rgb(91,117,200);
+    background: rgba(91,117,200,1);
 }
 .bur{
-    background: rgb(174,173,79);
+    background: rgba(174,173,79,1);
 }
 .leo{
-    background: rgb(91,193,200);
+    background: rgba(91,193,200,1);
 }
 .pal{
-    background: rgb(174,175,115);
+    background: rgba(174,175,115,1);
 }
 .sal{
-    background: rgb(174,79,101);
+    background: rgba(174,79,101,1);
 }
 .seg{
-    background: rgb(100,153,191);
+    background: rgba(100,153,191,1);
 }
 .sor{
-    background: rgb(195,137,96);
+    background: rgba(195,137,96,1);
 }
 .val{
-    background: rgb(155,120,170);
+    background: rgba(155,120,170,1);
 }
 .zam{
-    background: rgb();
+    background: rgba();
 }
 
 
