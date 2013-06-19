@@ -184,9 +184,10 @@ input:focus, input:active {
    margin-bottom: 0em; 
    margin-top: 0em; 
    color: white;
+   font-size: 0.8em;
 }
 
-.prov { float: right;}
+.provname { float: right;}
 
 .footer-container img {
     display: block;
