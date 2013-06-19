@@ -9,8 +9,8 @@
     <loc>
         <id>1284166991149</id>
         <name>Carretera Arbejal, 29 34840 Cervera de Pisuerga, Palencia, Spain</name>
-        <lat>42.871388<lat/>
-        <long>-4.499373<long/>
+        <lat>42.871388</lat>
+        <long>-4.499373</long>
     </loc>
     <loc>
         <id>1284166996107</id>
@@ -63,8 +63,8 @@
     <loc>
         <id>1284167006178</id>
         <name>Lugar Llano Alto, 37700 Béjar, Salamanca, Spain</name>
-        <lat>40.375468<lat/>
-        <lat>-5.762011<long/>
+        <lat>40.375468</lat>
+        <long>-5.762011</long>
     </loc>
     <loc>
         <id>1284166986038</id>
@@ -87,20 +87,20 @@
     <loc>
         <id>1284166995370</id>
         <name>Calle Chalets, 34004 Palencia, Castilla y León, Spain</name>
-        <lat>41.993887<lat/>
-        <long>-4.515575<long/>
+        <lat>41.993887</lat>
+        <long>-4.515575</long>
     </loc>
     <loc>
         <id>1284167006944</id>
         <name>Calle Escoto, 13 1537008 Salamanca, Spain</name>
-        <lat>40.95958<lat/>
-        <long>-5.660792<long/>
+        <lat>40.95958</lat>
+        <long>-5.660792</long>
     </loc>
     <loc>
         <id>1284167011168</id>
         <name>Carretera del Lago 49361, San Martín de Castañeda Zamora, Spain</name>
-        <lat>42.138435<lat/>
-        <long>-6.719026<long/>
+        <lat>42.138435</lat>
+        <long>-6.719026</long>
     </loc>
     <loc>
         <id>1284167009480</id>
@@ -165,14 +165,14 @@
     <loc>
         <id>1284167019981</id>
         <name>24847 Otero de Curueño, León, Spain</name>
-        <lat>42.856126<lat/>
-        <long>-5.395436<long/>
+        <lat>42.856126</lat>
+        <long>-5.395436</long>
     </loc>
     <loc>
         <id>1284167020504</id>
         <name>carretera LE-473 km 2, La Pola de Gordón, León, Spain</name>
-        <lat>42.871801<lat/>
-        <long>-5.69727<long/>
+        <lat>42.871801</lat>
+        <long>-5.69727</long>
     </loc>
     <loc>
         <id>1284167017839</id>
@@ -189,8 +189,8 @@
     <loc>
         <id>1284167024473</id>
         <name>42146 Abejar, Soria, Spain</name>
-        <lat>41.86595<lat/>
-        <long>-2.897172<long/>
+        <lat>41.86595</lat>
+        <long>-2.897172</long>
     </loc>
     <loc>
         <id>1284166570089</id>
@@ -237,19 +237,19 @@
     <loc>
         <id>1284166559000</id>
         <name>Paseo de San Francisco,1 42003 Soria, Spain</name>
-        <lat>41.761733<lat/>
-        <long>-2.473722<long/>
+        <lat>41.761733</lat>
+        <long>-2.473722</long>
     </loc>
     <loc>
         <id>1284166550073</id>
         <name>Av de la Juventud, 05003, Ávila, Spain</name>
-        <lat>40.64758<lat/>
-        <long>-4.68612<long/>
+        <lat>40.64758</lat>
+        <long>-4.68612</long>
     </loc>
     <loc>
         <id>1284174563504</id>
         <name>Av Concha, 37500 Ciudad Rodrigo, Salamanca, Spain</name>
-        <lat>40.594869<lat/>
-        <long>-6.533717<long/>
+        <lat>40.594869</lat>
+        <long>-6.533717</long>
     </loc>
 </locs>
