@@ -216,7 +216,9 @@ Media Queries
 ========================================================================== */
 
 @media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
-       #mobile-footer{display:block;text-align:center;}
+        #mobile-footer{display:block;text-align:center;font-family: 'RalewaySemiBold'; font-size:1em;}
+        #mobile-footer a{color:black;text-decoration:none;}
+        #mobile-footer a:hover{text-decoration:underline;}
        .footer-container {display: none;} /* En Chrome y navegadores derivados no va */
        .footer-container img{display:none;} 
        .result p {font-size: 1em;}
