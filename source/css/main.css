@@ -231,7 +231,7 @@ Media Queries
             
             .result p { font-size: 0.7em; }
             
-            .wrapper { height: 85%; width: 85%; margin:0;}
+            .wrapper { height: 85%; width: 85%; margin-right:auto;margin-left:auto;}
             #logo>img { width: 75%; }
             #logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
             .result {
