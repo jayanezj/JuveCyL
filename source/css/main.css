@@ -162,7 +162,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-left:14%;
 }
 
-#resultname, #resultprovince{width:100%;}
+#resultname, #resultprovince{width:100%;!important}
 
 .result {
     border-radius: 0.5em;
