@@ -77,7 +77,6 @@ Author's custom styles
 
 }
 
-
 @font-face {
     font-family: 'RalewaySemiBold';
     src: url('../font/Raleway/RalewaySemiBold.eot');
@@ -89,7 +88,6 @@ Author's custom styles
     font-style: normal;
 
 }
-
 
 body{min-width: 1024px;min-height: 600px;height: 100%;}
 
@@ -150,6 +148,7 @@ input:focus, input:active {
     border: 3px solid rgba(30,156,203,1);
     border-radius: 1em; outline: 0; 
 }
+
 .result p { 
    font-family: 'RalewaySemiBold'; 
    margin-bottom: 0em; 
@@ -175,10 +174,7 @@ input:focus, input:active {
     bottom:0;
 }
 
-
 .main-container{margin-bottom: 10%;}
-
-
 
 /*
 Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
@@ -212,9 +208,6 @@ de las mismas.
 .zam{
     background: rgba(114,79,174,1);
 }
-
-
-
 
 /* ==========================================================================
 Media Queries
