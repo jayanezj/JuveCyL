@@ -91,6 +91,8 @@ Author's custom styles
 
 body{min-width: 1024px;min-height: 600px;height: 100%;}
 
+#mobile-footer {display:none;}
+
 #logo>img { display: block; margin-left: auto; margin-right: auto;}
 
 #logo div {
@@ -214,6 +216,7 @@ Media Queries
 ========================================================================== */
 
 @media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+       #mobile-footer{display:block;text-align:center;}
        .footer-container {display: none;} /* En Chrome y navegadores derivados no va */
        .footer-container img{display:none;} 
        .result p {font-size: 1em;}
