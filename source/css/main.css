@@ -141,6 +141,9 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 95%;
 }
 
+#resultnames, #resultprovinces {
+    width: 100% !important;
+}
 
 .result {
     background-color: lightblue;
@@ -173,6 +176,7 @@ input:focus, input:active {
     position:fixed;
     bottom:0;
 }
+
 
 .main-container{margin-bottom: 10%;}
 

@@ -4,87 +4,41 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>Prueba Index</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<meta charset="utf-8">
+	<title>Prueba Index</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="main-container">
-        <div class="main wrapper clearfix">
-            <div id="logo">
-                <img src="img/logo.png" alt="logotipo alojamientos juveniles">
-                <div><input type="text" id="textbox"/><button id="search"><img src="img/lupa.png" alt="lupa buscar"></button></div>
-            </div>
-            <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-             <div class="result">
-                <p>
-                <span class="resultname">Albergue Su Puta Madre</span>
-                <span class="provname">Valladolid</span>
-                </p>
-            </div>
-            </div> <!-- #main -->
-    </div> <!-- #main-container -->
-            
-            <div class="footer-container">
-                <img src="img/pie.png" usemap="#footermap">
-                <map name="footermap">
-                  <area shape="poly" coords="584,116,585,60,827,54,826,107,765,120,765,121" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.es_CO" target="_blank">
-                  <area shape="poly" coords="1351,117,1389,111,1397,117,1401,158,1370,160,1356,157,1351,134" href="humans.txt" target="_blank">
-                  <area shape="poly" coords="1657,16,1730,42,1698,115,1664,113,1638,94" href="http://www.w3.org/html/logo/" target="_blank">
-                </map>
+	<!--[if lt IE 7]>
+	<p class="chromeframe">Estás utilizando un navegador <strong>muy obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a> o <a href="http://www.google.com/chromeframe/?redirect=true">activa  google chrome frame</a> para mejorar tu experiencia.</p>
+	<![endif]-->
+	
+	<div class="main-container">
+		<div id="maindiv" class="main wrapper clearfix">
+			<div id="logo">
+				<img src="img/logo.png" alt="logotipo alojamientos juveniles" />
+				<div><input type="text" id="textbox" placeholder="Busca un alojamiento o provincia"/><button id="search"><img src="img/lupa.png" alt="lupa buscar"></button></div>
+				<div id="resultsdiv"></div>
+			</div>
+			</div> <!-- #main -->
+	</div> <!-- #main-container -->
+			<div class="footer-container">
+				<img src="img/pie.png" usemap="#footermap" alt="pie" />
+				<map name="footermap">
+
+				 <area shape="poly" coords="695,71,984,64,985,129,906,144,696,139" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.es_CO" target="_blank" alt="ccommons">
+				  <area shape="poly" coords="1611,140,1657,133,1669,189,1619,190,1612,184,1607,147" href="humans.txt" target="_blank" alt="humans">
+				  <area shape="poly" coords="1973,19,2061,49,2022,138,1983,135,1951,112,1949,111" href="http://www.w3.org/html/logo/" target="_blank" alt="html5">
+				</map>
 </div>
-            
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-            <script src="js/main.js"></script>
-        </body>
-    </html>
+			
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+			<script src="js/main.js"></script>
+			<script src="js/resizemap.min.js"></script>
+		</body>
+	</html>
