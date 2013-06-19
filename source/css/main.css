@@ -164,17 +164,11 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-left:14%;
 }
 
-#resultnames, #resultprovinces {
-    width: 100% !important;
-}
 
 .result {
-    background-color: lightblue;
     border-radius: 0.5em;
     display: block;
-    font-family: calibri;
     font-size: 1.5em;
-    font-variant: small-caps;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1em;
@@ -190,9 +184,12 @@ input:focus, input:active {
    font-family: 'RalewaySemiBold'; 
    margin-bottom: 0em; 
    margin-top: 0em; 
+   color: white;
 }
 
-.provname { float: right; }
+.resultname {width:100%;}
+
+.resultprovince { float: right; width:100%;}
 
 .footer-container img {
     display: block;
