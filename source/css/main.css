@@ -177,7 +177,7 @@ input:focus, input:active {
    margin-top: 0em; 
    color: white;
    font-size: 1.3em;
-   
+   text-transform:uppercase;
 }
 
 .result a{color:white;text-decoration:none;}
