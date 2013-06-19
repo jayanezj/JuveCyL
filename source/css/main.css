@@ -47,27 +47,6 @@ body { font: 16px/26px Helvetica, Helvetica Neue, Arial; }
 
 .title { color: white; }
 
-/* ==============
-    MOBILE: Menu
-============== */
-
-nav ul { margin: 0; padding: 0; }
-
-nav a {
-    background: #e44d26;
-    color: white;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
-}
-
-nav a:hover,
-nav a:visited { color: white; }
-
-nav a:hover { text-decoration: underline; }
 
 /* ==============
     MOBILE: Main
@@ -244,6 +223,7 @@ Media Queries
 @media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
        .footer-container {display: none;} 
        .result p {font-size: 1em;}
+       body{height:100%;width:100%;}
 }
 
 @media only screen and (min-width: 1140px) {
