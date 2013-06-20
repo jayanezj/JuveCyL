@@ -195,11 +195,12 @@ input:focus, input:active {
     margin-left:auto;
     margin-right:auto;
     padding:1em;
-    border:3px solid blue;
+    border:6px solid white;
+    box-shadow:0.5em 0.5em;
 }
-#generalmap p{text-align:right;font-family: 'RalewaySemiBold';margin:0;font-size: 1.2em;}
-#close{text-decoration: none;color: black;}
-#close:hover{text-decoration: underline;color:grey;}
+
+#closemap{text-decoration: none;color: black;text-align:right;font-family: 'RalewaySemiBold'}
+#closemap:hover{text-decoration: underline;color:grey;}
 
 /*
 Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
