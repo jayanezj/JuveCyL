@@ -48,12 +48,34 @@ $('#totalkm').html('Distancia total: '+window.total_distance);
 
 function loadMap()
 	{
-	window.map= new GMaps(
+	$('#map').click(function(e)
 		{
-		div: '#map',
-		lat: 41.652393,
-		lng: -4.762573,
-		zoom: 8
+		$('<script src="js/vendor/gmaps.js"></script>').html('').appendTo('body');
+		$('<div id="gmap"></div>').html('').prependTo('#maindiv');
+		$('#gmap').css('display','none');
+			$('#gmap').fadeIn(800);
+		$.when($('<a href="#" id="closemap"></a>').html('CLOSE  X<br />').appendTo('#gmap')).done(function()
+			{
+			$('#closemap').click(function(e)
+				{
+					event.preventDefault();
+					$('#gmap').fadeOut(800,function(){$('#gmap').remove()});
+				});
+			});
+		$('<div id="generalmap"></div>').html('').appendTo('#gmap');
+		$('#gmap').css('height',$(window).height()-100);
+		$('#gmap').css('width',$(window).width()-100);
+		$('#gmap').css('position','absolute');
+		$('#gmap').css('z-index',2);
+		$('#gmap').css('top',25);
+		$('#gmap').css('left',25);
+		$.when(window.map= new GMaps(
+			{
+			div: '#generalmap',
+			lat: 41.652393,
+			lng: -4.762573,
+			zoom: 8
+			})).done(loadMarks());
 		});
 	} 
 function addMark()
@@ -111,6 +133,7 @@ function loadMarks()
 		{
 		aux=0;
 		addMark();
+		loadResult();
 		});
 	}
 
@@ -148,6 +171,5 @@ function loadMarks()
 
 $(document).ready(function () 
 	{
-	$.when(loadMap()).done(loadMarks());
-	loadResult();
+	loadMap();
 	});
