@@ -112,13 +112,23 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 
 #search img{height: 4em;}
 
+
+#map{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 12%;
+    
+}
+
+#map img{height: 4em;}
 #textbox {
     border: 3px solid rgba(30,156,203,1);
     border-radius: 1em;
     padding: 0.4em;
     padding-left: 1em;
     width: 70%;
-    margin-left:14%;
+    margin-left:-1.9em;
 }
 
 #resultname, #resultprovince{width:100%;!important}
