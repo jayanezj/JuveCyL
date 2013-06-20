@@ -195,11 +195,11 @@ input:focus, input:active {
     margin-left:auto;
     margin-right:auto;
     padding:1em;
-    border:6px solid grey;
-    box-shadow:0.5em 0.5em 0.5em;
+    border:6px solid rgb(230,230,230);
+    box-shadow:0.5em 0.5em 0.5em grey;
 }
 
-#closemap{text-decoration: none;color: black;text-align:right;font-family: 'RalewaySemiBold'}
+#closemap{text-decoration: none;color: black;text-align:right;font-family: 'RalewaySemiBold';right:0;}
 #closemap:hover{text-decoration: underline;color:grey;}
 
 /*
