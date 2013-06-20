@@ -109,75 +109,84 @@ Author's custom styles
 
 }
 
-body{
-    min-width: 1024px;
-    min-height: 600px;
-    height: 80%; 
-    width: 80%;
+
+.top{
+    margin-top: 100px;
+    width: 700px;
+    height: 230px;
     margin-right: auto;
     margin-left: auto;
+    background-color: #3399FF;
+    margin-bottom: 3em;
+    padding: 1em 2em 1em 3em;
+    border-radius: 5px;
+    box-shadow:0.5em 0.5em 1em grey;
 }
+.name{color:white;}
+.addres{color:white;}
 
-.title{font-family: 'AmaticSCRegular';}
-
-.address{
-    font-family: 'AmaticSC-Regular-webfont';
-    font-size: 1.2em;
-}
-/*foto*/
-  .picture {
-        float: right;
-        width: 200px;
-        height: 150px;
-        background-color: #ADAD00;
-        border: solid #ADAD00 1.8em;
-        border-radius: 0.5em;
+.picture {
+    float: right;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: white solid 4px;
     }
-
-
-/*Nombre y ubicación*/
-.titles{
-        width: 43em;
-        background-color: #ADAD00;
-        padding: 0.2em 4em;
-        border-radius: 0.5em;
-        color: white;
-   }
-
-/*Enlaces*/
-.icon{
-    width: 50px;
-    height: 50px;
-    margin-right: 2em;
-}
-
-/*SECCIONES*/
-section h3{
-    font-size: medium;
-    color: white;
-    background-color: #ADAD00;
-    width: 12em;
-    border-radius: 0.3em;
-    padding: 0.2em 0em 0.2em 2.5em;
-    font-weight: normal;
-    font-size: 1.5em;
-    font-family: 'AmaticSCRegular';
-}
-section p{
-    margin-left: 2.5em;
-}
-
 
 nav a {
     color: white;
     display: inline;
     margin-bottom: 0x;
     padding: 0px 0;
-    
+    margin-right: 0.5em;
+}
+nav img{
+    width: 40px;
+    height: 40px;
+}
+a:first-child{
+    margin-left: 12em;
+}
+
+.contact{
+    float: left;
+}
+
+.contact img{
+    display: inline;
+}
+
+.contact p{
+    margin-bottom: 0px; 
+    margin-top: 0px; 
+    color: white; width: 300px;
+}
+
+.contact{
+    width: 200px;
+}
+.contact img{
+    margin-right: 0.2em;
+}
+nav{
+    margin-top: 1em;
+    float: right;
+    width: 500px;
 }
 
 
 
+.down{
+    background-color: #3399FF;
+    width: 700px;
+    height: 150px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1em 2em 1em 3em;
+    border-radius: 5px;
+    box-shadow:0.5em 0.5em 1em grey;
+}
 
 
 
