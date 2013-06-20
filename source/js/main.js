@@ -99,7 +99,6 @@ function searchInn()
 	var searching = 0;
 	$('#textbox').keydown(function (e) 
 		{
-		$('#resultsdiv').css('min-height',0);
    if (event.keyCode == 10 || event.keyCode == 13) 
         {event.preventDefault();}
 		clearTimeout(timer);
@@ -237,7 +236,6 @@ function searchInn()
 						////////////////////////////////////////////////
 						////////////////////////////////////////////////
 						$('#footerimg').removeAttr('style');
-						$('#resultsdiv').css('min-height',$('#resultsdiv').height());
 						$('#footerimg').css('top',$('#resultsdiv').height()+464);
 						if($('#resultsdiv').height()+464<($(window).height()-$('#footerimg').height()))
 							{
