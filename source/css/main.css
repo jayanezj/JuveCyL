@@ -214,7 +214,7 @@ de las mismas.
 Media Queries
 ========================================================================== */
 
-@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 480px) and (max-device-width: 1023px) {
             body { height: 100%; width: 100%;}
             #mobile-footer {
                 display: block;
