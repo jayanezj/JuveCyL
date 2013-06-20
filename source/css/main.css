@@ -137,12 +137,16 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 75%; 
     margin-left:auto;
     margin-right: auto;
+    color: rgba(30,156,203,1);
+    font-size: 1.3em;
 }
 
 #resultprovinces h2{
     width: 75%; 
     margin-left:auto;
     margin-right: auto;
+    color: rgba(30,156,203,1);
+    font-size: 1.3em;
 }
 
 .result {
