@@ -117,8 +117,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     background-color: transparent;
     border: none;
     padding: 0;
-    margin-left: 12%;
-    
+    margin-left: 51%;
 }
 
 #map img{height: 4em;}
@@ -128,7 +127,7 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     padding: 0.4em;
     padding-left: 1em;
     width: 70%;
-    margin-left:-1.9em;
+    margin-left:15%;
 }
 
 #resultname, #resultprovince{width:100%;!important}
