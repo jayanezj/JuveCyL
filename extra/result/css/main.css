@@ -85,25 +85,25 @@ nav a:hover { text-decoration: underline; }
 /* ==========================================================================
 Author's custom styles
 ========================================================================== */
-
 @font-face {
-    font-family: 'AmaticSCRegular';
-    src: url('../font/AmaticSC-Regular-webfont.eot');
-    src: url('../font/AmaticSC-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/AmaticSC-Regular-webfont.woff') format('woff'),
-         url('../font/AmaticSC-Regular-webfont.ttf') format('truetype'),
-         url('../font/AmaticSC-Regular-webfont.svg#AmaticSCRegular') format('svg');
+    font-family: 'RalewayRegular';
+    src: url('../font/Raleway/RalewayRegular.eot');
+    src: url('../font/Raleway/RalewayRegular.eot?#iefix') format('embedded-opentype'),
+         url('../font/Raleway/RalewayRegular.woff') format('woff'),
+         url('../font/Raleway/RalewayRegular.ttf') format('truetype'),
+         url('../font/Raleway/RalewayRegular.svg#RalewayRegular') format('svg');
     font-weight: normal;
     font-style: normal;
+
 }
 
 @font-face {
-    font-family: 'AmaticBold';
-    src: url('../font/Amatic-Bold-webfont.eot');
-    src: url('../font/Amatic-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/Amatic-Bold-webfont.woff') format('woff'),
-         url('../font/Amatic-Bold-webfont.ttf') format('truetype'),
-         url('../font/Amatic-Bold-webfont.svg#') format('svg');
+    font-family: 'LondrinaSolidRegular';
+    src: url('../font/Londrina/LondrinaSolid-Regular-webfont.eot');
+    src: url('../font/Londrina/LondrinaSolid-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Londrina/LondrinaSolid-Regular-webfont.woff') format('woff'),
+         url('../font/Londrina/LondrinaSolid-Regular-webfont.ttf') format('truetype'),
+         url('../font/Londrina/LondrinaSolid-Regular-webfont.svg#LondrinaSolidRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -116,16 +116,22 @@ Author's custom styles
     height: 230px;
     margin-right: auto;
     margin-left: auto;
-    background-color: #3399FF;
+    background-color: rgba(30,156,203,1);
     margin-bottom: 3em;
     padding: 1em 2em 1em 3em;
     border-radius: 5px;
     box-shadow:0.5em 0.5em 1em grey;
 }
-.name{color:white;}
-.addres{color:white;}
+#name{
+    color:white;
+    font-family: 'LondrinaSolidRegular';
+}
+#addres{
+    color:white;
+   font-family: 'RalewayRegular'; 
+}
 
-.picture {
+#picture {
     float: right;
     margin-right: 0.5em;
     border-radius: 50%;
@@ -135,10 +141,7 @@ Author's custom styles
     }
 
 nav a {
-    color: white;
     display: inline;
-    margin-bottom: 0x;
-    padding: 0px 0;
     margin-right: 0.5em;
 }
 nav img{
@@ -158,11 +161,16 @@ a:first-child{
 }
 
 .contact p{
+   font-family: 'RalewayRegular'; 
     margin-bottom: 0px; 
     margin-top: 0px; 
-    color: white; width: 300px;
+    color: white; 
+
 }
 
+#phone{
+    width: 400px;
+}
 .contact{
     width: 200px;
 }
@@ -178,7 +186,7 @@ nav{
 
 
 .down{
-    background-color: #3399FF;
+    background-color: rgba(30,156,203,1);
     width: 700px;
     height: 150px;
     margin-right: auto;
