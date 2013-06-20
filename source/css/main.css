@@ -197,11 +197,11 @@ input:focus, input:active {
     margin-left:auto;
     margin-right:auto;
     padding:1em;
-    border:6px solid rgb(245,245,245);
+    border:12px solid rgb(245,245,245);
     box-shadow:0.5em 0.5em 1em grey;
 }
 
-#closemap{text-decoration: none;color: black;font-family: 'RalewaySemiBold';float:right;margin-right: 2em;}
+#closemap{text-decoration: none;color: black;font-family: 'RalewaySemiBold';position: absolute;top:0;right:0;z-index: 2;}
 #closemap:hover{text-decoration: underline;color:grey;}
 
 /*
