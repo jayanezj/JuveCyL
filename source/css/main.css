@@ -195,8 +195,8 @@ input:focus, input:active {
     margin-left:auto;
     margin-right:auto;
     padding:1em;
-    border:6px solid white;
-    box-shadow:0.5em 0.5em;
+    border:6px solid grey;
+    box-shadow:0.5em 0.5em 0.5em;
 }
 
 #closemap{text-decoration: none;color: black;text-align:right;font-family: 'RalewaySemiBold'}
