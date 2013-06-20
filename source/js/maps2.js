@@ -51,31 +51,29 @@ function loadMap()
 	$('#map').click(function(e)
 		{
 		$('<script src="js/vendor/gmaps.js"></script>').html('').appendTo('body');
-		$('<div id="gmap"></div>').html('').prependTo('#maindiv');
-		$('#gmap').css('display','none');
-			$('#gmap').fadeIn(800);
-		$.when($('<a href="#" id="closemap"></a>').html('CLOSE  X<br />').appendTo('#gmap')).done(function()
-			{
-			$('#closemap').click(function(e)
-				{
-					event.preventDefault();
-					$('#gmap').fadeOut(800,function(){$('#gmap').remove()});
-				});
-			});
-		$('<div id="generalmap"></div>').html('').appendTo('#gmap');
-		$('#gmap').css('height',$(window).height()-100);
-		$('#gmap').css('width',$(window).width()-100);
-		$('#gmap').css('position','absolute');
-		$('#gmap').css('z-index',2);
-		$('#gmap').css('top',25);
-		$('#gmap').css('left',25);
+		$('<div id="generalmap"></div>').html('').appendTo('body');
+		$('#generalmap').css('height',$(window).height()-100);
+		$('#generalmap').css('width',$(window).width()-100);
+		$('#generalmap').css('position','absolute');
+		$('#generalmap').css('top',25);
+		$('#generalmap').css('left',25);
+		$('#generalmap').css('display','none');
+		$('#generalmap').fadeIn(800);
 		$.when(window.map= new GMaps(
 			{
 			div: '#generalmap',
 			lat: 41.652393,
 			lng: -4.762573,
 			zoom: 8
-			})).done(loadMarks());
+			})).done(function(){
+			$('<a href="#" id="closemap"></a>').html('X<br />').prependTo('#generalmap');
+			$('#closemap').bind('click', function(evt)
+				{
+				evt.preventDefault();
+				$('#generalmap').fadeOut(800,function(){$('#generalmap').remove()});
+				});
+			loadMarks();
+			});
 		});
 	} 
 function addMark()
