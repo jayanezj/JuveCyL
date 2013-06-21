@@ -236,6 +236,97 @@ de las mismas.
     background: rgb(114,79,174);
 }
 
+
+/* Estilos del div superior info*/
+/* --------------------------------------------------------------------*/
+
+.infotop {
+    background-color: rgb(30,156,203);
+    border-radius: 5px;
+    box-shadow: 0.5em 0.5em 1em grey;
+    color: white;
+    font-family: 'RalewayRegular';
+    height: 300px;
+    margin: 4.5em auto 3em auto;
+    padding: 2em;
+    width: 800px;
+}
+
+#closeinfo { margin: 0; text-align: right; }
+
+#closeinfo a {
+    color: white;
+    font-family: 'RalewayRegular';
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#closeinfo a:hover { text-decoration: underline; }
+
+/* Titulo y Subtitulo*/
+
+#infoname { font-family: 'LondrinaSolidRegular'; margin-top: 0; }
+
+/* Imagen */
+
+#picture {   
+    float: right;
+    height: 150px;
+    width: 150px;
+    margin-right: 0.5em;
+    border: white solid 4px;
+    border-radius: 50%;
+}
+
+/* Menú de botones */
+
+nav {
+    float: right;
+    height: 70px;
+    margin-top: 30px;
+    position: relative;
+    width: 350px;
+}
+
+nav a { display: inline; float: right; margin-right: 0.5em; }
+nav img { height: 50px; width: 50px; }
+
+/* Contenedor con los datos de contacto*/
+
+.contact { float: left; }
+.contact p { margin-bottom: 0; margin-top: 0; }
+.contact span { margin-right: 0.7em; }
+
+#phone { width: 400px; }
+
+/* --------------------------------------------------------------------*/
+/* Fin estilos del div superior info*/
+
+
+/* Estilos del div inferior info*/
+/* --------------------------------------------------------------------*/
+
+.infodown {
+    background-color: rgb(30,156,203);
+    border-radius: 5px;
+    box-shadow: 0.5em 0.5em 1em grey;
+    color: white;
+    font-family: 'RalewayRegular';
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    text-align: justify;
+    width: 800px;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------------------*/
+/* Fin estilos del div inferior info*/
+
+
+
 /* ==========================================================================
 Media Queries
 ========================================================================== */
