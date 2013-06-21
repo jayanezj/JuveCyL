@@ -122,8 +122,13 @@ Author's custom styles
     border-radius: 5px;
     box-shadow:0.5em 0.5em 1em grey;
 }
+#closeresult{
+    float: right;
+    margin: 0px;
+    color:red;
+    }
 /*titulo y subtitulo*/
-#name{
+#infoname{
     color:white;
     font-family: 'LondrinaSolidRegular';
 }
@@ -143,18 +148,16 @@ Author's custom styles
 
 /*menu de botones*/
 nav{
-   
-    position: absolute;
-    top:310px;
-    left: 740px;
-    width: 300px;
+    position: relative;
+    width: 250px;
     height: 70px;
+    float:right;
 }
 
 nav a {
     display: inline;
     margin-right: 0.5em;
-
+    float: right;
 }
 nav img{
     width: 40px;
