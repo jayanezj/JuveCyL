@@ -110,19 +110,19 @@ Author's custom styles
 }
 
 
-.top{
+.infotop{
     margin-top: 100px;
-    width: 700px;
-    height: 250px;
+    width: 800px;
+    height: 300px;
     margin-right: auto;
     margin-left: auto;
-    background-color: rgba(30,156,203,1);
+    background-color: rgb(30,156,203);
     margin-bottom: 3em;
     padding: 1em 2em 1em 3em;
     border-radius: 5px;
     box-shadow:0.5em 0.5em 1em grey;
 }
-#closeresult{
+#closeinfo{
     float: right;
     margin: 0px;
     color:red;
@@ -132,9 +132,9 @@ Author's custom styles
     color:white;
     font-family: 'LondrinaSolidRegular';
 }
-#addres{
+#address{
     color:white;
-   font-family: 'RalewayRegular'; 
+    font-family: 'RalewayRegular'; 
 }
 /*imagen*/
 #picture {
@@ -152,6 +152,7 @@ nav{
     width: 250px;
     height: 70px;
     float:right;
+    margin-top: 30px;
 }
 
 nav a {
@@ -179,7 +180,7 @@ nav img{
 }
 
 .contact img{
-    margin-right: 0.2em;
+    margin-right: 0.5em;
 }
 
 #phone{
@@ -191,7 +192,7 @@ nav img{
 
 
 
-.down{
+.infodown{
     background-color: rgba(30,156,203,1);
     width: 700px;
     height: 150px;
