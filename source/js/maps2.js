@@ -50,8 +50,15 @@ function loadMap()
 	{
 	$('#map').click(function(e)
 		{
+		e.stopPropagation();
 		$('<script src="js/vendor/gmaps.js"></script>').html('').appendTo('body');
 		$('<div id="generalmap"></div>').html('').appendTo('body');
+		$('#generalmap').bind({
+		click: function(evt) {
+				evt.stopPropagation();
+				}
+			});
+
 		$('#generalmap').css('height',$(window).height()-100);
 		$('#generalmap').css('width',$(window).width()-100);
 		$('#generalmap').css('position','absolute');
@@ -66,7 +73,24 @@ function loadMap()
 			lng: -4.762573,
 			zoom: 8
 			})).done(function(){
-			$('<a href="#" id="closemap"></a>').html('X<br />').prependTo('#generalmap');
+			$('<img id="closemap" src="img/cerrar.png" class="fade" alt="cerrar"></img>').html('').prependTo('#generalmap');
+			$('#closemap').bind({
+				click: function(evt) {
+				evt.preventDefault();
+				$('#generalmap').fadeOut(800,function(){$('#generalmap').remove()});
+				},
+				mouseenter: function() {
+				$(this).fadeOut("fast");
+				$(this).attr("src", "img/cerrarhover.png");
+				$(this).fadeIn("fast");
+				},
+				mouseleave: function() {
+				$(this).fadeOut("fast");
+				$(this).attr("src", "img/cerrar.png");
+				$(this).fadeIn("fast");
+				}
+			});
+
 			$('#closemap').bind('click', function(evt)
 				{
 				evt.preventDefault();
@@ -96,7 +120,7 @@ function addMark()
 							lat: $(this).find('lat').text(),
 							lng: $(this).find('long').text(),
 							title: tits[aux],
-							icon: 'https://www.mediterraneocomunidades.com/wp-content/uploads/2012/11/icono_casa.png',
+							icon: 'img/casa_mapa.png',
 							infoWindow: 
 								{
 								content: '<p>' + tits[aux] + '</p> <p>' + $(this).find('name').text() + '</p>'
@@ -169,5 +193,11 @@ function loadMarks()
 
 $(document).ready(function () 
 	{
+	$('body').click(function() {
+	if ($('#generalmap').length){
+		$('#generalmap').fadeOut(800,function(){$('#generalmap').remove()});
+		}   
+	});
 	loadMap();
+	    
 	});
