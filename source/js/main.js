@@ -249,8 +249,8 @@ function searchInnByKey()
 	var searching = 0;
 	$('#textbox').keydown(function (e) 
 		{
-   if (event.keyCode == 10 || event.keyCode == 13) 
-        {event.preventDefault();}
+   if (e.keyCode == 10 || e.keyCode == 13) 
+        {e.preventDefault();}
 		clearTimeout(timer);
 		timer = setTimeout(function () 
 			{
@@ -278,7 +278,7 @@ function searchInnByKey()
 		});
 		$('#finderb').click(function (e) 
 			{
-				event.preventDefault();
+				e.preventDefault();
 			});
 	}
 

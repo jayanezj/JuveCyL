@@ -7,7 +7,18 @@ var map;
 var aux;
 function traceRoute()
 {
-$('#instructions').append('<h2 id="totalkm"></h2>');
+$('<div id="mapinstructions"></div>').html('').appendTo('#generalmap');
+$('#mapinstructions').append('<img id="closeinstructions" src="img/cerrar.png" class="fade" alt="cerrar"></img>');
+$('#closeinstructions').bind({
+		click: function(evt) {
+			map_origin=new Array(2);
+			map_destiny=new Array(2);
+			total_distance=0;
+				$('#mapinstructions').fadeOut(800,function(){$('#mapinstructions').remove()});
+				}
+			});
+$('#mapinstructions').append('<h2 id="totalkm"></h2>');
+$('#mapinstructions').append('<div style="height:80%; overflow:scroll; " id="instructions"></div>');
 window.map.travelRoute({
 	origin: window.map_origin,
 	destination: window.map_destiny,
@@ -39,6 +50,7 @@ window.map.travelRoute({
 			window.total_distance=window.total_distance.toLocaleString()+" Kilómetros";
 		}
 $('#totalkm').html('Distancia total: '+window.total_distance);
+$('#mapinstructions').fadeIn(800);
 		});
 
 	}
@@ -59,11 +71,11 @@ function loadMap()
 				}
 			});
 
-		$('#generalmap').css('height',$(window).height()-100);
-		$('#generalmap').css('width',$(window).width()-100);
+		$('#generalmap').css('height','80%');
+		$('#generalmap').css('width','80%');
 		$('#generalmap').css('position','absolute');
-		$('#generalmap').css('top',25);
-		$('#generalmap').css('left',25);
+		$('#generalmap').css('top','7%');
+		$('#generalmap').css('left','8%');
 		$('#generalmap').css('display','none');
 		$('#generalmap').fadeIn(800);
 		$.when(window.map= new GMaps(
@@ -188,11 +200,17 @@ function loadMarks()
 	}//,{title: 'imprime',name: 'printer',action: function(e) {alert(window.map_origin[0]+" : "+window.map_origin[1]+" - "+window.map_destiny[0]+" : "+window.map_destiny[1]);}}
 	]
 });
+	$('#gmaps_context_menu').bind("click",function(e){
+		e.stopPropagation();
+       }); 
 	}
 
 
 $(document).ready(function () 
 	{
+       $(document).bind("contextmenu",function(e){
+              //return false;
+       }); 
 	$('body').click(function() {
 	if ($('#generalmap').length){
 		$('#generalmap').fadeOut(800,function(){$('#generalmap').remove()});

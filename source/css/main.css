@@ -113,6 +113,8 @@ input:focus, input:active {
     margin-left: -3.5em;
 }
 
+/*GOOGLE MAPS*/
+
 #search img{height: 4em;}
 
 #map{
@@ -135,8 +137,10 @@ input:focus, input:active {
     box-shadow:0.5em 0.5em 1em grey;
 }
 
-#closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;}
-
+#closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;cursor:pointer;}
+#mapinstructions{display: none; background-color:rgba(255,128,0,0.2); padding: 1em; position:absolute; bottom:0; width:30%; right:0px; z-index:2; height:50%;}
+#instructions{height: 100%;overflow: scroll;top: 18%;position: absolute;}
+#closeinstructions{position:absolute; right: 0;cursor:pointer;}
 /*Contenedor resultdiv (resultados)*/
 
 #resultname, #resultprovince{width:100%;!important}
