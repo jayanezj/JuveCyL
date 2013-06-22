@@ -51,6 +51,7 @@ body { font: 16px/26px Helvetica, Helvetica Neue, Arial; }
 Author's custom styles
 ========================================================================== */
 
+
 @font-face {
     font-family: 'RalewayRegular';
     src: url('../font/Raleway/RalewayRegular.eot');
@@ -77,7 +78,9 @@ Author's custom styles
 
 body{min-width: 1024px;min-height: 600px;height: 100%;}
 
-#mobile-footer {display:none;}
+.main-container{margin-bottom: 10%;}
+
+/*Contenedor logo (buscador)*/
 
 #logo>h1>img { display: block; margin-left: auto; margin-right: auto;}
 
@@ -89,6 +92,20 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 80%;
 }
 
+input:focus, input:active { 
+    border: 3px solid rgb(30,156,203);
+    border-radius: 1em; outline: 0; 
+}
+
+#textbox {
+    border: 3px solid rgb(30,156,203);
+    border-radius: 1em;
+    padding: 0.4em;
+    padding-left: 1em;
+    width: 70%;
+    margin-left:15%;
+}
+
 #search {
     background-color: transparent;
     border: none;
@@ -98,7 +115,6 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 
 #search img{height: 4em;}
 
-
 #map{
     background-color: transparent;
     border: none;
@@ -107,14 +123,21 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
 }
 
 #map img{height: 4em;}
-#textbox {
-    border: 3px solid rgba(30,156,203,1);
-    border-radius: 1em;
-    padding: 0.4em;
-    padding-left: 1em;
-    width: 70%;
-    margin-left:15%;
+
+#generalmap{
+    width:80%;
+    height:80%;
+    border-radius: 0.5em;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+    border:12px solid rgb(245,245,245);
+    box-shadow:0.5em 0.5em 1em grey;
 }
+
+#closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;}
+
+/*Contenedor resultdiv (resultados)*/
 
 #resultname, #resultprovince{width:100%;!important}
 
@@ -144,16 +167,10 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 75%;
 }
 
-input:focus, input:active { 
-    border: 3px solid rgb(30,156,203);
-    border-radius: 1em; outline: 0; 
-}
-
 .result p { 
    font-family: 'RalewaySemiBold'; 
    margin-bottom: 0em; 
    margin-top: 0em; 
-   color: white;
    font-size: 1.3em;
    text-transform:uppercase;
 }
@@ -162,10 +179,11 @@ input:focus, input:active {
 .result a:hover{text-decoration:underline;}
 .result a:visited{color:rgb(242,242,242);}
 
-#nullresult{color: rgb(30,156,203);text-align:center;font-size: 1.3em;font-weight:bold;}
-
 .provname { float: right;}
 
+#nullresult{color: rgb(30,156,203);text-align:center;font-size: 1.3em;font-weight:bold;}
+
+/*Pie*/
 .footer-container img {
     display: block;
     width: 100%;
@@ -176,25 +194,9 @@ input:focus, input:active {
     bottom:0;
 }
 
-.main-container{margin-bottom: 10%;}
+#mobile-footer {display:none;}
 
-#generalmap{
-    width:80%;
-    height:80%;
-    border-radius: 0.5em;
-    margin-left:auto;
-    margin-right:auto;
-    padding:1em;
-    border:12px solid rgb(245,245,245);
-    box-shadow:0.5em 0.5em 1em grey;
-}
-
-#closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;}
-
-/*
-Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
-de las mismas. 
-*/
+/*Colores de fondo de cada provincia*/
 
 .avi{background: rgb(91,117,200);}
 .bur{background: rgb(174,173,79);}
@@ -205,6 +207,7 @@ de las mismas.
 .sor{background: rgb(195,137,96);}
 .val{background: rgb(155,120,170);}
 .zam{background: rgb(114,79,174);}
+
 
 
 /* Estilos del div superior info*/
