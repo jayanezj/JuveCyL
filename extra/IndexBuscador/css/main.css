@@ -1,5 +1,5 @@
 /* ==========================================================================
-HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+HTML5 Boilerplate styles 
 ========================================================================== */
 
 html,
@@ -45,44 +45,8 @@ body { font: 16px/26px Helvetica, Helvetica Neue, Arial; }
 
 .wrapper { margin: 0 5%; width: 90%; }
 
-/* ===================
-    ALL: Orange Theme
-=================== */
-
-.header-container { border-bottom: 20px solid #e44d26; }
-
-/*=======Comento lo de abajo para quitar el naranja que trae el pie y la cabecera.
-.footer-container,
-.main aside { border-top: 20px solid #e44d26; }
-
-
-.header-container,
-.footer-container,
-.main aside { background: #f16529; }
-*/
 .title { color: white; }
 
-/* ==============
-    MOBILE: Menu
-============== */
-
-nav ul { margin: 0; padding: 0; }
-
-nav a {
-    background: #e44d26;
-    color: white;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
-}
-
-nav a:hover,
-nav a:visited { color: white; }
-
-nav a:hover { text-decoration: underline; }
 
 /* ==============
     MOBILE: Main
@@ -90,11 +54,6 @@ nav a:hover { text-decoration: underline; }
 
 .main { padding: 30px 0; }
 
-.main article h1 { font-size: 2em; }
-
-.main aside { color: white; padding: 0px 5% 10px; }
-
-.footer-container footer { color: white; padding: 20px 0; }
 
 /* ===============
     ALL: IE Fixes
@@ -105,15 +64,38 @@ nav a:hover { text-decoration: underline; }
 /* ==========================================================================
 Author's custom styles
 ========================================================================== */
+
 @font-face {
-    font-family: 'Raleway';
+    font-family: 'RalewayRegular';
+    src: url('../font/Raleway/RalewayRegular.eot');
+    src: url('../font/Raleway/RalewayRegular.eot?#iefix') format('embedded-opentype'),
+         url('../font/Raleway/RalewayRegular.woff') format('woff'),
+         url('../font/Raleway/RalewayRegular.ttf') format('truetype'),
+         url('../font/Raleway/RalewayRegular.svg#RalewayRegular') format('svg');
+    font-weight: normal;
     font-style: normal;
-    font-weight: 400;
-    src: url('../font/raleway/raleway.woff') format('woff');
+
 }
 
-body{min-width: 1024px;min-height: 600px;}
+@font-face {
+    font-family: 'RalewaySemiBold';
+    src: url('../font/Raleway/RalewaySemiBold.eot');
+    src: url('../font/Raleway/RalewaySemiBold.eot?#iefix') format('embedded-opentype'),
+         url('../font/Raleway/RalewaySemiBold.woff') format('woff'),
+         url('../font/Raleway/RalewaySemiBold.ttf') format('truetype'),
+         url('../font/Raleway/RalewaySemiBold.svg#RalewaySemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+body{min-width: 1024px;min-height: 600px;height: 100%;}
+
+/* Estilos del main*/
+/* --------------------------------------------------------------------*/
+.main-container{margin-bottom: 10%;}
+
+/*Estilos del div Logo*/
 #logo>img { display: block; margin-left: auto; margin-right: auto;}
 
 #logo div {
@@ -121,110 +103,276 @@ body{min-width: 1024px;min-height: 600px;}
     margin-right: auto;
     margin-top: 0.5em;
     padding: 1em;
-    width: 60%;
+    width: 80%;
 }
 
-#search {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-left: -4em;
-}
+/*Contenedor sin nombre buscador: textbox+search+map*/
+/*-----------------------------------------------*/
 
-#search img{height: 4em;}
+/*Buscador*/
+input:focus, input:active { 
+    border: 3px solid rgba(30,156,203,1);
+    border-radius: 1em; outline: 0; 
+}
 
 #textbox {
     border: 3px solid rgba(30,156,203,1);
     border-radius: 1em;
     padding: 0.4em;
     padding-left: 1em;
-    width: 95%;
+    width: 70%;
+    margin-left:15%;
 }
 
+/*Botones del buscador*/
+#search {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: -3.5em;
+}
+
+#search img{height: 4em;}
+
+#map{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 51%;
+}
+
+#map img{height: 4em;}
+
+/*Contenedor resultados*/
+/*-----------------------------------------------*/
 
 .result {
-    background-color: lightblue;
     border-radius: 0.5em;
-    display: block;
-    font-family: calibri;
-    font-size: 1.5em;
-    font-variant: small-caps;
+/*    display: block; sobra???*/
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
+    margin-top: 0.5em;
     padding: 0.5em;
     width: 75%;
 }
 
-input:focus, input:active { 
-    border: 3px solid rgba(30,156,203,1);
-    border-radius: 1em; outline: 0; 
+.result p { 
+   font-family: 'RalewaySemiBold'; 
+   margin-bottom: 0em; 
+   margin-top: 0em; 
+   /*color: white; --> no hace falta, lo tiene el a*/
+   font-size: 1.3em;
+   text-transform:uppercase;
 }
-.result p { font-family: 'Raleway'; margin-bottom: 0em; margin-top: 0em; }
 
-.provname { float: right; }
+.result a{color:white;text-decoration:none;}
+.result a:hover{text-decoration:underline;}
+.result a:visited{color:rgb(242,242,242);}
 
+#resultname, #resultprovince{width:100%;!important}
+
+#resultnames h2{
+    width: 75%; 
+    margin-left:auto;
+    margin-right: auto;
+    color: rgb(30,156,203);
+    font-size: 1.3em;
+}
+
+#resultprovinces h2{
+    width: 75%; 
+    margin-left:auto;
+    margin-right: auto;
+    color: rgb(30,156,203);
+    font-size: 1.3em;
+}
+
+.provname { float: right;}
+
+/*Mapa*/
+/*-----------------------------------------------*/
+
+#generalmap{
+    width:80%;
+    height:80%;
+    border-radius: 0.5em;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+    border:12px solid rgb(245,245,245);
+    box-shadow:0.5em 0.5em 1em grey;
+}
+
+#closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;}
+
+/*Pie*/
+/*-----------------------------------------------*/
 .footer-container img {
     display: block;
-    height: 10%;
-    margin: auto;
-    width: 30%;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 1024px;
+    position:absolute;
+    bottom:0;
 }
+
+#mobile-footer {display:none;}
+/*
+Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
+de las mismas. 
+*/
+
+.avi{
+    background: rgb(91,117,200);
+}
+.bur{
+    background: rgb(174,173,79);
+}
+.leo{
+    background: rgb(91,193,200);
+}
+.pal{
+    background: rgb(174,175,115);
+}
+.sal{
+    background: rgb(174,79,101);
+}
+.seg{
+    background: rgb(100,153,191);
+}
+.sor{
+    background: rgb(195,137,96);
+}
+.val{
+    background: rgb(155,120,170);
+}
+.zam{
+    background: rgb(114,79,174);
+}
+
+
+/* Estilos del div superior info*/
+/* --------------------------------------------------------------------*/
+
+.infotop {
+    background-color: rgb(30,156,203);
+    border-radius: 5px;
+    box-shadow: 0.5em 0.5em 1em grey;
+    color: white;
+    font-family: 'RalewayRegular';
+    height: 300px;
+    margin: 4.5em auto 3em auto;
+    padding: 2em;
+    width: 800px;
+}
+
+#closeinfo { margin: 0; text-align: right; }
+
+#closeinfo a {
+    color: white;
+    font-family: 'RalewayRegular';
+    font-size: 1.3em;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#closeinfo a:hover { text-decoration: underline; }
+
+/* Titulo y Subtitulo*/
+
+#infoname { font-family: 'LondrinaSolidRegular'; margin-top: 0; }
+
+/* Imagen */
+
+#picture {   
+    float: right;
+    height: 150px;
+    width: 150px;
+    margin-right: 0.5em;
+    border: white solid 4px;
+    border-radius: 50%;
+}
+
+/* Menú de botones */
+
+nav {
+    float: right;
+    height: 70px;
+    margin-top: 30px;
+    position: relative;
+    width: 350px;
+}
+
+nav a { display: inline; float: right; margin-right: 0.5em; }
+nav img { height: 50px; width: 50px; }
+
+/* Contenedor con los datos de contacto*/
+
+.contact { float: left; }
+.contact p { margin-bottom: 0; margin-top: 0; }
+.contact span { margin-right: 0.7em; }
+
+#phone { width: 400px; }
+
+/* --------------------------------------------------------------------*/
+/* Fin estilos del div superior info*/
+
+
+/* Estilos del div inferior info*/
+/* --------------------------------------------------------------------*/
+
+.infodown {
+    background-color: rgb(30,156,203);
+    border-radius: 5px;
+    box-shadow: 0.5em 0.5em 1em grey;
+    color: white;
+    font-family: 'RalewayRegular';
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    text-align: justify;
+    width: 800px;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------------------*/
+/* Fin estilos del div inferior info*/
+
+
+
 /* ==========================================================================
 Media Queries
 ========================================================================== */
 
-@media only screen and (min-width: 480px) {
-        
-        /* ====================
-            INTERMEDIATE: Menu
-        ==================== */
-        
-            nav a {
-                float: left;
-                margin: 0 1.7%;
-                margin-bottom: 0;
-                padding: 25px 2%;
-                width: 27%;
+@media only screen and (min-device-width: 480px) and (max-device-width: 1023px) {
+            body { height: 100%; width: 100%;}
+            #mobile-footer {
+                display: block;
+                font-family: 'RalewaySemiBold';
+                font-size: 1em;
+                text-align: center;
             }
-        
-            nav li:first-child a { margin-left: 0; }
-        
-            nav li:last-child a { margin-right: 0; }
-        
-        /* ========================
-            INTERMEDIATE: IE Fixes
-        ======================== */
-        
-            nav ul li { display: inline; }
-        
-            .oldie nav a { margin: 0 0.7%; }
-}
-
-@media only screen and (min-width: 768px) {
-        
-        /* ====================
-            WIDE: CSS3 Effects
-        ==================== */
-        
-            .header-container,
-            .main aside { -webkit-box-shadow: 0 5px 10px #aaa; -moz-box-shadow: 0 5px 10px #aaa; box-shadow: 0 5px 10px #aaa; }
-        
-        /* ============
-            WIDE: Menu
-        ============ */
-        
-            .title { float: left; }
-        
-            nav { float: right; width: 38%; }
-        
-        /* ============
-            WIDE: Main
-        ============ */
-        
-            .main article { float: left; width: 57%; }
-        
-            .main aside { float: right; width: 28%; }
+            #mobile-footer a { color: black; text-decoration: none; }
+            #mobile-footer a:hover { text-decoration: underline; }
+            #mobile-footer p{margin-top: 0;margin-bottom: 0;}
+            
+            .footer-container { display: none; }
+            .footer-container img { display: none; }
+            
+            .result p { font-size: 0.7em; }
+            
+            .wrapper { height: 85%; width: 85%; margin-right:auto;margin-left:auto;}
+            #logo>img { width: 75%; }
+            #logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
+            .result {
+                border-radius: 0.5em;
+                display: block;
+                margin-top: 0.5em;
+                padding: 0.6em;
+                width: 65%;
+            }
 }
 
 @media only screen and (min-width: 1140px) {

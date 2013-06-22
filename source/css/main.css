@@ -91,8 +91,11 @@ Author's custom styles
 
 body{min-width: 1024px;min-height: 600px;height: 100%;}
 
-#mobile-footer {display:none;}
+/* Estilos del main*/
+/* --------------------------------------------------------------------*/
+.main-container{margin-bottom: 10%;}
 
+/*Estilos del div Logo*/
 #logo>img { display: block; margin-left: auto; margin-right: auto;}
 
 #logo div {
@@ -103,24 +106,15 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 80%;
 }
 
-#search {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-left: -3.5em;
+/*Contenedor sin nombre buscador: textbox+search+map*/
+/*-----------------------------------------------*/
+
+/*Buscador*/
+input:focus, input:active { 
+    border: 3px solid rgba(30,156,203,1);
+    border-radius: 1em; outline: 0; 
 }
 
-#search img{height: 4em;}
-
-
-#map{
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-left: 51%;
-}
-
-#map img{height: 4em;}
 #textbox {
     border: 3px solid rgba(30,156,203,1);
     border-radius: 1em;
@@ -130,27 +124,31 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     margin-left:15%;
 }
 
-#resultname, #resultprovince{width:100%;!important}
-
-#resultnames h2{
-    width: 75%; 
-    margin-left:auto;
-    margin-right: auto;
-    color: rgba(30,156,203,1);
-    font-size: 1.3em;
+/*Botones del buscador*/
+#search {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: -3.5em;
 }
 
-#resultprovinces h2{
-    width: 75%; 
-    margin-left:auto;
-    margin-right: auto;
-    color: rgba(30,156,203,1);
-    font-size: 1.3em;
+#search img{height: 4em;}
+
+#map{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 51%;
 }
+
+#map img{height: 4em;}
+
+/*Contenedor resultados*/
+/*-----------------------------------------------*/
 
 .result {
     border-radius: 0.5em;
-    display: block;
+/*    display: block; sobra???*/
     margin-left: auto;
     margin-right: auto;
     margin-top: 0.5em;
@@ -158,37 +156,41 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 75%;
 }
 
-input:focus, input:active { 
-    border: 3px solid rgba(30,156,203,1);
-    border-radius: 1em; outline: 0; 
-}
-
 .result p { 
    font-family: 'RalewaySemiBold'; 
    margin-bottom: 0em; 
    margin-top: 0em; 
-   color: white;
+   /*color: white; --> no hace falta, lo tiene el a*/
    font-size: 1.3em;
    text-transform:uppercase;
 }
 
 .result a{color:white;text-decoration:none;}
 .result a:hover{text-decoration:underline;}
-.result a:visited{color:rgba(242,242,242,1);}
+.result a:visited{color:rgb(242,242,242);}
+
+#resultname, #resultprovince{width:100%;!important}
+
+#resultnames h2{
+    width: 75%; 
+    margin-left:auto;
+    margin-right: auto;
+    color: rgb(30,156,203);
+    font-size: 1.3em;
+}
+
+#resultprovinces h2{
+    width: 75%; 
+    margin-left:auto;
+    margin-right: auto;
+    color: rgb(30,156,203);
+    font-size: 1.3em;
+}
 
 .provname { float: right;}
 
-.footer-container img {
-    display: block;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    min-width: 1024px;
-    position:absolute;
-    bottom:0;
-}
-
-.main-container{margin-bottom: 10%;}
+/*Mapa*/
+/*-----------------------------------------------*/
 
 #generalmap{
     width:80%;
@@ -203,6 +205,19 @@ input:focus, input:active {
 
 #closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;}
 
+/*Pie*/
+/*-----------------------------------------------*/
+.footer-container img {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 1024px;
+    position:absolute;
+    bottom:0;
+}
+
+#mobile-footer {display:none;}
 /*
 Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
 de las mismas. 
