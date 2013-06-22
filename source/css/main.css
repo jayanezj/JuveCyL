@@ -194,33 +194,15 @@ Estas de abajo son los colores de fondo de cada provincia, para identificarlas u
 de las mismas. 
 */
 
-.avi{
-    background: rgb(91,117,200);
-}
-.bur{
-    background: rgb(174,173,79);
-}
-.leo{
-    background: rgb(91,193,200);
-}
-.pal{
-    background: rgb(174,175,115);
-}
-.sal{
-    background: rgb(174,79,101);
-}
-.seg{
-    background: rgb(100,153,191);
-}
-.sor{
-    background: rgb(195,137,96);
-}
-.val{
-    background: rgb(155,120,170);
-}
-.zam{
-    background: rgb(114,79,174);
-}
+.avi{background: rgb(91,117,200);}
+.bur{background: rgb(174,173,79);}
+.leo{background: rgb(91,193,200);}
+.pal{background: rgb(174,175,115);}
+.sal{background: rgb(174,79,101);}
+.seg{background: rgb(100,153,191);}
+.sor{background: rgb(195,137,96);}
+.val{background: rgb(155,120,170);}
+.zam{background: rgb(114,79,174);}
 
 
 /* Estilos del div superior info*/
