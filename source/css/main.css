@@ -91,11 +91,8 @@ Author's custom styles
 
 body{min-width: 1024px;min-height: 600px;height: 100%;}
 
-/* Estilos del main*/
-/* --------------------------------------------------------------------*/
-.main-container{margin-bottom: 10%;}
+#mobile-footer {display:none;}
 
-/*Estilos del div Logo*/
 #logo>img { display: block; margin-left: auto; margin-right: auto;}
 
 #logo div {
@@ -106,25 +103,6 @@ body{min-width: 1024px;min-height: 600px;height: 100%;}
     width: 80%;
 }
 
-/*Contenedor sin nombre buscador: textbox+search+map*/
-/*-----------------------------------------------*/
-
-/*Buscador*/
-input:focus, input:active { 
-    border: 3px solid rgba(30,156,203,1);
-    border-radius: 1em; outline: 0; 
-}
-
-#textbox {
-    border: 3px solid rgba(30,156,203,1);
-    border-radius: 1em;
-    padding: 0.4em;
-    padding-left: 1em;
-    width: 70%;
-    margin-left:15%;
-}
-
-/*Botones del buscador*/
 #search {
     background-color: transparent;
     border: none;
@@ -134,6 +112,7 @@ input:focus, input:active {
 
 #search img{height: 4em;}
 
+
 #map{
     background-color: transparent;
     border: none;
@@ -142,32 +121,14 @@ input:focus, input:active {
 }
 
 #map img{height: 4em;}
-
-/*Contenedor resultados*/
-/*-----------------------------------------------*/
-
-.result {
-    border-radius: 0.5em;
-/*    display: block; sobra???*/
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    width: 75%;
+#textbox {
+    border: 3px solid rgba(30,156,203,1);
+    border-radius: 1em;
+    padding: 0.4em;
+    padding-left: 1em;
+    width: 70%;
+    margin-left:15%;
 }
-
-.result p { 
-   font-family: 'RalewaySemiBold'; 
-   margin-bottom: 0em; 
-   margin-top: 0em; 
-   /*color: white; --> no hace falta, lo tiene el a*/
-   font-size: 1.3em;
-   text-transform:uppercase;
-}
-
-.result a{color:white;text-decoration:none;}
-.result a:hover{text-decoration:underline;}
-.result a:visited{color:rgb(242,242,242);}
 
 #resultname, #resultprovince{width:100%;!important}
 
@@ -175,7 +136,7 @@ input:focus, input:active {
     width: 75%; 
     margin-left:auto;
     margin-right: auto;
-    color: rgb(30,156,203);
+    color: rgba(30,156,203,1);
     font-size: 1.3em;
 }
 
@@ -183,14 +144,51 @@ input:focus, input:active {
     width: 75%; 
     margin-left:auto;
     margin-right: auto;
-    color: rgb(30,156,203);
+    color: rgba(30,156,203,1);
     font-size: 1.3em;
 }
 
+.result {
+    border-radius: 0.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    width: 75%;
+}
+
+input:focus, input:active { 
+    border: 3px solid rgba(30,156,203,1);
+    border-radius: 1em; outline: 0; 
+}
+
+.result p { 
+   font-family: 'RalewaySemiBold'; 
+   margin-bottom: 0em; 
+   margin-top: 0em; 
+   color: white;
+   font-size: 1.3em;
+   text-transform:uppercase;
+}
+
+.result a{color:white;text-decoration:none;}
+.result a:hover{text-decoration:underline;}
+.result a:visited{color:rgba(242,242,242,1);}
+
 .provname { float: right;}
 
-/*Mapa*/
-/*-----------------------------------------------*/
+.footer-container img {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    min-width: 1024px;
+    position:absolute;
+    bottom:0;
+}
+
+.main-container{margin-bottom: 10%;}
 
 #generalmap{
     width:80%;
@@ -205,19 +203,6 @@ input:focus, input:active {
 
 #closemap{position: absolute;margin-right:120px;top:7px;right:0;z-index: 2;}
 
-/*Pie*/
-/*-----------------------------------------------*/
-.footer-container img {
-    display: block;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    min-width: 1024px;
-    position:absolute;
-    bottom:0;
-}
-
-#mobile-footer {display:none;}
 /*
 Estas de abajo son los colores de fondo de cada provincia, para identificarlas usamos las 3 primeras letras
 de las mismas. 
