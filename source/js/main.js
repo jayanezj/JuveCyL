@@ -229,8 +229,8 @@ $('.result').remove();
 						////////////////////////////////////////////////
 						////////////////////////////////////////////////
 						$('#footerimg').removeAttr('style');
-						$('#footerimg').css('top',$('#resultsdiv').height()+464);
-						if($('#resultsdiv').height()+464<($(window).height()-$('#footerimg').height()))
+						$('#footerimg').css('top',$('.main-container').height()+100);
+						if($('.main-container').height()+100<($(window).height()-$('#footerimg').height()))
 							{
 							$('#footerimg').removeAttr('style');
 							}
