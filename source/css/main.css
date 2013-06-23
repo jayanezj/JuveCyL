@@ -159,6 +159,7 @@ color:white;}
 #gmaps_context_menu a{font-family: 'RalewaySemiBold';color: rgb(30,156,203);text-decoration: none; text-transform: uppercase;}    
 #gmaps_context_menu a:hover{text-decoration: underline;}
 
+#loadingGif {color: rgb(30,156,203);text-align:center;font-size: 1.3em;font-weight:bold;}
 /*Contenedor resultdiv (resultados)*/
 
 #resultname, #resultprovince{width:100%;!important}
