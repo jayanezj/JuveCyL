@@ -95,7 +95,7 @@ function getInn(id)
 						webs+='<a href="http://'+$(this).text()+'" target="_blank">'+$(this).text()+'</a> /';
 						});
 					//webs=webs+' <a target="_blank" href="http://192.168.100.150/juvenil/?id='+id+'">Enlace permanente</a>';
-				    webs+='<a href="http://www.juvecyl.tuars.com/?id='+id+'>Enlace permanente</a>';
+				    webs+=' <a target="_blank" href="http://www.juvecyl.tuars.com/?id='+id+'">Enlace permanente</a>';
 					$('<p id="web"></p>').html('<span><img src="img/web.png" alt="Webs" /></span>'+webs).appendTo('.contact');
 					////////////////////////////////////////////////
 					//NAVEGADOR ENLACES
