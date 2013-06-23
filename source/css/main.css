@@ -337,7 +337,7 @@ nav img { height: 50px; width: 50px; }
     margin-right: auto;
     padding: 1em;
     text-align: justify;
-    overflow: scroll;
+    overflow: auto;
 /*CAMBIOS PARA REESCALADO*/
 height: 300px;
 width: 800px;
