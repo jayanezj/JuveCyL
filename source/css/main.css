@@ -245,10 +245,12 @@ color:white;}
     margin: 2em auto 2em auto;
     padding: 1em;
 /*CAMBIOS PARA REESCALADO*/
-height: 30%;
+height: 300px;
+width: 800px;
+top: 20px;
+/*height: 30%;
 width: 80%;
-top: 7%;
-left: 8%;
+left: 8%;*/
 display: none;
 
 }
@@ -297,7 +299,7 @@ nav {
     float: right;
     position: absolute;
     height: 70px;
-    margin-top: 2em;
+    margin-top: 4.5em;
     width: 50%;
     right: 0.5em;
 }
@@ -337,10 +339,14 @@ nav img { height: 50px; width: 50px; }
     text-align: justify;
     overflow: scroll;
 /*CAMBIOS PARA REESCALADO*/
+height: 300px;
+width: 800px;
+top: 450px;
+/*
 height: 30%;
 width: 80%;
-top: 60%;
 left: 8%;
+*/
 display: none;
 }
 

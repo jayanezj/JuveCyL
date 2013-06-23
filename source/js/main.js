@@ -101,7 +101,7 @@ function getInn(id)
 					//NAVEGADOR ENLACES
 					////////////////////////////////////////////////
 					$('<nav id="navigation"></nav>').html('').appendTo('.infotop');
-					$('<ul></ul>').html('<li><img class="navlink" id="nav_activity" src="img/boton_actividades.png" alt="actividades" title="Actividades" /></li><li><img class="navlink" id="nav_howtoget" src="img/boton_como_llegar.png" alt="como llegar" title="Cómo llegar" /></li><li><img class="navlink" id="nav_description" src="img/boton_descripcion.png" alt="descripción" title="Descripción" /></li><li><img class="navlink" id="nav_equipment" src="img/boton_equipamiento.png" alt="equipamiento" title="Equipamiento" /></li><li><img class="navlink" id="nav_services" src="img/boton_servicios.png" alt="servicios" title="Servicios" /></li>').appendTo('#navigation');
+					$('<ul></ul>').html('<li><img class="navlink" id="nav_activity" src="img/boton_actividades.png" alt="Actividades" /></li><li><img class="navlink" id="nav_howtoget" src="img/boton_como_llegar.png" alt="Cómo llegar" /></li><li><img class="navlink" id="nav_description" src="img/boton_descripcion.png" alt="Descripción" /></li><li><img class="navlink" id="nav_equipment" src="img/boton_equipamiento.png" alt="Equipamiento" /></li><li><img class="navlink" id="nav_services" src="img/boton_servicios.png" alt="Servicios" /></li>').appendTo('#navigation');
 					$('.navlink').bind({
 						click: function (evt) {
 							$('#sec_description').fadeOut(500);
@@ -130,7 +130,7 @@ function getInn(id)
 					        },
 					    mouseenter: function (evt) {
 					    	$('.info_nav').fadeIn(200);
-					    	$('.info_nav').html($(this).attr("title"));
+					    	$('.info_nav').html($(this).attr("alt"));
 					    	$('.info_nav').css('left',evt.clientX-30);
 					    	$('.info_nav').css('top',evt.clientY+40);
 					    },
@@ -182,11 +182,13 @@ function getInn(id)
 			        $('.infodown').bind("click", function (e) {
         			e.stopPropagation();
     				});
+    				$('.infotop').css('left',($(window).width()/2)-400+'px');
+    				$('.infodown').css('left',($(window).width()/2)-400+'px');
 			        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 			        	$('.infotop').css('left','5px');
 			        	$('.infodown').css('left','5px');
-			        	$('.infotop').css('width',$(window).width-10+'px');
-			        	$('.infodown').css('width',$(window).width-10+'px');
+			        	$('.infotop').css('width',$(window).width()-10+'px');
+			        	$('.infodown').css('width',$(window).width()-10+'px');
 			        	}
 			        return false;
 					}
