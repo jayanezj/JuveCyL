@@ -312,6 +312,8 @@ nav img { height: 50px; width: 50px; }
 .contact { float: left; }
 .contact p { margin-bottom: 0; margin-top: 0; }
 .contact span { margin-right: 0.7em; }
+.contact a{color:white;text-decoration:none;}
+.contact a:hover{text-decoration:underline;}
 
 #phone { width: 400px; }
 
