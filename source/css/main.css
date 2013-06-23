@@ -239,7 +239,7 @@ color:white;}
 .infotop {
     position: absolute;
     background-color: rgb(30,156,203);
-    border-radius: 5px;
+    border-radius: 0.5em;
     box-shadow: 0.5em 0.5em 1em grey;
     color: white;
     font-family: 'RalewayRegular';
@@ -330,7 +330,7 @@ nav img { height: 50px; width: 50px; }
 .infodown {
     position: absolute;
     background-color: rgb(30,156,203);
-    border-radius: 5px;
+    border-radius: 0.5em;
     box-shadow: 0.5em 0.5em 1em grey;
     color: white;
     font-family: 'RalewayRegular';
