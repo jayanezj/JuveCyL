@@ -236,15 +236,30 @@ color:white;}
 /* --------------------------------------------------------------------*/
 
 .infotop {
+    position: absolute;
     background-color: rgb(30,156,203);
     border-radius: 5px;
     box-shadow: 0.5em 0.5em 1em grey;
     color: white;
     font-family: 'RalewayRegular';
-    height: 300px;
-    margin: 4.5em auto 3em auto;
-    padding: 2em;
-    width: 800px;
+    margin: 2em auto 2em auto;
+    padding: 1em;
+/*CAMBIOS PARA REESCALADO*/
+height: 30%;
+width: 80%;
+top: 7%;
+left: 8%;
+display: none;
+
+}
+
+.info_nav{
+    position: absolute;
+    z-index: 2;
+    background-color:white; 
+    padding: 0.2em;
+    border-radius:0.5em;
+    color:rgba(30,156,203,1);
 }
 
 #closeinfo { margin: 0; text-align: right; }
@@ -267,8 +282,10 @@ color:white;}
 
 #picture {   
     float: right;
-    height: 150px;
-    width: 150px;
+    width:100%;
+    height:90%;
+    max-height: 100px;
+    max-width: 150px;
     margin-right: 0.5em;
     border: white solid 4px;
     border-radius: 50%;
@@ -278,13 +295,16 @@ color:white;}
 
 nav {
     float: right;
+    position: absolute;
     height: 70px;
-    margin-top: 30px;
-    position: relative;
-    width: 350px;
+    margin-top: 2em;
+    width: 100%;
+    right: 0.5em;
 }
 
-nav a { display: inline; float: right; margin-right: 0.5em; }
+.navlink{cursor:pointer;}
+#closedetails{cursor:pointer;}
+nav li { display: inline; float: right; margin-right: 0.5em; }
 nav img { height: 50px; width: 50px; }
 
 /* Contenedor con los datos de contacto*/
@@ -303,6 +323,7 @@ nav img { height: 50px; width: 50px; }
 /* --------------------------------------------------------------------*/
 
 .infodown {
+    position: absolute;
     background-color: rgb(30,156,203);
     border-radius: 5px;
     box-shadow: 0.5em 0.5em 1em grey;
@@ -310,11 +331,15 @@ nav img { height: 50px; width: 50px; }
     font-family: 'RalewayRegular';
     margin-left: auto;
     margin-right: auto;
-    padding: 2em;
+    padding: 1em;
     text-align: justify;
-    width: 800px;
-    max-height: 350px;
-    overflow: hidden;
+    overflow: scroll;
+/*CAMBIOS PARA REESCALADO*/
+height: 30%;
+width: 80%;
+top: 60%;
+left: 8%;
+display: none;
 }
 
 /* --------------------------------------------------------------------*/
