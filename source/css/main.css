@@ -26,12 +26,12 @@ RESULTS BOX
 FOOTER
 PROVINCES COLORIZED
 DETAIL FRAME
-    top frame
-    close frame
-    title
-    nav
-    contact data
-    bottom frame
+	top frame
+	close frame
+	title
+	nav
+	contact data
+	bottom frame
 MEDIA QUERIES
 HELPER CLASSES
 PRINT STYLES
@@ -61,10 +61,10 @@ body { font-size: 1em; line-height: 1.4; }
 img { vertical-align: middle; }
 
 .chromeframe {
-    background: #ccc;
-    color: #000;
-    margin: 0.2em 0;
-    padding: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	margin: 0.2em 0;
+	padding: 0.2em 0;
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,38 +107,38 @@ FONTS
 
 
 @font-face {
-    font-family: 'RalewayRegular';
-    src: url('../font/Raleway/RalewayRegular.eot');
-    src: url('../font/Raleway/RalewayRegular.eot?#iefix') format('embedded-opentype'),
-         url('../font/Raleway/RalewayRegular.woff') format('woff'),
-         url('../font/Raleway/RalewayRegular.ttf') format('truetype'),
-         url('../font/Raleway/RalewayRegular.svg#RalewayRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'RalewayRegular';
+	src: url('../font/Raleway/RalewayRegular.eot');
+	src: url('../font/Raleway/RalewayRegular.eot?#iefix') format('embedded-opentype'),
+		 url('../font/Raleway/RalewayRegular.woff') format('woff'),
+		 url('../font/Raleway/RalewayRegular.ttf') format('truetype'),
+		 url('../font/Raleway/RalewayRegular.svg#RalewayRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'RalewaySemiBold';
-    src: url('../font/Raleway/RalewaySemiBold.eot');
-    src: url('../font/Raleway/RalewaySemiBold.eot?#iefix') format('embedded-opentype'),
-         url('../font/Raleway/RalewaySemiBold.woff') format('woff'),
-         url('../font/Raleway/RalewaySemiBold.ttf') format('truetype'),
-         url('../font/Raleway/RalewaySemiBold.svg#RalewaySemiBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'RalewaySemiBold';
+	src: url('../font/Raleway/RalewaySemiBold.eot');
+	src: url('../font/Raleway/RalewaySemiBold.eot?#iefix') format('embedded-opentype'),
+		 url('../font/Raleway/RalewaySemiBold.woff') format('woff'),
+		 url('../font/Raleway/RalewaySemiBold.ttf') format('truetype'),
+		 url('../font/Raleway/RalewaySemiBold.svg#RalewaySemiBold') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
 }
 
 @font-face {
-    font-family: 'LondrinaSolidRegular';
-    src: url('../font/Londrina/LondrinaSolidRegular.eot');
-    src: url('../font/Londrina/LondrinaSolidRegular.eot?#iefix') format('embedded-opentype'),
-         url('../font/Londrina/LondrinaSolidRegular.woff') format('woff'),
-         url('../font/Londrina/LondrinaSolidRegular.ttf') format('truetype'),
-         url('../font/Londrina/LondrinaSolidRegular.svg#LondrinaSolidRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'LondrinaSolidRegular';
+	src: url('../font/Londrina/LondrinaSolidRegular.eot');
+	src: url('../font/Londrina/LondrinaSolidRegular.eot?#iefix') format('embedded-opentype'),
+		 url('../font/Londrina/LondrinaSolidRegular.woff') format('woff'),
+		 url('../font/Londrina/LondrinaSolidRegular.ttf') format('truetype'),
+		 url('../font/Londrina/LondrinaSolidRegular.svg#LondrinaSolidRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body{min-width: 1024px;min-height: 600px;height: 100%;}
@@ -155,32 +155,32 @@ SEARCH BOX
 #logo>h1>img { display: block; margin-left: auto; margin-right: auto;}
 
 #logo div {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.5em;
-    padding: 1em;
-    width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5em;
+	padding: 1em;
+	width: 80%;
 }
 
 input:focus, input:active { 
-    border: 3px solid rgb(30,156,203);
-    border-radius: 1em; outline: 0; 
+	border: 3px solid rgb(30,156,203);
+	border-radius: 1em; outline: 0; 
 }
 
 #textbox {
-    border: 3px solid rgb(30,156,203);
-    border-radius: 1em;
-    padding: 0.4em;
-    padding-left: 1em;
-    width: 70%;
-    margin-left:15%;
+	border: 3px solid rgb(30,156,203);
+	border-radius: 1em;
+	padding: 0.4em;
+	padding-left: 1em;
+	width: 70%;
+	margin-left:15%;
 }
 
 #search {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-left: -3.5em;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin-left: -3.5em;
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -191,39 +191,42 @@ GOOGLE MAPS
 #search img{height: 4em;}
 
 #map{
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-left: 51%;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin-left: 51%;
 }
 
 #map img{height: 4em;}
 
 #generalmap{
-    width:80%;
-    height:80%;
-    border-radius: 0,0,0.5em,0.5em;
-    margin-left:auto;
-    margin-right:auto;
-    padding:1em;
-    border:8px solid rgb(245,245,245);
-    border-top: 1px;
-    background-color:rgb(245,245,245);
-    box-shadow:0.5em 0.5em 1em grey;
+	width:80%;
+	height:80%;
+	top:7%;
+	left:8%;
+	border-radius: 0,0,0.5em,0.5em;
+	margin-left:auto;
+	margin-right:auto;
+	padding:1em;
+	display:none;
+	border:8px solid rgb(245,245,245);
+	border-top: 1px;
+	background-color:rgb(245,245,245);
+	box-shadow:0.5em 0.5em 1em grey;
 }
 
 .closemapspan{
-    top: 2%;
-    left:8%;
-    position: absolute;
-    width:80%;
-    height: 50%;
-    border-radius: 0.5em,0.5em,0,0;
-    margin-left:auto;
-    margin-right:auto;
-    padding:1em;
-    border:8px solid rgb(245,245,245);
-    background-color:rgb(245,245,245);
+	top: 2%;
+	left:8%;
+	position: absolute;
+	width:80%;
+	height: 50%;
+	border-radius: 0.5em,0.5em,0,0;
+	margin-left:auto;
+	margin-right:auto;
+	padding:1em;
+	border:8px solid rgb(245,245,245);
+	background-color:rgb(245,245,245);
 box-shadow:0.5em 0.5em 0.5em grey;}
 
 #closemap{position: absolute;top:7px;right:0;z-index: 2;cursor:pointer;}
@@ -256,29 +259,29 @@ RESULTS BOX
 #resultname, #resultprovince{width:100%;!important}
 
 #resultnames h2{
-    width: 75%; 
-    margin-left:auto;
-    margin-right: auto;
-    color: rgb(30,156,203);
-    font-size: 1.3em;
+	width: 75%; 
+	margin-left:auto;
+	margin-right: auto;
+	color: rgb(30,156,203);
+	font-size: 1.3em;
 }
 
 #resultprovinces h2{
-    width: 75%; 
-    margin-left:auto;
-    margin-right: auto;
-    color: rgb(30,156,203);
-    font-size: 1.3em;
+	width: 75%; 
+	margin-left:auto;
+	margin-right: auto;
+	color: rgb(30,156,203);
+	font-size: 1.3em;
 }
 
 .result {
-    border-radius: 0.5em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    width: 75%;
+	border-radius: 0.5em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5em;
+	padding: 0.5em;
+	width: 75%;
 }
 
 .result p { 
@@ -303,13 +306,13 @@ FOOTER
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .footer-container img {
-    display: block;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    min-width: 1024px;
-    position:absolute;
-    bottom:0;
+	display: block;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	min-width: 1024px;
+	position:absolute;
+	bottom:0;
 }
 
 
@@ -342,31 +345,31 @@ top frame
 ==================================================================*/
 
 .infotop {
-    position: absolute;
-    background-color: rgb(30,156,203);
-    border-radius: 0.5em;
-    box-shadow: 0.5em 0.5em 1em grey;
-    color: white;
-    font-family: 'RalewayRegular';
-    margin: 2em auto 2em auto;
-    padding: 1em;
-    /*CAMBIOS PARA REESCALADO*/
-    height: 300px;
-    width: 800px;
-    top: 20px;
-    /*height: 30%;
-    width: 80%;
-    left: 8%;*/
-    display: none;
+	position: absolute;
+	background-color: rgb(30,156,203);
+	border-radius: 0.5em;
+	box-shadow: 0.5em 0.5em 1em grey;
+	color: white;
+	font-family: 'RalewayRegular';
+	margin: 2em auto 2em auto;
+	padding: 1em;
+	/*CAMBIOS PARA REESCALADO*/
+	height: 300px;
+	width: 800px;
+	top: 20px;
+	/*height: 30%;
+	width: 80%;
+	left: 8%;*/
+	display: none;
 }
 
 .info_nav{
-    position: absolute;
-    z-index: 2;
-    background-color:white; 
-    padding: 0.2em;
-    border-radius:0.5em;
-    color:rgba(30,156,203,1);
+	position: absolute;
+	z-index: 2;
+	background-color:white; 
+	padding: 0.2em;
+	border-radius:0.5em;
+	color:rgba(30,156,203,1);
 }
 
 /*==================================================================
@@ -377,11 +380,11 @@ close frame
 #closeinfo { margin: 0; text-align: right; }
 
 #closeinfo a {
-    color: white;
-    font-family: 'RalewayRegular';
-    font-size: 1.3em;
-    font-weight: bolder;
-    text-decoration: none;
+	color: white;
+	font-family: 'RalewayRegular';
+	font-size: 1.3em;
+	font-weight: bolder;
+	text-decoration: none;
 }
 
 #closeinfo a:hover { text-decoration: underline; }
@@ -401,14 +404,14 @@ image
 ==================================================================*/
 
 #picture {   
-    float: right;
-    width:100%;
-    height:100%;
-    max-height: 150px;
-    max-width: 150px;
-    margin-right: 0.5em;
-    border: white solid 4px;
-    border-radius: 50%;
+	float: right;
+	width:100%;
+	height:100%;
+	max-height: 150px;
+	max-width: 150px;
+	margin-right: 0.5em;
+	border: white solid 4px;
+	border-radius: 50%;
 }
 
 /*==================================================================
@@ -418,12 +421,12 @@ nav
 ==================================================================*/
 
 nav {
-    float: right;
-    position: absolute;
-    height: 70px;
-    margin-top: 4.5em;
-    width: 50%;
-    right: 0.5em;
+	float: right;
+	position: absolute;
+	height: 70px;
+	margin-top: 4.5em;
+	width: 50%;
+	right: 0.5em;
 }
 
 .navlink{cursor:pointer;}
@@ -450,27 +453,27 @@ bottom frame
 ====================================================================
 ==================================================================*/
 .infodown {
-    position: absolute;
-    background-color: rgb(30,156,203);
-    border-radius: 0.5em;
-    box-shadow: 0.5em 0.5em 1em grey;
-    color: white;
-    font-family: 'RalewayRegular';
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1em;
-    text-align: justify;
-    overflow: auto;
-    /*CAMBIOS PARA REESCALADO*/
-    height: 300px;
-    width: 800px;
-    top: 450px;
-    /*
-    height: 30%;
-    width: 80%;
-    left: 8%;
-    */
-    display: none;
+	position: absolute;
+	background-color: rgb(30,156,203);
+	border-radius: 0.5em;
+	box-shadow: 0.5em 0.5em 1em grey;
+	color: white;
+	font-family: 'RalewayRegular';
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+	text-align: justify;
+	overflow: auto;
+	/*CAMBIOS PARA REESCALADO*/
+	height: 300px;
+	width: 800px;
+	top: 450px;
+	/*
+	height: 30%;
+	width: 80%;
+	left: 8%;
+	*/
+	display: none;
 }
 
 /* ==========================================================================
@@ -478,41 +481,41 @@ Media Queries
 ========================================================================== */
 
 @media only screen and (min-device-width: 480px) and (max-device-width: 1023px) {
-            body { height: 100%; width: 100%;}
-            #mobile-footer {
-                display: block;
-                font-family: 'RalewaySemiBold';
-                font-size: 1em;
-                text-align: center;
-            }
-            #mobile-footer a { color: black; text-decoration: none; }
-            #mobile-footer a:hover { text-decoration: underline; }
-            #mobile-footer p{margin-top: 0;margin-bottom: 0;}
-            
-            .footer-container { display: none; }
-            .footer-container img { display: none; }
-            
-            .result p { font-size: 0.7em; }
-            
-            .wrapper { height: 85%; width: 85%; margin-right:auto;margin-left:auto;}
-            #logo>img { width: 75%; }
-            #logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
-            .result {
-                border-radius: 0.5em;
-                display: block;
-                margin-top: 0.5em;
-                padding: 0.6em;
-                width: 65%;
-            }
+			body { height: 100%; width: 100%;}
+			#mobile-footer {
+				display: block;
+				font-family: 'RalewaySemiBold';
+				font-size: 1em;
+				text-align: center;
+			}
+			#mobile-footer a { color: black; text-decoration: none; }
+			#mobile-footer a:hover { text-decoration: underline; }
+			#mobile-footer p{margin-top: 0;margin-bottom: 0;}
+			
+			.footer-container { display: none; }
+			.footer-container img { display: none; }
+			
+			.result p { font-size: 0.7em; }
+			
+			.wrapper { height: 85%; width: 85%; margin-right:auto;margin-left:auto;}
+			#logo>img { width: 75%; }
+			#logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
+			.result {
+				border-radius: 0.5em;
+				display: block;
+				margin-top: 0.5em;
+				padding: 0.6em;
+				width: 65%;
+			}
 }
 
 @media only screen and (min-width: 1140px) {
-        
-        /* ===============
-            Maximal Width
-        =============== */
-        
-            .wrapper { margin: 0 auto; width: 1026px /* 1140px - 10% for margins */; }
+		
+		/* ===============
+			Maximal Width
+		=============== */
+		
+			.wrapper { margin: 0 auto; width: 1026px /* 1140px - 10% for margins */; }
 }
 
 /* ==========================================================================
@@ -520,40 +523,40 @@ Helper classes
 ========================================================================== */
 
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	*text-indent: -9999px;
 }
 
 .ir:before {
-    content: "";
-    display: block;
-    height: 150%;
-    width: 0;
+	content: "";
+	display: block;
+	height: 150%;
+	width: 0;
 }
 
 .hidden { display: none !important; visibility: hidden; }
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
 }
 
 .invisible { visibility: hidden; }
@@ -570,44 +573,44 @@ Print styles
 ========================================================================== */
 
 @media print {
-            * {
-                background: transparent !important;
-                box-shadow: none !important;
-                color: #000 !important; /* Black prints faster: h5bp.com/s */
-                text-shadow: none !important;
-            }
-        
-            a,
-            a:visited { text-decoration: underline; }
-        
-            a[href]:after { content: " (" attr(href) ")"; }
-        
-            abbr[title]:after { content: " (" attr(title) ")"; }
-        
-            /*
-            * Don't show links for images, or javascript/internal links
-            */
-        
-            .ir a:after,
-            a[href^="javascript:"]:after,
-            a[href^="#"]:after { content: ""; }
-        
-            pre,
-            blockquote { border: 1px solid #999; page-break-inside: avoid; }
-        
-            thead { display: table-header-group /* h5bp.com/t */; }
-        
-            tr,
-            img { page-break-inside: avoid; }
-        
-            img { max-width: 100% !important; }
-        
-            @page { margin: 0.5cm; }
-        
-            p,
-            h2,
-            h3 { orphans: 3; widows: 3; }
-        
-            h2,
-            h3 { page-break-after: avoid; }
+			* {
+				background: transparent !important;
+				box-shadow: none !important;
+				color: #000 !important; /* Black prints faster: h5bp.com/s */
+				text-shadow: none !important;
+			}
+		
+			a,
+			a:visited { text-decoration: underline; }
+		
+			a[href]:after { content: " (" attr(href) ")"; }
+		
+			abbr[title]:after { content: " (" attr(title) ")"; }
+		
+			/*
+			* Don't show links for images, or javascript/internal links
+			*/
+		
+			.ir a:after,
+			a[href^="javascript:"]:after,
+			a[href^="#"]:after { content: ""; }
+		
+			pre,
+			blockquote { border: 1px solid #999; page-break-inside: avoid; }
+		
+			thead { display: table-header-group /* h5bp.com/t */; }
+		
+			tr,
+			img { page-break-inside: avoid; }
+		
+			img { max-width: 100% !important; }
+		
+			@page { margin: 0.5cm; }
+		
+			p,
+			h2,
+			h3 { orphans: 3; widows: 3; }
+		
+			h2,
+			h3 { page-break-after: avoid; }
 }
