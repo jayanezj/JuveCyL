@@ -152,7 +152,7 @@ input:focus, input:active {
 #mapinstructions{display: none; background-color:rgba(30,156,203,0.9); padding: 1em;
 position:absolute; bottom:0.5em;right:0.5em;border-radius:0.5em; width:30%; right:0px; z-index:2; height:50%;
 color:white;}
-#mapinstructions h2{font-family: 'LondrinaSolidRegular';}
+#mapinstructions h2{font-family: 'LondrinaSolidRegular';margin: 0em;}
 #instructions{height: 100%;overflow: scroll;top: 18%;position: absolute;}
 #closeinstructions{position:absolute; right: 0.3em;top:0.3em;cursor:pointer;}
 #gmaps_context_menu{border:5px solid rgb(245,245,245);box-shadow:0.5em 0.5em 1em grey;border-radius: 0.5em;text-align: justify;}
