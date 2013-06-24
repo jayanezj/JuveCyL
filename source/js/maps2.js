@@ -67,13 +67,13 @@ function loadMap() {
     $('#map').click(function (e) {
         e.stopPropagation();
         $('<script src="js/vendor/gmaps.js"></script>').html('').appendTo('body');
+        $('<span class="closemapspan"></span>').html('<img id="closemap" src="img/cerrar.png" class="fade" alt="cerrar"></img>').appendTo('body');
         $('<div id="generalmap"></div>').html('').appendTo('body');
         $('#generalmap').bind({
             click: function (evt) {
                 evt.stopPropagation();
             }
         });
-
         $('#generalmap').css('height', '80%');
         $('#generalmap').css('width', '80%');
         $('#generalmap').css('position', 'absolute');
@@ -87,10 +87,13 @@ function loadMap() {
             lng: -4.762573,
             zoom: 8
         })).done(function () {
-            $('<img id="closemap" src="img/cerrar.png" class="fade" alt="cerrar"></img>').html('').prependTo('#generalmap');
+            
             $('#closemap').bind({
                 click: function (evt) {
                     evt.preventDefault();
+                    $('.closemapspan').fadeOut(800, function () {
+                        $('.closemapspan').remove()
+                    });
                     $('#generalmap').fadeOut(800, function () {
                         $('#generalmap').remove()
                     });
@@ -109,6 +112,9 @@ function loadMap() {
 
             $('#closemap').bind('click', function (evt) {
                 evt.preventDefault();
+                    $('.closemapspan').fadeOut(800, function () {
+                        $('.closemapspan').remove()
+                    });
                 $('#generalmap').fadeOut(800, function () {
                     $('#generalmap').remove()
                 });
@@ -208,6 +214,9 @@ $(document).ready(function () {
     });
     $('body').click(function () {
         if($('#generalmap').length) {
+                    $('.closemapspan').fadeOut(800, function () {
+                        $('.closemapspan').remove()
+                    });
             $('#generalmap').fadeOut(800, function () {
                 $('#generalmap').remove()
             });
