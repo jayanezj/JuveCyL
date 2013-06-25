@@ -31,4 +31,5 @@ Software: Sublime Text, Smaller, Photoshop CS6, GitHub
 /* EXTRA */
 
 Project licensed with Creative Commons http://creativecommons.org/licenses/by-nc-nd/3.0/deed.es_CO
-Project hosted at GitHub https://github.com/berikin/juvenilXML
+Project hosted at GitHub 	https://github.com/berikin/juvenilXML
+							http://berikin.github.io/juvenilXML
