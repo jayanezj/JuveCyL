@@ -215,6 +215,10 @@ GOOGLE MAPS
 }
 
 .closemapspan{
+	top: 4.5%;
+	left:92.8%;
+	position: absolute;
+/*
 	top: 2%;
 	left:8%;
 	position: absolute;
@@ -227,6 +231,7 @@ GOOGLE MAPS
 	border:8px solid rgb(245,245,245);
 	background-color:rgb(245,245,245);
 	box-shadow:0.5em 0.5em 0.5em grey;
+*/
 }
 
 #closemap{position: absolute;top:7px;right:0;z-index: 2;cursor:pointer;}
