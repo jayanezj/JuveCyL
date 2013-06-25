@@ -154,7 +154,10 @@ function getInn(id)
 					// INFORMACIÓN DEL ALOJAMIENTO
 					////////////////////////////////////////////////
 					//FOTO DEL ALBERGUE
-					$('.infotop').append('<img src="'+$(this).find('attribute[name="Imagen"]').find('link').find('reference').text()+'" alt="foto del albergue" id="picture">');
+					if ($(this).find('attribute[name="Imagen"]').find('link').find('reference').text()=="")
+						{$('.infotop').append('<img src="img/albergue_sin_imagen.png" alt="foto del albergue" id="picture">');}
+					else
+						{$('.infotop').append('<img src="'+$(this).find('attribute[name="Imagen"]').find('link').find('reference').text()+'" alt="foto del albergue" id="picture">');}
 					// TÍTULO
 					$('<h1 id="infoname"></h1>').html($(this).find('attribute[name="Titulo_es"]').find('string').text()).appendTo('.infotop');
 					// DIRECCIÓN

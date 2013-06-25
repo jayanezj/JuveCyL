@@ -226,7 +226,8 @@ GOOGLE MAPS
 	padding:1em;
 	border:8px solid rgb(245,245,245);
 	background-color:rgb(245,245,245);
-box-shadow:0.5em 0.5em 0.5em grey;}
+	box-shadow:0.5em 0.5em 0.5em grey;
+}
 
 #closemap{position: absolute;top:7px;right:0;z-index: 2;cursor:pointer;}
 #mapinstructions{display: none; background-color:rgba(30,156,203,0.9); padding: 1em;
@@ -360,6 +361,7 @@ top frame
 	width: 80%;
 	left: 8%;*/
 	display: none;
+	overflow: auto;
 }
 
 .info_nav{
