@@ -204,13 +204,12 @@ GOOGLE MAPS
 	height:80%;
 	top:7%;
 	left:8%;
-	border-radius: 0,0,0.5em,0.5em;
+	border-radius: 0.5em;
 	margin-left:auto;
 	margin-right:auto;
 	padding:1em;
 	display:none;
 	border:8px solid rgb(245,245,245);
-	border-top: 1px;
 	background-color:rgb(245,245,245);
 	box-shadow:0.5em 0.5em 1em grey;
 }
@@ -221,7 +220,7 @@ GOOGLE MAPS
 	position: absolute;
 	width:80%;
 	height: 50%;
-	border-radius: 0.5em,0.5em,0,0;
+	border-radius: 0.5em;
 	margin-left:auto;
 	margin-right:auto;
 	padding:1em;
