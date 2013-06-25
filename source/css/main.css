@@ -261,7 +261,7 @@ RESULTS BOX
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-#resultname, #resultprovince{width:100%;!important}
+#resultname, #resultprovince{width:100% !important;}
 
 #resultnames h2{
 	width: 75%; 
@@ -532,7 +532,7 @@ Helper classes
 	background-color: transparent;
 	border: 0;
 	overflow: hidden;
-	*text-indent: -9999px;
+	/*text-indent: -9999px;*/
 }
 
 .ir:before {
@@ -572,7 +572,7 @@ Helper classes
 
 .clearfix:after { clear: both; }
 
-.clearfix { *zoom: 1; }
+/*.clearfix { zoom: 1; }*/
 
 /* ==========================================================================
 Print styles
@@ -611,7 +611,7 @@ Print styles
 		
 			img { max-width: 100% !important; }
 		
-			@page { margin: 0.5cm; }
+			/*@page { margin: 0.5cm; }*/
 		
 			p,
 			h2,
