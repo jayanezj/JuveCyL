@@ -1,20 +1,20 @@
 /* TEAM */
 HTML5, CSS3: Marcos de la Calle Samaniego.
-Location: Valladolid, Castilla y LeÃ³n, EspaÃ±a.
+Location: Valladolid, Castilla y León, España.
 
-HTML5, CSS3: Ricardo RodrÃ­guez Vaca.
-Location: Valladolid, Castilla y LeÃ³n, EspaÃ±a.
+HTML5, CSS3: Ricardo Rodríguez Vaca.
+Location: Valladolid, Castilla y León, España.
 
 Design: Erique Diego Blanco.
 Site: http://www.perruncho.com/quienessomos.html
 Blog: http://instalache.blogspot.com.es
-Location: Valladolid, Castilla y LeÃ³n, EspaÃ±a.
+Location: Valladolid, Castilla y León, España.
 
-Javascript, jQuery, Ajax, PHP: JosÃ© Antonio YÃ¡Ã±ez JimÃ©nez.
+Javascript, jQuery, Ajax, PHP: José Antonio Yáñez Jiménez.
 Site: http://www.jimenezfrontend.es
 Twitter: https://twitter.com/berikin
 Flickr: http://www.flickr.com/people/39930781@N06/
-Location: Valladolid, Castilla y LeÃ³n, EspaÃ±a.
+Location: Valladolid, Castilla y León, España.
 
 /* THANKS */
 
@@ -31,5 +31,4 @@ Software: Sublime Text, Smaller, Photoshop CS6, GitHub
 /* EXTRA */
 
 Project licensed with Creative Commons http://creativecommons.org/licenses/by-nc-nd/3.0/deed.es_CO
-Project hosted at GitHub 	https://github.com/berikin/juvenilXML
-							http://berikin.github.io/juvenilXML
+Project hosted at GitHub https://github.com/berikin/juvenilXML
