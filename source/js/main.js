@@ -430,7 +430,7 @@ function searchc(box)
 					switch(aux2)
 						{
 						case 'salamanca':
-							$('<div class="result sal"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" class="linkedprov">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
+							$('<div class="result sal"></div>').html('<p><span class="provname"><a href="#" class="linkedprov">'+aux2+'</a></span><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span></p>').appendTo('#resultprovinces');
 							break;
 						case 'ávila':
 							$('<div class="result avi"></div>').html('<p><span class="resultname"><a href="#" id="' + id + '" class="linked">'+aux+'</a></span> <span class="provname"><a href="#" class="linkedprov">'+aux2+'</a></span></p>').appendTo('#resultprovinces');
