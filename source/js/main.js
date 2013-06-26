@@ -203,7 +203,7 @@ function getInn(id)
 					//NAVEGADOR ENLACES
 					////////////////////////////////////////////////
 					$('<nav id="navigation"></nav>').html('').appendTo('.infotop');
-					$('<ul></ul>').html('<li><img class="navlink" id="nav_activity" src="img/boton_actividades.png" alt="Actividades" /></li><li><img class="navlink" id="nav_howtoget" src="img/boton_como_llegar.png" alt="Cómo llegar" /></li><li><img class="navlink" id="nav_description" src="img/boton_descripcion.png" alt="Descripción" /></li><li><img class="navlink" id="nav_equipment" src="img/boton_equipamiento.png" alt="Equipamiento" /></li><li><img class="navlink" id="nav_services" src="img/boton_servicios.png" alt="Servicios" /></li>').appendTo('#navigation');
+					$('<ul></ul>').html('<li><img class="navlink fade" id="nav_activity" src="img/boton_actividades.png" alt="Actividades" /></li><li><img class="navlink fade" id="nav_howtoget" src="img/boton_como_llegar.png" alt="Cómo llegar" /></li><li><img class="navlink fade" id="nav_description" src="img/boton_descripcion.png" alt="Descripción" /></li><li><img class="navlink fade" id="nav_equipment" src="img/boton_equipamiento.png" alt="Equipamiento" /></li><li><img class="navlink fade" id="nav_services" src="img/boton_servicios.png" alt="Servicios" /></li>').appendTo('#navigation');
 					$('.navlink').bind({
 						click: function (evt) {
 							$('#sec_description').fadeOut(500);
@@ -231,12 +231,22 @@ function getInn(id)
 								}
 							},
 						mouseenter: function (evt) {
+							var ids=$(this).attr("src");
+							ids=ids.substring(0,(ids.length-4));
+							$(this).fadeOut("fast");
+							$(this).attr("src",ids+"hover.png");
+							$(this).fadeIn("fast");
 							$('.info_nav').fadeIn(200);
 							$('.info_nav').html($(this).attr("alt"));
 							$('.info_nav').css('left',evt.clientX-30);
 							$('.info_nav').css('top',evt.clientY+40);
 						},
 						mouseleave: function (evt) {
+							var ids=$(this).attr("src");
+							ids=ids.substring(0,(ids.length-9));
+							$(this).fadeOut("fast");
+							$(this).attr("src",ids+".png");
+							$(this).fadeIn("fast");
 							$('.info_nav').fadeOut(200);
 						}
 					});
