@@ -501,11 +501,8 @@ Media Queries
 			.footer-container { display: none; }
 			.footer-container img { display: none; }
 			
-			.result p { font-size: 0.7em; }
-			
 			.wrapper { height: 85%; width: 85%; margin-right:auto;margin-left:auto;}
-			#logo>img { width: 75%; }
-			#logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
+			
 			.result {
 				border-radius: 0.5em;
 				display: block;
@@ -513,6 +510,13 @@ Media Queries
 				padding: 0.6em;
 				width: 65%;
 			}
+			
+			.result p { font-size: 0.7em; }
+			
+			#logo>img { width: 75%; }
+			#logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
+			
+			.provname { float: right;}
 }
 
 @media only screen and (min-width: 1140px) {
