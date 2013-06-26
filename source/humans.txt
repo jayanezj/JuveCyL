@@ -1,20 +1,23 @@
 /* TEAM */
 HTML5, CSS3: Marcos de la Calle Samaniego.
-Location: Valladolid, Castilla y Le�n, Espa�a.
+Location: Valladolid, Castilla y León, España.
+Twitter: https://twitter.com/marcosDLCS
+Facebook: https://facebook.com/markeles
+Pinterest: http://pinterest.com/marcosdlcs
 
-HTML5, CSS3: Ricardo Rodr�guez Vaca.
-Location: Valladolid, Castilla y Le�n, Espa�a.
+HTML5, CSS3: Ricardo Rodríguez Vaca.
+Location: Valladolid, Castilla y León, España.
 
 Design: Enrique Diego Blanco.
 Site: http://www.perruncho.com/quienessomos.html
 Blog: http://instalache.blogspot.com.es
-Location: Valladolid, Castilla y Le�n, Espa�a.
+Location: Valladolid, Castilla y León, España.
 
-Javascript, jQuery, Ajax, PHP: Jos� Antonio Y��ez Jim�nez.
+Javascript, jQuery, Ajax, PHP: José Antonio Yáñez Jiménez
 Site: http://www.jimenezfrontend.es
 Twitter: https://twitter.com/berikin
 Flickr: http://www.flickr.com/people/39930781@N06/
-Location: Valladolid, Castilla y Le�n, Espa�a.
+Location: Valladolid, Castilla y León, España.
 
 /* THANKS */
 
