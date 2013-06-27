@@ -43,8 +43,8 @@ class location {
   		public function getLong() {return $this->long;}
       }
 $locations=array();
-$file = '/home/u639914671/public_html/db/inns.xml';
-$file2 = '/home/u639914671/public_html/db/locs.xml';
+$file = '/home/u618737484/public_html/db/inns.xml';
+$file2 = '/home/u618737484/public_html/db/locs.xml';
 if (file_exists($file))
 	{
 	$inns = simplexml_load_file($file);
