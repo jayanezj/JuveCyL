@@ -90,6 +90,10 @@ MOBILE
 
 .main { padding: 30px 0; }
 #mobile-footer {display:none;}
+/*APLICACION MOVIL*/
+#apk{position: absolute; display:none; width: 90%; height: 50%; background-color: rgb(30,156,203);margin-left: 5%;margin-right: 5%;margin-top:5%; border-radius: 0.5em }
+#linkapk{width: 50%; margin-left: auto;margin-right: auto;margin-top: 15%; color: white; font-family:'RalewayRegular';}
+#closeapk{position: absolute; display:block; left: 98%;top:0%;}
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -525,10 +529,6 @@ Media Queries
 			#logo div { font-size: 1em; margin-top: 0.5em; width: 50%; }
 			
 			.provname { float: right;}
-			/*APLICACION MOVIL*/
-			#apk{position: absolute;width: 90%; height: 50%; background-color: rgb(30,156,203);margin-left: 5%;margin-right: 5%;margin-top:5%; border-radius: 0.5em }
-			#linkapk{width: 50%;display: block; margin-left: auto;margin-right: auto;margin-top: 15%; color: white; font-family:'RalewayRegular';}
-			#closeapk{position: absolute; left: 98%;top:0%;}
 }
 
 @media only screen and (min-width: 1140px) {
@@ -538,10 +538,6 @@ Media Queries
 		=============== */
 		
 			.wrapper { margin: 0 auto; width: 1026px /* 1140px - 10% for margins */; }
-			/*APLICACION MOVIL*/
-			#apk{position: absolute;width: 90%; height: 50%; background-color: rgb(30,156,203);margin-left: 5%;margin-right: 5%;margin-top:5%; border-radius: 0.5em }
-			#linkapk{width: 50%;display: block; margin-left: auto;margin-right: auto;margin-top: 15%; color: white; font-family:'RalewayRegular';}
-			#closeapk{position: absolute; left: 98%;top:0%;}
 }
 
 /* ==========================================================================
