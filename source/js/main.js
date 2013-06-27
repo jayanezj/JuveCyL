@@ -25,7 +25,21 @@
 //
 //====================================================================
 //====================================================================
-
+function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////// 
@@ -198,6 +212,7 @@ function getInn(id)
 						});
 					//webs=webs+' <a target="_blank" href="http://192.168.100.150/juvenil/?id='+id+'">Enlace permanente</a>';
 					webs+=' <a target="_blank" href="http://www.juvecyl.tuars.com/?id='+id+'">Enlace permanente</a>';
+					//webs+=' <a target="_blank" href="http://www.juvecyl.es/?id='+id+'">Enlace permanente</a>';
 					$('<p id="web"></p>').html('<span><img src="img/web.png" alt="Webs" /></span>'+webs).appendTo('.contact');
 					////////////////////////////////////////////////
 					//NAVEGADOR ENLACES
@@ -579,6 +594,15 @@ function getParameterByName(name)
 //====================================================================
 $(document).ready(function () 
 	{
+	if (detectmob())
+	{
+		$('#apk').css('display','block');
+		$('#closeapk').click(function (e) 
+		{
+			e.preventDefault();
+			$('#apk').css('display','none');
+		});
+	}
 	$('body').click(function () 
 		{
 		if($('.infodown').length) 

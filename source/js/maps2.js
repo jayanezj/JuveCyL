@@ -103,7 +103,6 @@ function traceRoute() {
 function loadMap() {
 	$('#map').click(function (e) {
 		e.stopPropagation();
-		$('<script src="js/vendor/gmaps.js"></script>').html('').appendTo('body');
 		$('<span class="closemapspan"></span>').html('<img id="closemap" src="img/cerrar.png" class="fade" alt="cerrar"></img>').appendTo('body');
 		$('<div id="generalmap"></div>').html('').appendTo('body');
 		$('#generalmap').bind({
@@ -129,6 +128,7 @@ function loadMap() {
 						{
 						$('.closemapspan').remove()
 						});
+					$('#gmaps_context_menu').remove();
 					$('#generalmap').fadeOut(800, function () 
 						{
 						$('#generalmap').remove()
@@ -150,6 +150,7 @@ function loadMap() {
 				$('.closemapspan').fadeOut(800, function () {
 					$('.closemapspan').remove()
 				});
+				$('#gmaps_context_menu').remove();
 				$('#generalmap').fadeOut(800, function () {
 					$('#generalmap').remove()
 				});
@@ -252,6 +253,7 @@ $(document).ready(function () {
 			$('.closemapspan').fadeOut(800, function () {
 				$('.closemapspan').remove()
 			});
+			$('#gmaps_context_menu').remove();
 			$('#generalmap').fadeOut(800, function () {
 				$('#generalmap').remove()
 			});
