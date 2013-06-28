@@ -525,10 +525,12 @@ Media Queries
 			.infodown {width: 80%};
 			
 			.result p { font-size: 0.7em; }
-			
+			/*
 			#logo>img { width: 40%; }
 			#logo div { font-size: 1em; margin-top: 0.5em; width: 50%; }
-			
+			*/
+			#logo>img { width: 75%; }
+      			#logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
 			.provname { float: right;}
 }
 
