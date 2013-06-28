@@ -57,10 +57,10 @@ body {
 }
 
 a {
-  color: #5a9bc8;
+  color: #d5000d;
 }
 a:hover {
-  color: #5d9bc8;
+  color: #c5000c;
 }
 
 header {
@@ -277,7 +277,6 @@ h6 {
 p {
   font-weight: 300;
   margin-bottom: 20px;
-  text-align: justify;
 }
  
 a {
