@@ -15,28 +15,28 @@
 ====================================================================
 SUMMARY
 ==============
-HTML5 BOILER PLATE STYLES #29
-INITIALIZR STYLES #56
-MOBILE #71
-IE FIX #80
-FONTS #88
-SOCIAL MEDIA CONTAINER
-SEARCH BOX
-GOOGLE MAPS
-SEARCHING BOX
-RESULTS BOX
-FOOTER
-PROVINCES COLORIZED
-DETAIL FRAME
+HTML5 BOILER PLATE STYLES #47
+INITIALIZR STYLES #83
+MOBILE #103
+IE FIX #147
+FONTS #157
+SOCIAL MEDIA CONTAINER #207
+SEARCH BOX #220
+GOOGLE MAPS #261
+SEARCHING BOX #363
+RESULTS BOX #377
+FOOTER #447
+PROVINCES COLORIZED #461
+DETAIL FRAME #478
 	top frame
 	close frame
 	title
 	nav
 	contact data
 	bottom frame
-MEDIA QUERIES
-HELPER CLASSES
-PRINT STYLES
+MEDIA QUERIES #675
+HELPER CLASSES #703
+PRINT STYLES #753
 
 ====================================================================
 ==================================================================*/
@@ -52,15 +52,24 @@ html,
 button,
 input,
 select,
-textarea { color: #222; }
+textarea { color: #221; }
 
-body { font-size: 1em; line-height: 1.4; }
+body { font-size: 1em; 
+	line-height: 1.4; 
+}
 
-::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::-moz-selection { 
+	background: #b3d4fc; 
+	text-shadow: none; 
+}
 
-::selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; 
+	text-shadow: none; 
+}
 
-img { vertical-align: middle; }
+img { 
+	vertical-align: middle; 
+}
 
 .chromeframe {
 	background: #ccc;
@@ -79,9 +88,14 @@ Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
 
 body { font: 16px/26px Helvetica, Helvetica Neue, Arial; }
 
-.wrapper { margin: 0 5%; width: 90%; }
+.wrapper { 
+	margin: 0 5%;
+	width: 90%; 
+}
 
-.title { color: white; }
+.title { 
+	color: white; 
+}
 
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,13 +104,43 @@ MOBILE
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.main { padding: 30px 0; }
-#mobile-footer {display:none;}
+.main { 
+	padding: 30px 0; 
+}
+
+#mobile-footer {
+	display:none;
+}
+
 /*APLICACION MOVIL*/
-#apk{position: absolute; display:none; top:0; left:0;right:0;bottom: 0; background-color: rgb(30,156,203);border-radius: 0.5em; 
-color:white;text-align: center;font-family: "LondrinaSolidRegular";padding: 2em;font-size: 1.5em;}
-#linkapk img{margin-right: auto;margin-left: auto;width:300px;}
-#closeapk{position: absolute; display:block; right: 2%;top:2%;}
+#apk{
+	position: absolute; 
+	display:none; 
+	top:0; 
+	left:0;
+	right:0;
+	bottom: 0; 
+	background-color: rgb(30,156,203);
+	border-radius: 0.5em; 
+	color:white;
+	text-align: center;
+	font-family: "LondrinaSolidRegular";
+	padding: 2em;
+	font-size: 1.5em;
+}
+
+#linkapk img{
+	margin-right: auto;
+	margin-left: auto;
+	width:300px;
+}
+
+#closeapk{
+	position: absolute;
+ 	display:block; 
+ 	right: 2%;
+ 	top:2%;
+}
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -104,7 +148,9 @@ IE FIX
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.ie7 .title { padding-top: 20px; }
+.ie7 .title { 
+	padding-top: 20px; 
+}
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,7 +194,11 @@ FONTS
 	font-style: normal;
 }
 
-body{min-width: 1024px;min-height: 600px;height: 100%;}
+body{
+	min-width: 1024px;
+	min-height: 600px;
+	height: 100%;
+}
 
 .main-container{margin-bottom: 10%;}
 
@@ -171,7 +221,11 @@ SEARCH BOX
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-#logo>h1>img { display: block; margin-left: auto; margin-right: auto;}
+#logo>h1>img { 
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+}
 
 #logo div {
 	margin-left: auto;
@@ -207,7 +261,9 @@ input:focus, input:active {
 GOOGLE MAPS
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-#search img{height: 4em;}
+#search img{
+	height: 4em;
+}
 
 #map{
 	background-color: transparent;
@@ -216,7 +272,9 @@ GOOGLE MAPS
 	margin-left: 51%;
 }
 
-#map img{height: 4em;}
+#map img{
+	height: 4em;
+}
 
 #generalmap{
 	width:80%;
@@ -237,32 +295,67 @@ GOOGLE MAPS
 	top: 4.5%;
 	left:92.8%;
 	position: absolute;
-/*
-	top: 2%;
-	left:8%;
-	position: absolute;
-	width:80%;
-	height: 50%;
-	border-radius: 0.5em;
-	margin-left:auto;
-	margin-right:auto;
-	padding:1em;
-	border:8px solid rgb(245,245,245);
-	background-color:rgb(245,245,245);
-	box-shadow:0.5em 0.5em 0.5em grey;
-*/
 }
 
-#closemap{position: absolute;top:7px;right:0;z-index: 2;cursor:pointer;}
-#mapinstructions{display: none; background-color:rgba(30,156,203,0.9); padding: 1em;
-position:absolute; bottom:0.5em;right:0.5em;border-radius:0.5em; width:30%; right:0px; z-index:2; height:50%;
-color:white;}
-#mapinstructions h2{font-family: 'LondrinaSolidRegular';margin: 0em;}
-#instructions{height: 100%;overflow: scroll;top: 18%;position: absolute;}
-#closeinstructions{position:absolute; right: 0.3em;top:0.3em;cursor:pointer;}
-#gmaps_context_menu{border:5px solid rgb(245,245,245);box-shadow:0.5em 0.5em 1em grey;border-radius: 0.5em;text-align: justify;}
-#gmaps_context_menu a{font-family: 'RalewaySemiBold';color: rgb(30,156,203);text-decoration: none; text-transform: uppercase;}    
-#gmaps_context_menu a:hover{text-decoration: underline;}
+#closemap{
+	position: absolute;
+	top:7px;
+	right:0;
+	z-index: 2;
+	cursor:pointer;
+}
+
+#mapinstructions{
+	display: none;
+	background-color:rgba(30,156,203,0.9); 
+	padding: 1em;
+	position:absolute;
+	bottom:0.5em;
+	right:0.5em;
+	border-radius:0.5em;
+	width:30%;
+	right:0px;
+	z-index:2;
+	height:50%;
+	color:white;
+}
+
+#mapinstructions h2{
+	font-family: 'LondrinaSolidRegular';
+	margin: 0em;
+}
+
+#instructions{
+	height: 100%;
+	overflow: scroll;
+	top: 18%;
+	position: absolute;
+}
+
+#closeinstructions{
+	position:absolute;
+	right: 0.3em;
+	top:0.3em;
+	cursor:pointer;
+}
+
+#gmaps_context_menu{
+	border:5px solid rgb(245,245,245);
+	box-shadow:0.5em 0.5em 1em grey;
+	border-radius: 0.5em;
+	text-align: justify;
+}
+
+#gmaps_context_menu a{
+	font-family: 'RalewaySemiBold';
+	color: rgb(30,156,203);
+	text-decoration: none;
+	text-transform: uppercase;
+}    
+
+#gmaps_context_menu a:hover{
+	text-decoration: underline;
+}
 
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -270,7 +363,12 @@ color:white;}
 SEARCHING BOX
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-#loadingGif {color: rgb(30,156,203);text-align:center;font-size: 1.3em;font-weight:bold;}
+#loadingGif {
+	color: rgb(30,156,203);
+	text-align:center;
+	font-size: 1.3em;
+	font-weight:bold;
+}
 
 
 
@@ -280,7 +378,9 @@ RESULTS BOX
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-#resultname, #resultprovince{width:100% !important;}
+#resultname, #resultprovince{
+	width:100% !important;
+}
 
 #resultnames h2{
 	width: 75%; 
@@ -316,13 +416,29 @@ RESULTS BOX
    text-transform:uppercase;
 }
 
-.result a{color:white;text-decoration:none;}
-.result a:hover{text-decoration:underline;}
-.result a:visited{color:rgb(242,242,242);}
+.result a{
+	color:white;
+	text-decoration:none;
+}
 
-.provname { float: right;}
+.result a:hover{
+	text-decoration:underline;
+}
 
-#nullresult{color: rgb(30,156,203);text-align:center;font-size: 1.3em;font-weight:bold;}
+.result a:visited{
+	color:rgb(242,242,242);
+}
+
+.provname {
+	float: right;
+}
+
+#nullresult{
+	color: rgb(30,156,203);
+	text-align:center;
+	font-size: 1.3em;
+	font-weight:bold;
+}
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -377,13 +493,9 @@ top frame
 	font-family: 'RalewayRegular';
 	margin: 2em auto 2em auto;
 	padding: 1em;
-	/*CAMBIOS PARA REESCALADO*/
 	height: 300px;
 	width: 800px;
 	top: 20px;
-	/*height: 30%;
-	width: 80%;
-	left: 8%;*/
 	display: none;
 	overflow: auto;
 }
@@ -402,7 +514,10 @@ top frame
 close frame
 ====================================================================
 ==================================================================*/
-#closeinfo { margin: 0; text-align: right; }
+#closeinfo { 
+	margin: 0; 
+	text-align: right; 
+}
 
 #closeinfo a {
 	color: white;
@@ -412,7 +527,9 @@ close frame
 	text-decoration: none;
 }
 
-#closeinfo a:hover { text-decoration: underline; }
+#closeinfo a:hover { 
+	text-decoration: underline; 
+}
 
 /*==================================================================
 ====================================================================
@@ -420,7 +537,10 @@ title
 ====================================================================
 ==================================================================*/
 
-#infoname { font-family: 'LondrinaSolidRegular'; margin-top: 0; }
+#infoname { 
+	font-family: 'LondrinaSolidRegular'; 
+	margin-top: 0; 
+}
 
 /*==================================================================
 ====================================================================
@@ -454,23 +574,55 @@ nav {
 	right: 0.5em;
 }
 
-.navlink{cursor:pointer;}
-#closedetails{cursor:pointer;}
-nav li { display: inline; float: right; margin-right: 0.5em; }
-nav img { height: 50px; width: 50px; }
+.navlink{
+	cursor:pointer;
+}
+
+#closedetails{
+	cursor:pointer;
+}
+
+nav li {
+	display: inline; 
+	float: right;
+	margin-right: 0.5em; 
+}
+
+nav img {
+	height: 50px;
+	width: 50px; 
+}
 
 /*==================================================================
 ====================================================================
 contact data
 ====================================================================
 ==================================================================*/
-.contact { float: left; }
-.contact p { margin-bottom: 0; margin-top: 0; }
-.contact span { margin-right: 0.7em; }
-.contact a{color:white;text-decoration:none;}
-.contact a:hover{text-decoration:underline;}
+.contact { 
+	float: left; 
+}
 
-#phone { width: 400px; }
+.contact p {
+	margin-bottom: 0;
+	margin-top: 0; 
+}
+
+.contact span { 
+	margin-right: 0.7em;
+}
+
+.contact a{
+	color:white;
+	text-decoration:none;
+}
+
+.contact a:hover{
+	text-decoration:underline;
+}
+
+#phone {
+	width: 400px; 
+}
 
 /*==================================================================
 ====================================================================
@@ -489,15 +641,9 @@ bottom frame
 	padding: 1em;
 	text-align: justify;
 	overflow: auto;
-	/*CAMBIOS PARA REESCALADO*/
 	height: 300px;
 	width: 800px;
 	top: 450px;
-	/*
-	height: 30%;
-	width: 80%;
-	left: 8%;
-	*/
 	display: none;
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -539,12 +685,8 @@ Media Queries
 			.infodown {width: 80%};
 			
 			.result p { font-size: 0.7em; }
-			/*
-			#logo>img { width: 40%; }
-			#logo div { font-size: 1em; margin-top: 0.5em; width: 50%; }
-			*/
 			#logo>img { width: 75%; }
-      			#logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
+   			#logo div { font-size: 1em; margin-top: 0.5em; width: 85%; }
 			.provname { float: right;}
 }
 
