@@ -2,12 +2,12 @@
 
 ##Enlaces
 
-Proyecto juveCyL: http://juvecyl.es/
-Proyecto en GitHub: https://github.com/berikin/juvenilXML
-Página de información http://berikin.github.io/juvenilXML/
-Twitter: https://twitter.com/@juvecyl
-Blog desarrollo y noticias: http://desarrollo.juvecyl.es/
-Página de facebook: https://www.facebook.com/pages/Juvecyl/176063525902980 
+- Proyecto juveCyL: http://juvecyl.es/
+- Proyecto en GitHub: https://github.com/berikin/juvenilXML
+- Página de información http://berikin.github.io/juvenilXML/
+- Twitter: https://twitter.com/@juvecyl
+- Blog desarrollo y noticias: http://desarrollo.juvecyl.es/
+- Página de facebook: https://www.facebook.com/pages/Juvecyl/176063525902980 
 
 ##Descripción
 
@@ -139,9 +139,9 @@ Las herramientas utilizadas para el diseño han sido principalmente Adobe Photos
 Diseñador y programador web, siempre actualizando sus conocimientos a través de múltiples estudios relacionados con la informática. Ha colaborado con entidades como la Confederación Vallisoletana de Empresarios y la Fundación General Universidad de Valladolid. Entre su formación cuenta con el título de técnico en Explotación de Sistemas Informáticos y técnico superior en Administración de Sistemas Informáticos y Redes. Actualmente se encuentra estudiando el segundo curso para la obtención de los títulos de técnico superior en Desarrollo de Aplicaciones Web y técnico superior en Desarrollo de Aplicaciones Multiplataforma. Para más información puede visitar su portfolio personal en  http://www.jimenezfrontend.es
 
 Funciones:
--JavaScript (lo que incluye JavaScript puro, jQuery y Ajax) 
--PHP
--Búsqueda de alojamiento web
+- JavaScript (lo que incluye JavaScript puro, jQuery y Ajax) 
+- PHP
+- Búsqueda de alojamiento web
 
 ###Enrique Diego Blanco
 
@@ -178,7 +178,7 @@ Ha cursado 1º de DAW en el periodo 2012/2013 en el I.E.S. Galileo (Valladolid).
 Contacto: marcos.dlcs@gmail.com
 
 Funciones:
--HTML5 y CSS3
+- HTML5 y CSS3
 
 ##Agradecimientos
 
