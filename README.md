@@ -1,4 +1,4 @@
-#JUVECYL.ES - ALOJAMIENTOS JUVENILES DE CASTILLA Y LEÓN
+#JUVECYL | ALOJAMIENTOS JUVENILES DE CASTILLA Y LEÓN
 
 ##Enlaces
 
@@ -154,6 +154,7 @@ Es cofundador del estudio creativo Perruncho Studio, que actualmente realiza tra
 En este proyecto se ha encargado de la parte creativa y gráfica aportando su gran experiencia.
 
 Contacto: alcarabeo@hotmail.com
+
 Web Perruncho Studio: http://perruncho.com
 
 Funciones:
