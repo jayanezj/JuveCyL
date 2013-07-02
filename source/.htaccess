@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^juvecyl.tuars.com
+RewriteRule ^ http://www.juvecyl.tuars.com%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:ZuDany
+ErrorDocument 404 /404.html
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE ZuDany:ERRORPAGEID

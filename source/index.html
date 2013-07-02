@@ -48,16 +48,24 @@
 	<!--[if lt IE 7]>
 	<p class="chromeframe">Estás utilizando un navegador <strong>muy obsoleto</strong>. Por favor <a href="http://browsehappy.com/">actualiza tu navegador</a> o <a href="http://www.google.com/chromeframe/?redirect=true">activa  google chrome frame</a> para mejorar tu experiencia.</p>
 	<![endif]-->
-	
 	<div class="main-container">
-		<div id="socialmedia">
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+		<nav id="socialmedia">
+			<div class="fb-like" id="fb" data-href="http://juvecyl.es" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-font="segoe ui" data-action="recommend"></div>
 			<a href="http://desarrollo.juvecyl.es/" target="_blank"><img src="img/wp.png" alt="Blog de desarrollo" /></a>
 			<a href="https://www.facebook.com/pages/Juvecyl/176063525902980" target="_blank"><img src="img/fb.png" alt="Página Facebook" /></a>
 			<a href="https://twitter.com/@juvecyl" target="_blank"><img src="img/tw.png" alt="Cuenta Twitter" /></a>
 			<a href="http://berikin.github.io/juvenilXML/" target="_blank"><img src="img/gitan.png" alt="Proyecto GitHub" /></a>
 			<a href="http://www.linkedin.com/company/3217547" target="_blank"><img src="img/ldin.png" alt="Página linkedIn" /></a>
 			<a href="https://plus.google.com/u/0/117734531647236301008/posts" target="_blank"><img src="img/gmas.png" alt="Perfil Google+" /></a>
-		</div>
+		</nav>
 		<div id="maindiv" class="main wrapper clearfix">
 			<div id="apk">
 				<p><a id="closeapk" href="#"><img src="img/cerrar.png" alt="cerrar" /></a></p>
@@ -84,7 +92,7 @@
 	</div>
 	
 	<div class="footer-container">
-		<img id="footerimg" src="img/pie.png" usemap="#footermap" alt="pie" />
+		<img id="footerimg" src="img/pie.png" usemap="#footermap" alt="Página realizada en HTML5 con licencia Creative Commons con el uso de los Datos abiertos de la Junta de Castilla y León" />
 		<map name="footermap">
 			<area shape="poly" coords="695,71,984,64,985,129,906,144,696,139" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.es_CO" target="_blank" alt="ccommons">
 			<area shape="poly" coords="1611,140,1657,133,1669,189,1619,190,1612,184,1607,147" href="humans.txt" target="_blank" alt="humans">
