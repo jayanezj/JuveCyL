@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <string-array name="nav_options">
+        <item>Este es el menú</item>
+        <item>Desde aquí</item>
+        <item>podrás elegir</item>
+        <item>las provincias</item>
+    </string-array>
+ 
+</resources>

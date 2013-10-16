@@ -3,6 +3,11 @@
 
     <string name="app_name">JuveCyL</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="reloadbutton">Descarga los datos</string>
+    <string name="welcome_first_run">Bienvenido \n a \nJuveCyL</string>
+    <string name="thanks_first_run">Gracias por usar nuestra aplicación</string>
+    <string name="pull_first_run">Tira</string>
+    <string name="img_first_arrow">Flecha</string>
+    <string name="first_run_button">Entendido</string>
 
 </resources>
