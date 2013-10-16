@@ -25,6 +25,7 @@ public class Cover extends SherlockActivity implements AnimationListener
 		protected void onCreate(Bundle savedInstanceState)
 			{
 				super.onCreate(savedInstanceState);
+				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 				setContentView(R.layout.first_run_layout);
 				arrowPull = (ImageView) findViewById(R.id.img_first_arrow);
 				navList = (ListView) findViewById(R.id.left_drawer);

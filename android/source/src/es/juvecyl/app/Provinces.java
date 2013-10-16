@@ -22,21 +22,23 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-public class Main extends SherlockActivity
+public class Provinces extends SherlockActivity
 	{
 		private ListView navList;
+		private TextView tv1;
+		private String targetProvince;
 		private AlertsAdapter arrayAdapter;
-		ArrayList<MainNav> navdata=new ArrayList<MainNav>();
+		ArrayList<MainNav> navdata = new ArrayList<MainNav>();
+
 		@Override
 		protected void onCreate(Bundle savedInstanceState)
 			{
 				super.onCreate(savedInstanceState);
 				overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-				setContentView(R.layout.main_layout);
-				//CREACIÓN DEL MENÚ LATERAL CON COLORES
-				//RECOGEMOS NUESTRO MENÚ LATERAL
+				setContentView(R.layout.provinces_layout);
+				Bundle bundle = this.getIntent().getExtras();
+				targetProvince = bundle.getString("province");
 				navList = (ListView) findViewById(R.id.main_left_drawer);
-				//CREAMOS LOS ELEMENTOS QUE COMPONDRÁN EL MENÚ
 				navdata.add(new MainNav("Búsqueda", "#4a4a4a"));
 				navdata.add(new MainNav("Ávila", "#5b75c8"));
 				navdata.add(new MainNav("Burgos", "#aead4f"));
@@ -47,27 +49,39 @@ public class Main extends SherlockActivity
 				navdata.add(new MainNav("Soria", "#c38960"));
 				navdata.add(new MainNav("Valladolid", "#9b78aa"));
 				navdata.add(new MainNav("Zamora", "#724fae"));
-				//INSTANCIAMOS NUESTRA CLASE EXTENDIDA DE ARRAYADAPTER
-				arrayAdapter = new AlertsAdapter(this, R.layout.main_list,navdata);
-				//COLOCAMOS EL NAV BAR
+				arrayAdapter = new AlertsAdapter(this, R.layout.main_list, navdata);
 				navList.setAdapter(arrayAdapter);
-				//ESCUCHADOR PARA CLICK EN LA NAV BAR
+				tv1 = (TextView) findViewById(R.id.provinces_tv1);
+				tv1.setText(targetProvince);
+				for (int i = 0; i < navdata.size(); i++) {
+					if (navdata.get(i).getTitle().equals(targetProvince)) {
+						tv1.setBackgroundColor(Color.parseColor(navdata.get(i).getBgColor()));
+						break;
+					}
+				}
 				navList.setOnItemClickListener(new OnItemClickListener()
 					{
 
 						@Override
 						public void onItemClick(AdapterView<?> a, View v, int pos, long id)
 							{
-								//RECOGEMOS QUÉ ELEMENTO HA SIDO CLICKADO
-								String selected =((MainNav)a.getAdapter().getItem(pos)).getTitle();
-								if (!selected.equals("Búsqueda")){
-								//GUARDAMOS LA PROVINCIA DESTINO Y LANZAMOS LA ACTIVIDAD DE PROVINCIAS
-								Intent intent = new Intent(Main.this, Provinces.class);
-								Bundle b = new Bundle();
-				                b.putString("province", selected);
-				                intent.putExtras(b);
-								startActivity(intent);
-								finish();}
+								// TODO Auto-generated method stub
+								String selected = ((MainNav) a.getAdapter().getItem(pos)).getTitle();
+								if (selected.equals(targetProvince)) {
+									// NOTHING
+								} else if (selected.equals("Búsqueda")) {
+									Intent intent = new Intent(Provinces.this, Main.class);
+									startActivity(intent);
+									finish();
+								} else {
+									Intent intent = new Intent(Provinces.this, Provinces.class);
+									Bundle b = new Bundle();
+									b.putString("province", selected);
+									intent.putExtras(b);
+									startActivity(intent);
+									finish();
+								}
+
 							}
 					});
 			}
@@ -89,7 +103,7 @@ public class Main extends SherlockActivity
 				}
 				return true;
 			}
-		//CLASE EXTENDIDA DE ARRAYADAPTER
+
 		class AlertsAdapter extends ArrayAdapter<MainNav>
 			{
 

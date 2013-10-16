@@ -9,7 +9,9 @@ package es.juvecyl.app;
 
 public final class R {
     public static final class anim {
-        public static final int slide_left_right=0x7f040000;
+        public static final int fade_in=0x7f040000;
+        public static final int fade_out=0x7f040001;
+        public static final int slide_left_right=0x7f040002;
     }
     public static final class array {
         public static final int main_nav=0x7f0c0001;
@@ -961,7 +963,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f050032;
-        public static final int TitleList=0x7f05003d;
+        public static final int TitleList=0x7f05003e;
         public static final int abs__action_bar=0x7f050020;
         public static final int abs__action_bar_container=0x7f05001f;
         public static final int abs__action_bar_subtitle=0x7f050011;
@@ -1001,26 +1003,28 @@ containing a value of this type.
         public static final int abs__textButton=0x7f050013;
         public static final int abs__title=0x7f05001b;
         public static final int abs__up=0x7f05000b;
-        public static final int btn_first_ok=0x7f050037;
-        public static final int content_frame=0x7f050035;
+        public static final int btn_first_ok=0x7f050038;
+        public static final int content_frame=0x7f050036;
         public static final int disableHome=0x7f050009;
         public static final int downloadButton=0x7f050033;
-        public static final int drawer_layout=0x7f050034;
+        public static final int download_progress_bar=0x7f050034;
+        public static final int drawer_layout=0x7f050035;
         public static final int edit_query=0x7f050026;
         public static final int homeAsUp=0x7f050006;
-        public static final int img_first_arrow=0x7f05003a;
-        public static final int left_drawer=0x7f05003b;
+        public static final int img_first_arrow=0x7f05003b;
+        public static final int left_drawer=0x7f05003c;
         public static final int listMode=0x7f050002;
-        public static final int main_left_drawer=0x7f05003c;
+        public static final int main_left_drawer=0x7f05003d;
         public static final int normal=0x7f050001;
-        public static final int reload=0x7f05003e;
+        public static final int provinces_tv1=0x7f05003f;
+        public static final int reload=0x7f050040;
         public static final int showCustom=0x7f050008;
         public static final int showHome=0x7f050005;
         public static final int showTitle=0x7f050007;
         public static final int tabMode=0x7f050003;
-        public static final int tv_first_Pull=0x7f050039;
-        public static final int tv_first_Thanks=0x7f050038;
-        public static final int tv_first_welcome=0x7f050036;
+        public static final int tv_first_Pull=0x7f05003a;
+        public static final int tv_first_Thanks=0x7f050039;
+        public static final int tv_first_welcome=0x7f050037;
         public static final int useLogo=0x7f050004;
         public static final int wrap_content=0x7f050000;
     }
@@ -1053,8 +1057,9 @@ containing a value of this type.
         public static final int first_run_layout=0x7f030016;
         public static final int main_layout=0x7f030017;
         public static final int main_list=0x7f030018;
-        public static final int sherlock_spinner_dropdown_item=0x7f030019;
-        public static final int sherlock_spinner_item=0x7f03001a;
+        public static final int provinces_layout=0x7f030019;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001a;
+        public static final int sherlock_spinner_item=0x7f03001b;
     }
     public static final class menu {
         public static final int menu=0x7f0d0000;

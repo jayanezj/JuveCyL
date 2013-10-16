@@ -15,4 +15,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="41dp" />
 
+    <ProgressBar
+        android:id="@+id/download_progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/downloadButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="156dp" />
+
 </RelativeLayout>
