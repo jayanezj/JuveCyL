@@ -9,6 +9,8 @@ import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
@@ -74,6 +76,9 @@ public class DownloadXML extends SherlockActivity {
 			Toast.makeText(DownloadXML.this,
 					"Actualizando la base de datos...", Toast.LENGTH_SHORT)
 					.show();
+			TimerTask tsk1=new TimerTask(){public void run(){Log.e("Te pasas","Te pasas");bgtask.cancel(false);}};
+			Timer limit=new Timer();
+			limit.schedule(tsk1, 6000);
 		}
 
 		@Override
@@ -152,6 +157,52 @@ public class DownloadXML extends SherlockActivity {
 		protected void onCancelled() {
 			Toast.makeText(DownloadXML.this, "Tarea cancelada!",
 					Toast.LENGTH_SHORT).show();
+			
+			try {
+				FileInputStream dataBase = getBaseContext().openFileInput(
+						"db.xml");
+				downloadButton = (Button) findViewById(R.id.downloadButton);
+				downloadButton.setText("Usar datos locales");
+				downloadButton.setVisibility(View.VISIBLE);
+				downloadButton.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						firstrun = getSharedPreferences("PREFERENCE",
+								MODE_PRIVATE).getBoolean("firstrun", true);
+						if (firstrun) {
+							Intent intent = new Intent(DownloadXML.this,
+									Cover.class);
+							startActivity(intent);
+							finish();
+							// Save the state
+							getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+									.edit().putBoolean("firstrun", false)
+									.commit();
+						} else {
+
+							Intent intent = new Intent(DownloadXML.this,
+									Main.class);
+							startActivity(intent);
+							finish();
+						}
+					}
+				});
+
+			} catch (FileNotFoundException e) {
+				downloadButton = (Button) findViewById(R.id.downloadButton);
+				downloadButton.setText("Reintentar");
+				downloadButton.setVisibility(View.VISIBLE);
+				downloadButton.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						downloadButton.setVisibility(View.INVISIBLE);
+						bgtask = new Background();
+						bgtask.execute();
+					}
+				});
+			}
 		}
 	}
 

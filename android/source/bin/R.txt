@@ -1,4 +1,5 @@
 int anim slide_left_right 0x7f040000
+int array main_nav 0x7f0c0001
 int array nav_options 0x7f0c0000
 int attr actionBarDivider 0x7f01000e
 int attr actionBarItemBackground 0x7f01000f
@@ -285,6 +286,7 @@ int drawable tab_unselected_focused_juvecyl 0x7f020090
 int drawable tab_unselected_juvecyl 0x7f020091
 int drawable tab_unselected_pressed_juvecyl 0x7f020092
 int id RelativeLayout1 0x7f050032
+int id TitleList 0x7f05003d
 int id abs__action_bar 0x7f050020
 int id abs__action_bar_container 0x7f05001f
 int id abs__action_bar_subtitle 0x7f050011
@@ -334,8 +336,9 @@ int id homeAsUp 0x7f050006
 int id img_first_arrow 0x7f05003a
 int id left_drawer 0x7f05003b
 int id listMode 0x7f050002
+int id main_left_drawer 0x7f05003c
 int id normal 0x7f050001
-int id reload 0x7f05003c
+int id reload 0x7f05003e
 int id showCustom 0x7f050008
 int id showHome 0x7f050005
 int id showTitle 0x7f050007
@@ -370,8 +373,9 @@ int layout abs__simple_dropdown_hint 0x7f030014
 int layout download_xml_layout 0x7f030015
 int layout first_run_layout 0x7f030016
 int layout main_layout 0x7f030017
-int layout sherlock_spinner_dropdown_item 0x7f030018
-int layout sherlock_spinner_item 0x7f030019
+int layout main_list 0x7f030018
+int layout sherlock_spinner_dropdown_item 0x7f030019
+int layout sherlock_spinner_item 0x7f03001a
 int menu menu 0x7f0d0000
 int string abs__action_bar_home_description 0x7f0a0000
 int string abs__action_bar_up_description 0x7f0a0001

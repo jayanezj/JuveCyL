@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <string-array name="main_nav">
+        <item>Búsqueda</item>
+        <item>Ávila</item>
+        <item>Burgos</item>
+        <item>León</item>
+        <item>Palencia</item>
+        <item>Salamanca</item>
+        <item>Segovia</item>
+        <item>Soria</item>
+        <item>Valladolid</item>
+        <item>Zamora</item>
+    </string-array>
+ 
+</resources>

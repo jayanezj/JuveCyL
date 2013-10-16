@@ -12,6 +12,7 @@ public final class R {
         public static final int slide_left_right=0x7f040000;
     }
     public static final class array {
+        public static final int main_nav=0x7f0c0001;
         public static final int nav_options=0x7f0c0000;
     }
     public static final class attr {
@@ -960,6 +961,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f050032;
+        public static final int TitleList=0x7f05003d;
         public static final int abs__action_bar=0x7f050020;
         public static final int abs__action_bar_container=0x7f05001f;
         public static final int abs__action_bar_subtitle=0x7f050011;
@@ -1009,8 +1011,9 @@ containing a value of this type.
         public static final int img_first_arrow=0x7f05003a;
         public static final int left_drawer=0x7f05003b;
         public static final int listMode=0x7f050002;
+        public static final int main_left_drawer=0x7f05003c;
         public static final int normal=0x7f050001;
-        public static final int reload=0x7f05003c;
+        public static final int reload=0x7f05003e;
         public static final int showCustom=0x7f050008;
         public static final int showHome=0x7f050005;
         public static final int showTitle=0x7f050007;
@@ -1049,8 +1052,9 @@ containing a value of this type.
         public static final int download_xml_layout=0x7f030015;
         public static final int first_run_layout=0x7f030016;
         public static final int main_layout=0x7f030017;
-        public static final int sherlock_spinner_dropdown_item=0x7f030018;
-        public static final int sherlock_spinner_item=0x7f030019;
+        public static final int main_list=0x7f030018;
+        public static final int sherlock_spinner_dropdown_item=0x7f030019;
+        public static final int sherlock_spinner_item=0x7f03001a;
     }
     public static final class menu {
         public static final int menu=0x7f0d0000;
