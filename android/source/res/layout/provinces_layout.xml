@@ -17,6 +17,24 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/white"
             android:textSize="@dimen/medium_font" />
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true" 
+            android:layout_below="@+id/provinces_tv1">
+
+            <LinearLayout
+                android:id="@+id/provinces_L_Layout_Results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp" >
+            </LinearLayout>
+        </ScrollView>
     </RelativeLayout>
 
     <!-- The navigation drawer -->

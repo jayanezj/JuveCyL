@@ -11,7 +11,9 @@ public final class R {
     public static final class anim {
         public static final int fade_in=0x7f040000;
         public static final int fade_out=0x7f040001;
-        public static final int slide_left_right=0x7f040002;
+        public static final int left_to_right=0x7f040002;
+        public static final int right_to_left=0x7f040003;
+        public static final int slide_left_right=0x7f040004;
     }
     public static final class array {
         public static final int main_nav=0x7f0c0001;
@@ -1016,8 +1018,10 @@ containing a value of this type.
         public static final int listMode=0x7f050002;
         public static final int main_left_drawer=0x7f05003d;
         public static final int normal=0x7f050001;
+        public static final int provinces_L_Layout_Results=0x7f050041;
         public static final int provinces_tv1=0x7f05003f;
-        public static final int reload=0x7f050040;
+        public static final int reload=0x7f050042;
+        public static final int scrollView1=0x7f050040;
         public static final int showCustom=0x7f050008;
         public static final int showHome=0x7f050005;
         public static final int showTitle=0x7f050007;
