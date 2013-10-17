@@ -290,7 +290,7 @@ int drawable tab_unselected_focused_juvecyl 0x7f020090
 int drawable tab_unselected_juvecyl 0x7f020091
 int drawable tab_unselected_pressed_juvecyl 0x7f020092
 int id RelativeLayout1 0x7f050032
-int id TitleList 0x7f05003e
+int id TitleList 0x7f05003f
 int id abs__action_bar 0x7f050020
 int id abs__action_bar_container 0x7f05001f
 int id abs__action_bar_subtitle 0x7f050011
@@ -332,6 +332,7 @@ int id abs__title 0x7f05001b
 int id abs__up 0x7f05000b
 int id btn_first_ok 0x7f050038
 int id content_frame 0x7f050036
+int id content_frame2 0x7f05003d
 int id disableHome 0x7f050009
 int id downloadButton 0x7f050033
 int id download_progress_bar 0x7f050034
@@ -341,12 +342,12 @@ int id homeAsUp 0x7f050006
 int id img_first_arrow 0x7f05003b
 int id left_drawer 0x7f05003c
 int id listMode 0x7f050002
-int id main_left_drawer 0x7f05003d
+int id main_content_frame 0x7f050041
+int id main_drawer_layout 0x7f050040
+int id main_left_drawer2 0x7f05003e
+int id main_menu_drawer 0x7f050042
 int id normal 0x7f050001
-int id provinces_L_Layout_Results 0x7f050041
-int id provinces_tv1 0x7f05003f
-int id reload 0x7f050042
-int id scrollView1 0x7f050040
+int id reload 0x7f050043
 int id showCustom 0x7f050008
 int id showHome 0x7f050005
 int id showTitle 0x7f050007

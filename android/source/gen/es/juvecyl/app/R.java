@@ -965,7 +965,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f050032;
-        public static final int TitleList=0x7f05003e;
+        public static final int TitleList=0x7f05003f;
         public static final int abs__action_bar=0x7f050020;
         public static final int abs__action_bar_container=0x7f05001f;
         public static final int abs__action_bar_subtitle=0x7f050011;
@@ -1007,6 +1007,7 @@ containing a value of this type.
         public static final int abs__up=0x7f05000b;
         public static final int btn_first_ok=0x7f050038;
         public static final int content_frame=0x7f050036;
+        public static final int content_frame2=0x7f05003d;
         public static final int disableHome=0x7f050009;
         public static final int downloadButton=0x7f050033;
         public static final int download_progress_bar=0x7f050034;
@@ -1016,12 +1017,12 @@ containing a value of this type.
         public static final int img_first_arrow=0x7f05003b;
         public static final int left_drawer=0x7f05003c;
         public static final int listMode=0x7f050002;
-        public static final int main_left_drawer=0x7f05003d;
+        public static final int main_content_frame=0x7f050041;
+        public static final int main_drawer_layout=0x7f050040;
+        public static final int main_left_drawer2=0x7f05003e;
+        public static final int main_menu_drawer=0x7f050042;
         public static final int normal=0x7f050001;
-        public static final int provinces_L_Layout_Results=0x7f050041;
-        public static final int provinces_tv1=0x7f05003f;
-        public static final int reload=0x7f050042;
-        public static final int scrollView1=0x7f050040;
+        public static final int reload=0x7f050043;
         public static final int showCustom=0x7f050008;
         public static final int showHome=0x7f050005;
         public static final int showTitle=0x7f050007;

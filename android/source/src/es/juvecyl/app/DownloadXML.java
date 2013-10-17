@@ -133,6 +133,9 @@ public class DownloadXML extends SherlockActivity
 								pgb1.setVisibility(View.INVISIBLE);
 								// MANDAMOS A LA ACTIVIDAD PRINCIPAL
 								Intent intent = new Intent(DownloadXML.this, Main.class);
+								Bundle b = new Bundle();
+				                b.putString("province", "Búsqueda");
+				                intent.putExtras(b);
 								startActivity(intent);
 								finish();
 							}
@@ -164,6 +167,9 @@ public class DownloadXML extends SherlockActivity
 												} else {
 
 													Intent intent = new Intent(DownloadXML.this, Main.class);
+													Bundle b = new Bundle();
+									                b.putString("province", "Búsqueda");
+									                intent.putExtras(b);
 													startActivity(intent);
 													finish();
 												}
@@ -219,6 +225,9 @@ public class DownloadXML extends SherlockActivity
 											} else {
 
 												Intent intent = new Intent(DownloadXML.this, Main.class);
+												Bundle b = new Bundle();
+								                b.putString("province", "Búsqueda");
+								                intent.putExtras(b);
 												startActivity(intent);
 												finish();
 											}
