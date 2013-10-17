@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -36,6 +37,7 @@ public class Main extends SherlockActivity
 		private TextView[] tv;
 		private Context actualcontext;
 		private ArrayList<MainNav> navdata = new ArrayList<MainNav>();
+		private Vibrator vibe;
 		// //////////////////////////////////////////////////////////////////////////
 		// CAPAS DEL XML
 		// //////////////////////////////////////////////////////////////////////////
@@ -59,6 +61,7 @@ public class Main extends SherlockActivity
 				actualcontext = this;
 				contentFrame = (RelativeLayout) findViewById(R.id.main_content_frame);
 				setTitle(targetProvince);
+				vibe=(Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 				// //////////////////////////////////////////////////////////////////////////
 				// INSTANCIAMOS NUESTRO ARRAY DE NAVEGACIÓN PRINCIPAL Y COGEMOS
 				// EL COLOR DE LA PROVINCIA
@@ -162,7 +165,7 @@ public class Main extends SherlockActivity
 						@Override
 						public void onItemClick(AdapterView<?> a, View v, int pos, long id)
 							{
-								// TODO Auto-generated method stub
+								vibe.vibrate(60);
 								String selected = ((MainNav) a.getAdapter().getItem(pos)).getTitle();
 								if (selected.equals(targetProvince))
 									{
@@ -249,6 +252,7 @@ public class Main extends SherlockActivity
 			{
 				if (item.getItemId() == R.id.reload)
 					{
+						vibe.vibrate(60);
 						startActivity(new Intent(this, DownloadXML.class));
 						finish();
 					}
