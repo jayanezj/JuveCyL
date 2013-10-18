@@ -44,6 +44,9 @@ public class Cover extends SherlockActivity implements AnimationListener
 							{
 								// TODO Auto-generated method stub
 								Intent intent = new Intent(Cover.this, Main.class);
+								Bundle b = new Bundle();
+				                b.putString("province", "Búsqueda");
+				                intent.putExtras(b);
 								startActivity(intent);
 								finish();
 							}

@@ -9,5 +9,6 @@
     <string name="pull_first_run">Tira</string>
     <string name="img_first_arrow">Flecha</string>
     <string name="first_run_button">Entendido</string>
-
+	<string name="open_drawer">Desplegar el menú</string>
+	<string name="close_drawer">Replegar el menú</string>
 </resources>

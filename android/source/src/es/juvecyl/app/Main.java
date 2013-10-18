@@ -2,16 +2,24 @@ package es.juvecyl.app;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -29,7 +37,6 @@ import com.actionbarsherlock.view.MenuItem;
 
 public class Main extends SherlockActivity
 	{
-		private ListView navList;
 		private String targetProvince, provinceColor;
 		private MainNavMaker arrayAdapter;
 		private XMLDB db;
@@ -42,6 +49,10 @@ public class Main extends SherlockActivity
 		// CAPAS DEL XML
 		// //////////////////////////////////////////////////////////////////////////
 		private RelativeLayout contentFrame;
+		private DrawerLayout drawerLayout;
+		private ListView navList;
+		// ESCUCHADOR DEL MENU NAV
+		private ActionBarDrawerToggle navToggle;
 		// //////////////////////////////////////////////////////////////////////////
 		// CAPAS DE LA ACTIVIDAD
 		// //////////////////////////////////////////////////////////////////////////
@@ -56,37 +67,70 @@ public class Main extends SherlockActivity
 				super.onCreate(savedInstanceState);
 				overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
 				setContentView(R.layout.provinces_layout);
+
 				Bundle bundle = this.getIntent().getExtras();
 				targetProvince = bundle.getString("province");
 				actualcontext = this;
-				contentFrame = (RelativeLayout) findViewById(R.id.main_content_frame);
-				setTitle(targetProvince);
-				vibe=(Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 				// //////////////////////////////////////////////////////////////////////////
-				// INSTANCIAMOS NUESTRO ARRAY DE NAVEGACIÓN PRINCIPAL Y COGEMOS
+				// RECOGEMOS DEL XML
+				// //////////////////////////////////////////////////////////////////////////
+				contentFrame = (RelativeLayout) findViewById(R.id.main_content_frame);
+				drawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
+				navList = (ListView) findViewById(R.id.main_menu_drawer);
+				// //////////////////////////////////////////////////////////////////////////
+				// ESTABLECEMOS UN TÍTULO
+				// //////////////////////////////////////////////////////////////////////////
+				setTitle(targetProvince);
+				// //////////////////////////////////////////////////////////////////////////
+				// CARGAMOS LOS DATOS
+				// //////////////////////////////////////////////////////////////////////////
+				db = new XMLDB(getBaseContext(), true);
+				// //////////////////////////////////////////////////////////////////////////
+				// DECLARAMOS EL VIBRADOR
+				// //////////////////////////////////////////////////////////////////////////
+				vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+				// //////////////////////////////////////////////////////////////////////////
+				// NAVEGADOR LATERAL
+				//
+				// PRIMERO HACEMOS QUE EL TÍTULO SEA UN BOTÓN QUE PUEDA EXPANDIR
+				// EL MENÚ LATERAL
+				//
+				// //////////////////////////////////////////////////////////////////////////
+				getSupportActionBar().setHomeButtonEnabled(true);
+				getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+				// //////////////////////////////////////////////////////////////////////////
+				// DECLARAMOS EL ESCUCHADOR DE NUESTRO MENÚ LATERAL
+				// //////////////////////////////////////////////////////////////////////////
+				navToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, R.string.open_drawer, R.string.close_drawer)
+					{
+						public void onDrawerClosed(View view)
+							{
+								invalidateOptionsMenu();
+							}
+
+						public void onDrawerOpened(View view)
+							{
+								invalidateOptionsMenu();
+							}
+					};
+				drawerLayout.setDrawerListener(navToggle);
+
+				// //////////////////////////////////////////////////////////////////////////
+				// DECLARAMOS NUESTRO ARRAY DE NAVEGACIÓN PRINCIPAL Y COGEMOS
 				// EL COLOR DE LA PROVINCIA
 				// //////////////////////////////////////////////////////////////////////////
 				navdata = new MainNav(1).getNav();
-				for (int i = 0; i < navdata.size(); i++)
-					{
-						if (navdata.get(i).getTitle().equals(targetProvince))
-							{
-								provinceColor = navdata.get(i).getBgColor();
-								break;
-							}
-					}
-				if (targetProvince.equals("Búsqueda"))
-					{
-						Search();
-					}
-				else
-					{
-						Province();
-
-					}
+				if (targetProvince.equals("Búsqueda")) {
+					Search();
+					provinceColor = navdata.get(0).getBgColor();
+				} else {
+					Province();
+				}
 
 				// //////////////////////////////////////////////////////////////////////////
-				// INSTANCIAMOS UN SCROLLVIEW
+				// DECLARAMOS UN SCROLLVIEW PARA LOS RESULTADOS
 				// //////////////////////////////////////////////////////////////////////////
 				scrollMain = new ScrollView(actualcontext);
 				scrollMain.setId(1989);
@@ -96,7 +140,7 @@ public class Main extends SherlockActivity
 				scrollParams.addRule(RelativeLayout.BELOW, 1988);
 				scrollMain.setLayoutParams(scrollParams);
 				// //////////////////////////////////////////////////////////////////////////
-				// INSTANCIAMOS EL LINEAR LAYOUT INTERNO AL SCROLLVIEW
+				// DECLARAMOS EL LINEAR LAYOUT INTERNO AL SCROLLVIEW
 				// //////////////////////////////////////////////////////////////////////////
 				linearInsideScroll = new LinearLayout(actualcontext);
 				linearInsideScroll.setId(1990);
@@ -106,56 +150,19 @@ public class Main extends SherlockActivity
 				linearInsideScroll.setLayoutParams(linearInsideParams);
 
 				// //////////////////////////////////////////////////////////////////////////
-				// CON TODAS LAS CAPAS INSTANCIADAS LAS AGREGAMOS A LA VISTA
+				// CON TODAS LAS CAPAS DECLARADAS LAS AGREGAMOS A LA VISTA
 				// //////////////////////////////////////////////////////////////////////////
-				if (targetProvince.equals("Búsqueda"))
-					{
-						contentFrame.addView(searchField);
-					}
-				else
-					{
-						contentFrame.addView(provinceTextName);
-					}
-				contentFrame.addView(scrollMain);
-				scrollMain.addView(linearInsideScroll);
-				// //////////////////////////////////////////////////////////////////////////
-				// MOSTRAR RESULTADOS DE LA PROVINCIA
-				// //////////////////////////////////////////////////////////////////////////
-				db = new XMLDB(getBaseContext(), true);
-				counter = 0;
-				for (int i = 0; i < db.getLodgings().size(); i++)
-					{
-						if (db.getLodgings().get(i).getProvince().equals(targetProvince))
-							{
-								counter++;
-							}
-					}
-				Log.d("Resultados", counter + "");
-				tv = new TextView[counter];
-				counter = 0;
-				for (int i = 0; i < db.getLodgings().size(); i++)
-					{
-						if (db.getLodgings().get(i).getProvince().equals(targetProvince))
-							{
-								tv[counter] = new TextView(actualcontext);
-								LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-								prm.setMargins(0, 10, 0, 10);
-								tv[counter].setLayoutParams(prm);
-								tv[counter].setText(db.getLodgings().get(i).getTitle());
-								tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
-								tv[counter].setTextColor(Color.WHITE);
-								tv[counter].setPadding(10, 20, 10, 20);
-								tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-								tv[counter].setTypeface(null, Typeface.BOLD);
-								linearInsideScroll.addView(tv[counter]);
-								counter++;
-								Log.e("views", counter + "");
-							}
-					}
+				if (targetProvince.equals("Búsqueda")) {
+					contentFrame.addView(searchField);
+					contentFrame.addView(scrollMain);
+					scrollMain.addView(linearInsideScroll);
+				} else {
+					contentFrame.addView(provinceTextName);
+					ProvinceResults();
+				}
 				// //////////////////////////////////////////////////////////////////////////
 				// CREANDO EL NAVEGADOR LATERAL
 				// //////////////////////////////////////////////////////////////////////////
-				navList = (ListView) findViewById(R.id.main_menu_drawer);
 				navdata = new MainNav(1).getNav();
 				arrayAdapter = new MainNavMaker(this, R.layout.main_list, navdata);
 				navList.setAdapter(arrayAdapter);
@@ -167,78 +174,25 @@ public class Main extends SherlockActivity
 							{
 								vibe.vibrate(60);
 								String selected = ((MainNav) a.getAdapter().getItem(pos)).getTitle();
-								if (selected.equals(targetProvince))
-									{
-										// NOTHING
+								if (selected.equals(targetProvince)) {
+									// NOTHING
+								} else {
+									targetProvince = selected;
+									setTitle(targetProvince);
+									ClearLayout();
+									if (!targetProvince.equals("Búsqueda")) {
+										ProvinceResults();
 									}
-								else
-									{
-										targetProvince = selected;
-										setTitle(targetProvince);
-										contentFrame.removeAllViews();
-										if (targetProvince.equals("Búsqueda"))
-											{
-												Search();
-												contentFrame.addView(searchField);
-											}
-										else
-											{
-												Province();
-												contentFrame.addView(provinceTextName);
-											}
-										contentFrame.addView(scrollMain);
-										scrollMain.removeAllViews();
-										scrollMain.addView(linearInsideScroll);
-										linearInsideScroll.removeAllViews();
-										if (!targetProvince.equals("Búsqueda"))
-											{
-
-												for (int i = 0; i < navdata.size(); i++)
-													{
-														if (navdata.get(i).getTitle().equals(targetProvince))
-															{
-																provinceColor = navdata.get(i).getBgColor();
-																break;
-															}
-													}
-												counter = 0;
-												for (int i = 0; i < db.getLodgings().size(); i++)
-													{
-														if (db.getLodgings().get(i).getProvince().equals(targetProvince))
-															{
-																counter++;
-															}
-													}
-
-												tv = new TextView[counter];
-												counter = 0;
-												for (int i = 0; i < db.getLodgings().size(); i++)
-													{
-														if (db.getLodgings().get(i).getProvince().equals(targetProvince))
-															{
-																tv[counter] = new TextView(actualcontext);
-																LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-																prm.setMargins(0, 10, 0, 10);
-																tv[counter].setLayoutParams(prm);
-																tv[counter].setText(db.getLodgings().get(i).getTitle());
-																tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
-																tv[counter].setTextColor(Color.WHITE);
-																tv[counter].setPadding(10, 20, 10, 20);
-																tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-																tv[counter].setTypeface(null, Typeface.BOLD);
-																linearInsideScroll.addView(tv[counter]);
-																counter++;
-															}
-													}
-												provinceTextName.setText(targetProvince);
-												provinceTextName.setBackgroundColor(Color.parseColor(provinceColor));
-											}
-									}
+									drawerLayout.closeDrawer(navList);
+								}
 
 							}
 					});
 			}
 
+		// //////////////////////////////////////////////////////////////////////////
+		// AÑADIMOS ELEMENTOS AL MENÚ DEL ACTION BAR
+		// //////////////////////////////////////////////////////////////////////////
 		@Override
 		public boolean onCreateOptionsMenu(Menu menu)
 			{
@@ -247,34 +201,135 @@ public class Main extends SherlockActivity
 				return true;
 			}
 
-		@Override
-		public boolean onOptionsItemSelected(MenuItem item)
-			{
-				if (item.getItemId() == R.id.reload)
-					{
-						vibe.vibrate(60);
-						startActivity(new Intent(this, DownloadXML.class));
-						finish();
-					}
-				return true;
-			}
-
+		@SuppressLint("NewApi")
+		@SuppressWarnings("deprecation")
 		protected void Search()
 			{
 				// //////////////////////////////////////////////////////////////////////////
-				// INSTANCIAMOS UN TEXTFIELD
+				// DECLARAMOS UN TEXTFIELD PARA BÚSQUEDAS
 				// //////////////////////////////////////////////////////////////////////////
 				searchField = new EditText(actualcontext);
 				searchField.setId(1988);
-				RelativeLayout.LayoutParams editTextParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				RelativeLayout.LayoutParams editTextParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+				editTextParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+				editTextParams.topMargin = 15;
+				searchField.setPadding(25, 20, 0, 5);
 				searchField.setLayoutParams(editTextParams);
-				searchField.setGravity(Gravity.CENTER);
+				searchField.setGravity(Gravity.LEFT);
+				searchField.setOnClickListener(new OnClickListener()
+					{
+						@Override
+						public void onClick(View arg0)
+							{
+								vibe.vibrate(60);
+							}
+					});
+				// //////////////////////////////////////////////////////////////////////////
+				// COMPROBAMOS LA VERSIÓN DE ANDROID PARA USAR LA PROPIEDAD DEPRECADA
+				// O LA NUEVA SI EL TARGET ES COMO MÍNIMO DE JELLY BEAN
+				// //////////////////////////////////////////////////////////////////////////
+				int sdk = android.os.Build.VERSION.SDK_INT;
+				if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+					searchField.setBackgroundDrawable(getResources().getDrawable(R.drawable.search_box));
+				} else {
+					searchField.setBackground(getResources().getDrawable(R.drawable.search_box));
+				}
+				// //////////////////////////////////////////////////////////////////////////
+				// ESCUCHADOR PARA CUANDO ESCRIBAMOS EN LA CAJA DE TEXTO
+				// //////////////////////////////////////////////////////////////////////////
+				searchField.addTextChangedListener(new TextWatcher()
+					{
+
+						@Override
+						public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3)
+							{
+								String searchString = searchField.getText().toString();
+								// //////////////////////////////////////////////////////////////////////////
+								// COMO MÍNIMO ESPERAMOS A 2 CARACTERES DE ENTRADA
+								// //////////////////////////////////////////////////////////////////////////
+								if (searchString.length() > 2) {
+									Log.d("busca","busca");
+									SearchResults(searchString);
+								} else {
+									scrollMain.removeAllViews();
+									scrollMain.addView(linearInsideScroll);
+									linearInsideScroll.removeAllViews();
+								}
+							}
+
+						@Override
+						public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3)
+							{
+								// NO SE USA
+							}
+
+						@Override
+						public void afterTextChanged(Editable arg0)
+							{
+								// NO SE USA
+
+							}
+					});
+			}
+
+		// //////////////////////////////////////////////////////////////////////////
+		// BÚSQUEDA DE ALOJAMIENTOS POR NOMBRE
+		// //////////////////////////////////////////////////////////////////////////
+		protected void SearchResults(String searchString)
+			{
+				//scrollMain.removeAllViews();
+				//scrollMain.addView(linearInsideScroll);
+				//linearInsideScroll.removeAllViews();
+				counter = 0;
+				// //////////////////////////////////////////////////////////////////////////
+				// BUSCAMOS COINCIDENCIAS Y DESPUÉS INSTANCIAMOS TANTOS TEXTVIEW
+				// COMO
+				// COINCIDENCIAS HAYA
+				// //////////////////////////////////////////////////////////////////////////
+				for (int i = 0; i < db.getLodgings().size(); i++) {
+					if (db.getLodgings().get(i).getTitle().toLowerCase().contains(searchString.toLowerCase())) {
+						counter++;
+						Log.d("Resultados",""+counter);
+					}
+				}
+				tv = new TextView[counter];
+				counter = 0;
+				// //////////////////////////////////////////////////////////////////////////
+				// METEMOS LAS COINCIDENCIAS EN SENDOS TEXTVIEW
+				// //////////////////////////////////////////////////////////////////////////
+				for (int i = 0; i < db.getLodgings().size(); i++) {
+					if (db.getLodgings().get(i).getTitle().toLowerCase().contains(searchString.toLowerCase())) {
+						tv[counter] = new TextView(actualcontext);
+						LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+						prm.setMargins(0, 10, 0, 10);
+						tv[counter].setLayoutParams(prm);
+						tv[counter].setText(db.getLodgings().get(i).getTitle());
+						for (int j = 0; j < navdata.size(); j++) {
+							if (navdata.get(j).getTitle().equals(db.getLodgings().get(i).getProvince())) {
+								tv[counter].setBackgroundColor(Color.parseColor(navdata.get(j).getBgColor()));
+								break;
+							}
+						}
+						tv[counter].setTextColor(Color.WHITE);
+						tv[counter].setPadding(10, 20, 10, 20);
+						tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+						tv[counter].setTypeface(null, Typeface.BOLD);
+						linearInsideScroll.addView(tv[counter]);
+						counter++;
+					}
+				}
 			}
 
 		protected void Province()
 			{
+				for (int i = 0; i < navdata.size(); i++) {
+					if (navdata.get(i).getTitle().equals(targetProvince)) {
+						provinceColor = navdata.get(i).getBgColor();
+						break;
+					}
+				}
 				// //////////////////////////////////////////////////////////////////////////
-				// INSTANCIAMOS UN TEXTVIEW
+				// DECLARAMOS UN TEXTVIEW
 				// //////////////////////////////////////////////////////////////////////////
 				provinceTextName = new TextView(actualcontext);
 				provinceTextName.setId(1988);
@@ -288,4 +343,103 @@ public class Main extends SherlockActivity
 				provinceTextName.setBackgroundColor(Color.parseColor(provinceColor));
 			}
 
+		protected void ProvinceResults()
+			{
+				for (int i = 0; i < navdata.size(); i++) {
+					if (navdata.get(i).getTitle().equals(targetProvince)) {
+						provinceColor = navdata.get(i).getBgColor();
+						break;
+					}
+				}
+				// //////////////////////////////////////////////////////////////////////////
+				// MOSTRAR RESULTADOS DE LA PROVINCIA
+				// //////////////////////////////////////////////////////////////////////////
+				counter = 0;
+				for (int i = 0; i < db.getLodgings().size(); i++) {
+					if (db.getLodgings().get(i).getProvince().equals(targetProvince)) {
+						counter++;
+					}
+				}
+				tv = new TextView[counter];
+				counter = 0;
+				for (int i = 0; i < db.getLodgings().size(); i++) {
+					if (db.getLodgings().get(i).getProvince().equals(targetProvince)) {
+						tv[counter] = new TextView(actualcontext);
+						LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+						prm.setMargins(0, 10, 0, 10);
+						tv[counter].setLayoutParams(prm);
+						tv[counter].setText(db.getLodgings().get(i).getTitle());
+						tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
+						tv[counter].setTextColor(Color.WHITE);
+						tv[counter].setPadding(10, 20, 10, 20);
+						tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+						tv[counter].setTypeface(null, Typeface.BOLD);
+						linearInsideScroll.addView(tv[counter]);
+						counter++;
+					}
+				}
+			}
+
+		protected void ClearLayout()
+			{
+				contentFrame.removeAllViews();
+				if (targetProvince.equals("Búsqueda")) {
+					Search();
+					contentFrame.addView(searchField);
+				} else {
+					Province();
+					contentFrame.addView(provinceTextName);
+				}
+				contentFrame.addView(scrollMain);
+				scrollMain.removeAllViews();
+				scrollMain.addView(linearInsideScroll);
+				linearInsideScroll.removeAllViews();
+			}
+
+		public boolean onMenuItemSelected(int featureId, MenuItem item)
+			{
+
+				int itemId = item.getItemId();
+				switch (itemId)
+					{
+					case android.R.id.home:
+						vibe.vibrate(60);
+						if (drawerLayout.isDrawerOpen(navList)) {
+							drawerLayout.closeDrawer(navList);
+						} else {
+							drawerLayout.openDrawer(navList);
+						}
+						break;
+					case R.id.reload:
+						vibe.vibrate(60);
+						startActivity(new Intent(this, DownloadXML.class));
+						finish();
+					}
+
+				return true;
+			}
+
+		@Override
+		protected void onPostCreate(Bundle savedInstanceState)
+			{
+				super.onPostCreate(savedInstanceState);
+				navToggle.syncState();
+			}
+
+		@Override
+		public void onConfigurationChanged(Configuration newConfig)
+			{
+				super.onConfigurationChanged(newConfig);
+				navToggle.onConfigurationChanged(newConfig);
+			}
+
+		@Override
+		public boolean onKeyDown(int keyCode, KeyEvent event)
+			{
+				if (keyCode == KeyEvent.KEYCODE_BACK) {
+					moveTaskToBack(true);
+					return true;
+				}
+				return super.onKeyDown(keyCode, event);
+			}
 	}
