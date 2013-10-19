@@ -3,8 +3,8 @@
 ##Enlaces
 
 - Proyecto juveCyL: http://juvecyl.es/
-- Proyecto en GitHub: https://github.com/berikin/juvenilXML
-- Página de información http://berikin.github.io/juvenilXML/
+- Proyecto en GitHub: https://github.com/berikin/JuveCyL
+- Página de información http://berikin.github.io/JuveCyL/
 - Twitter: https://twitter.com/@juvecyl
 - Blog desarrollo y noticias: http://desarrollo.juvecyl.es/
 - Página de facebook: https://www.facebook.com/pages/Juvecyl/176063525902980 
