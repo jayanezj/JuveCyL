@@ -16,7 +16,28 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
     <color name="white">#FFFFFF</color>
     <color name="corporativeblue">#1e9ccb</color>
 
+    <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">#cc5a33e5</item>
+        <item name="sv_showcaseColor">#4a0796</item>
+        <item name="sv_buttonText">Cerrar</item>
+        <item name="sv_titleTextAppearance">@style/CustomTitle</item>
+        <item name="sv_buttonForegroundColor">#CF3119</item>
+        <item name="sv_detailTextAppearance">@style/CustomDetail</item>
+    </style>
+
+    <style name="SampleTheme" parent="@style/Theme.Juvecyl">
+        <item name="showcaseViewStyle">@style/CustomShowcaseTheme</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Juvecyl</item>
+    </style>
+
+    <style name="CustomTitle" parent="TextAppearance.ShowcaseView.Title">
+        <item name="android:textColor">#e6e6e6</item>
+    </style>
+    <style name="CustomDetail" parent="TextAppearance.ShowcaseView.Detail">
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>

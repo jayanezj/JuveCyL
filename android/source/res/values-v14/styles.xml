@@ -9,4 +9,8 @@
         <!-- API 14 theme customizations can go here. -->
     </style>
 
+    <style name="SampleTheme" parent="android:Theme.Holo.Light">
+        <item name="showcaseViewStyle">@style/CustomShowcaseTheme</item>
+    </style>
+
 </resources>

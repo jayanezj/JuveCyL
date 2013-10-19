@@ -249,6 +249,9 @@ public class Main extends SherlockActivity
 								// //////////////////////////////////////////////////////////////////////////
 								if (searchString.length() > 2) {
 									Log.d("busca","busca");
+									scrollMain.removeAllViews();
+									scrollMain.addView(linearInsideScroll);
+									linearInsideScroll.removeAllViews();
 									SearchResults(searchString);
 								} else {
 									scrollMain.removeAllViews();
