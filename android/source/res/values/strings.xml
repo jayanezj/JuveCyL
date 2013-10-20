@@ -9,10 +9,12 @@
     <string name="pull_first_run">¡Desliza!</string>
     <string name="img_first_arrow">Flecha</string>
     <string name="first_run_button">Entendido</string>
-	<string name="open_drawer">Desplegar el menú</string>
-	<string name="close_drawer">Replegar el menú</string>
-  <string name="first_run_got_it">¡Lo tengo!</string>
-  <string name="tutorial_title">Tutorial JuveCyL</string>
-  <string name="tutorial_message">JuveCyL utiliza el menú lateral desplegable desde el lado izquierdo. Puedes sacarlo arrastrando el dedo desde el margen izquierdo</string>
-  <string name="tutorial_message2">También puedes ocultar y mostrar el menú lateral tocando en la parte superior derecha de la barra de acción</string>
+    <string name="open_drawer">Desplegar el menú</string>
+    <string name="close_drawer">Replegar el menú</string>
+    <string name="first_run_got_it">¡Lo tengo!</string>
+    <string name="tutorial_title">Tutorial JuveCyL</string>
+    <string name="tutorial_message">JuveCyL utiliza el menú lateral desplegable desde el lado izquierdo. Puedes sacarlo arrastrando el dedo desde el margen izquierdo</string>
+    <string name="tutorial_message2">También puedes ocultar y mostrar el menú lateral tocando en la parte superior derecha de la barra de acción</string>
+    <string name="main_no_results">No se han encontrado resultados</string>
+
 </resources>

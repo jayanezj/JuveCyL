@@ -147,6 +147,7 @@ public class DownloadXML extends SherlockActivity
 							Toast.makeText(DownloadXML.this, "Error en la actualización", Toast.LENGTH_SHORT).show();
 							//COMPROBAMOS SI EL DISPOSITIVO TIENE UNA COPIA ANTIGUA DE LA BASE DE DATOS
 							try {
+								@SuppressWarnings("unused")
 								FileInputStream dataBase = getBaseContext().openFileInput("db.xml");
 								downloadButton = (Button) findViewById(R.id.downloadButton);
 								downloadButton.setText("Usar datos locales");
@@ -205,6 +206,7 @@ public class DownloadXML extends SherlockActivity
 						Toast.makeText(DownloadXML.this, "Cancelando...", Toast.LENGTH_SHORT).show();
 
 						try {
+							@SuppressWarnings("unused")
 							FileInputStream dataBase = getBaseContext().openFileInput("db.xml");
 							downloadButton = (Button) findViewById(R.id.downloadButton);
 							downloadButton.setText("Usar datos locales");

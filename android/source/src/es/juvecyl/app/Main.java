@@ -1,6 +1,8 @@
 package es.juvecyl.app;
 
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -122,12 +124,15 @@ public class Main extends SherlockActivity
 				// EL COLOR DE LA PROVINCIA
 				// //////////////////////////////////////////////////////////////////////////
 				navdata = new MainNav(1).getNav();
-				if (targetProvince.equals("Búsqueda")) {
-					Search();
-					provinceColor = navdata.get(0).getBgColor();
-				} else {
-					Province();
-				}
+				if (targetProvince.equals("Búsqueda"))
+					{
+						Search();
+						provinceColor = navdata.get(0).getBgColor();
+					}
+				else
+					{
+						Province();
+					}
 
 				// //////////////////////////////////////////////////////////////////////////
 				// DECLARAMOS UN SCROLLVIEW PARA LOS RESULTADOS
@@ -152,14 +157,17 @@ public class Main extends SherlockActivity
 				// //////////////////////////////////////////////////////////////////////////
 				// CON TODAS LAS CAPAS DECLARADAS LAS AGREGAMOS A LA VISTA
 				// //////////////////////////////////////////////////////////////////////////
-				if (targetProvince.equals("Búsqueda")) {
-					contentFrame.addView(searchField);
-					contentFrame.addView(scrollMain);
-					scrollMain.addView(linearInsideScroll);
-				} else {
-					contentFrame.addView(provinceTextName);
-					ProvinceResults();
-				}
+				if (targetProvince.equals("Búsqueda"))
+					{
+						contentFrame.addView(searchField);
+						contentFrame.addView(scrollMain);
+						scrollMain.addView(linearInsideScroll);
+					}
+				else
+					{
+						contentFrame.addView(provinceTextName);
+						ProvinceResults();
+					}
 				// //////////////////////////////////////////////////////////////////////////
 				// CREANDO EL NAVEGADOR LATERAL
 				// //////////////////////////////////////////////////////////////////////////
@@ -174,17 +182,21 @@ public class Main extends SherlockActivity
 							{
 								vibe.vibrate(60);
 								String selected = ((MainNav) a.getAdapter().getItem(pos)).getTitle();
-								if (selected.equals(targetProvince)) {
-									// NOTHING
-								} else {
-									targetProvince = selected;
-									setTitle(targetProvince);
-									ClearLayout();
-									if (!targetProvince.equals("Búsqueda")) {
-										ProvinceResults();
+								if (selected.equals(targetProvince))
+									{
+										// NOTHING
 									}
-									drawerLayout.closeDrawer(navList);
-								}
+								else
+									{
+										targetProvince = selected;
+										setTitle(targetProvince);
+										ClearLayout();
+										if (!targetProvince.equals("Búsqueda"))
+											{
+												ProvinceResults();
+											}
+										drawerLayout.closeDrawer(navList);
+									}
 
 							}
 					});
@@ -210,6 +222,7 @@ public class Main extends SherlockActivity
 				// //////////////////////////////////////////////////////////////////////////
 				searchField = new EditText(actualcontext);
 				searchField.setId(1988);
+				searchField.setSingleLine(true);
 				RelativeLayout.LayoutParams editTextParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 				editTextParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
 				editTextParams.topMargin = 15;
@@ -229,11 +242,14 @@ public class Main extends SherlockActivity
 				// O LA NUEVA SI EL TARGET ES COMO MÍNIMO DE JELLY BEAN
 				// //////////////////////////////////////////////////////////////////////////
 				int sdk = android.os.Build.VERSION.SDK_INT;
-				if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-					searchField.setBackgroundDrawable(getResources().getDrawable(R.drawable.search_box));
-				} else {
-					searchField.setBackground(getResources().getDrawable(R.drawable.search_box));
-				}
+				if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN)
+					{
+						searchField.setBackgroundDrawable(getResources().getDrawable(R.drawable.search_box));
+					}
+				else
+					{
+						searchField.setBackground(getResources().getDrawable(R.drawable.search_box));
+					}
 				// //////////////////////////////////////////////////////////////////////////
 				// ESCUCHADOR PARA CUANDO ESCRIBAMOS EN LA CAJA DE TEXTO
 				// //////////////////////////////////////////////////////////////////////////
@@ -247,17 +263,20 @@ public class Main extends SherlockActivity
 								// //////////////////////////////////////////////////////////////////////////
 								// COMO MÍNIMO ESPERAMOS A 2 CARACTERES DE ENTRADA
 								// //////////////////////////////////////////////////////////////////////////
-								if (searchString.length() > 2) {
-									Log.d("busca","busca");
-									scrollMain.removeAllViews();
-									scrollMain.addView(linearInsideScroll);
-									linearInsideScroll.removeAllViews();
-									SearchResults(searchString);
-								} else {
-									scrollMain.removeAllViews();
-									scrollMain.addView(linearInsideScroll);
-									linearInsideScroll.removeAllViews();
-								}
+								if (searchString.length() > 2)
+									{
+										Log.d("busca", "busca");
+										scrollMain.removeAllViews();
+										scrollMain.addView(linearInsideScroll);
+										linearInsideScroll.removeAllViews();
+										SearchResults(searchString);
+									}
+								else
+									{
+										scrollMain.removeAllViews();
+										scrollMain.addView(linearInsideScroll);
+										linearInsideScroll.removeAllViews();
+									}
 							}
 
 						@Override
@@ -280,57 +299,116 @@ public class Main extends SherlockActivity
 		// //////////////////////////////////////////////////////////////////////////
 		protected void SearchResults(String searchString)
 			{
-				//scrollMain.removeAllViews();
-				//scrollMain.addView(linearInsideScroll);
-				//linearInsideScroll.removeAllViews();
 				counter = 0;
 				// //////////////////////////////////////////////////////////////////////////
 				// BUSCAMOS COINCIDENCIAS Y DESPUÉS INSTANCIAMOS TANTOS TEXTVIEW
-				// COMO
-				// COINCIDENCIAS HAYA
+				// COMO COINCIDENCIAS HAYA
 				// //////////////////////////////////////////////////////////////////////////
-				for (int i = 0; i < db.getLodgings().size(); i++) {
-					if (db.getLodgings().get(i).getTitle().toLowerCase().contains(searchString.toLowerCase())) {
-						counter++;
-						Log.d("Resultados",""+counter);
-					}
-				}
-				tv = new TextView[counter];
-				counter = 0;
-				// //////////////////////////////////////////////////////////////////////////
-				// METEMOS LAS COINCIDENCIAS EN SENDOS TEXTVIEW
-				// //////////////////////////////////////////////////////////////////////////
-				for (int i = 0; i < db.getLodgings().size(); i++) {
-					if (db.getLodgings().get(i).getTitle().toLowerCase().contains(searchString.toLowerCase())) {
-						tv[counter] = new TextView(actualcontext);
-						LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-						prm.setMargins(0, 10, 0, 10);
-						tv[counter].setLayoutParams(prm);
-						tv[counter].setText(db.getLodgings().get(i).getTitle());
-						for (int j = 0; j < navdata.size(); j++) {
-							if (navdata.get(j).getTitle().equals(db.getLodgings().get(i).getProvince())) {
-								tv[counter].setBackgroundColor(Color.parseColor(navdata.get(j).getBgColor()));
-								break;
+				for (int i = 0; i < db.getLodgings().size(); i++)
+					{
+						if (db.getLodgings().get(i).getTitle().toLowerCase(Locale.ENGLISH).contains(searchString.toLowerCase(Locale.ENGLISH)))
+							{
+								counter++;
 							}
-						}
-						tv[counter].setTextColor(Color.WHITE);
-						tv[counter].setPadding(10, 20, 10, 20);
-						tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-						tv[counter].setTypeface(null, Typeface.BOLD);
-						linearInsideScroll.addView(tv[counter]);
-						counter++;
 					}
-				}
+				// //////////////////////////////////////////////////////////////////////////
+				// SI NO HAY RESULTADOS MOSTRAMOS UN MENSAJE INFORMATIVO
+				// //////////////////////////////////////////////////////////////////////////
+				if (counter == 0)
+					{
+						// //////////////////////////////////////////////////////////////////////////
+						// LAYOUT RELATIVO PARA EL MENSAJE
+						// //////////////////////////////////////////////////////////////////////////
+						scrollMain.removeAllViews();
+						RelativeLayout relative=new RelativeLayout(actualcontext);
+						RelativeLayout.LayoutParams relativeInsideParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+						relative.setLayoutParams(relativeInsideParams);
+						
+						// //////////////////////////////////////////////////////////////////////////
+						// METEMOS AL EXCURSIONISTA
+						// //////////////////////////////////////////////////////////////////////////
+						@SuppressWarnings("unused")
+						InputStream stream = null;
+						try
+							{
+								stream = getAssets().open("excur.gif");
+							}
+						catch (Exception e)
+							{
+								Log.e("fallo fichero",e.toString());
+							}
+						GifView tripper = new GifView(actualcontext, "file:///android_asset/excur.gif");
+						tripper.setId(2009);
+						RelativeLayout.LayoutParams relativeWeb = new RelativeLayout.LayoutParams(300, 300);
+						relativeWeb.addRule(RelativeLayout.CENTER_HORIZONTAL,RelativeLayout.TRUE);
+						tripper.setLayoutParams(relativeWeb);
+						tripper.setScrollContainer(false);
+						tripper.setInitialScale(100);
+						
+						// //////////////////////////////////////////////////////////////////////////
+						// METEMOS EL TEXTO
+						// //////////////////////////////////////////////////////////////////////////
+						TextView results=new TextView(actualcontext);
+						RelativeLayout.LayoutParams textParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+						textParams.addRule(RelativeLayout.CENTER_HORIZONTAL,RelativeLayout.TRUE);
+						textParams.setMargins(0, 10, 0, 10);
+						textParams.addRule(RelativeLayout.BELOW,2009);
+						results.setLayoutParams(textParams);
+						results.setText(getResources().getString(R.string.main_no_results));
+						
+						// //////////////////////////////////////////////////////////////////////////
+						// AÑADIMOS TODO AL LAYOUT
+						// //////////////////////////////////////////////////////////////////////////
+						scrollMain.addView(relative);
+						relative.addView(tripper);
+						relative.addView(results);
+
+					}
+				else
+					{
+						tv = new TextView[counter];
+						counter = 0;
+						// //////////////////////////////////////////////////////////////////////////
+						// METEMOS LAS COINCIDENCIAS EN SENDOS TEXTVIEW
+						// //////////////////////////////////////////////////////////////////////////
+						for (int i = 0; i < db.getLodgings().size(); i++)
+							{
+								if (db.getLodgings().get(i).getTitle().toLowerCase(Locale.ENGLISH).contains(searchString.toLowerCase(Locale.ENGLISH)))
+									{
+										tv[counter] = new TextView(actualcontext);
+										LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+										prm.setMargins(0, 10, 0, 10);
+										tv[counter].setLayoutParams(prm);
+										tv[counter].setText(db.getLodgings().get(i).getTitle());
+										for (int j = 0; j < navdata.size(); j++)
+											{
+												if (navdata.get(j).getTitle().equals(db.getLodgings().get(i).getProvince()))
+													{
+														tv[counter].setBackgroundColor(Color.parseColor(navdata.get(j).getBgColor()));
+														break;
+													}
+											}
+										tv[counter].setTextColor(Color.WHITE);
+										tv[counter].setPadding(10, 20, 10, 20);
+										tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+										tv[counter].setTypeface(null, Typeface.BOLD);
+										linearInsideScroll.addView(tv[counter]);
+										counter++;
+									}
+							}
+					}
 			}
 
 		protected void Province()
 			{
-				for (int i = 0; i < navdata.size(); i++) {
-					if (navdata.get(i).getTitle().equals(targetProvince)) {
-						provinceColor = navdata.get(i).getBgColor();
-						break;
+				for (int i = 0; i < navdata.size(); i++)
+					{
+						if (navdata.get(i).getTitle().equals(targetProvince))
+							{
+								provinceColor = navdata.get(i).getBgColor();
+								break;
+							}
 					}
-				}
 				// //////////////////////////////////////////////////////////////////////////
 				// DECLARAMOS UN TEXTVIEW
 				// //////////////////////////////////////////////////////////////////////////
@@ -348,51 +426,60 @@ public class Main extends SherlockActivity
 
 		protected void ProvinceResults()
 			{
-				for (int i = 0; i < navdata.size(); i++) {
-					if (navdata.get(i).getTitle().equals(targetProvince)) {
-						provinceColor = navdata.get(i).getBgColor();
-						break;
+				for (int i = 0; i < navdata.size(); i++)
+					{
+						if (navdata.get(i).getTitle().equals(targetProvince))
+							{
+								provinceColor = navdata.get(i).getBgColor();
+								break;
+							}
 					}
-				}
 				// //////////////////////////////////////////////////////////////////////////
 				// MOSTRAR RESULTADOS DE LA PROVINCIA
 				// //////////////////////////////////////////////////////////////////////////
 				counter = 0;
-				for (int i = 0; i < db.getLodgings().size(); i++) {
-					if (db.getLodgings().get(i).getProvince().equals(targetProvince)) {
-						counter++;
+				for (int i = 0; i < db.getLodgings().size(); i++)
+					{
+						if (db.getLodgings().get(i).getProvince().equals(targetProvince))
+							{
+								counter++;
+							}
 					}
-				}
 				tv = new TextView[counter];
 				counter = 0;
-				for (int i = 0; i < db.getLodgings().size(); i++) {
-					if (db.getLodgings().get(i).getProvince().equals(targetProvince)) {
-						tv[counter] = new TextView(actualcontext);
-						LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-						prm.setMargins(0, 10, 0, 10);
-						tv[counter].setLayoutParams(prm);
-						tv[counter].setText(db.getLodgings().get(i).getTitle());
-						tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
-						tv[counter].setTextColor(Color.WHITE);
-						tv[counter].setPadding(10, 20, 10, 20);
-						tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
-						tv[counter].setTypeface(null, Typeface.BOLD);
-						linearInsideScroll.addView(tv[counter]);
-						counter++;
+				for (int i = 0; i < db.getLodgings().size(); i++)
+					{
+						if (db.getLodgings().get(i).getProvince().equals(targetProvince))
+							{
+								tv[counter] = new TextView(actualcontext);
+								LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+								prm.setMargins(0, 10, 0, 10);
+								tv[counter].setLayoutParams(prm);
+								tv[counter].setText(db.getLodgings().get(i).getTitle());
+								tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
+								tv[counter].setTextColor(Color.WHITE);
+								tv[counter].setPadding(10, 20, 10, 20);
+								tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+								tv[counter].setTypeface(null, Typeface.BOLD);
+								linearInsideScroll.addView(tv[counter]);
+								counter++;
+							}
 					}
-				}
 			}
 
 		protected void ClearLayout()
 			{
 				contentFrame.removeAllViews();
-				if (targetProvince.equals("Búsqueda")) {
-					Search();
-					contentFrame.addView(searchField);
-				} else {
-					Province();
-					contentFrame.addView(provinceTextName);
-				}
+				if (targetProvince.equals("Búsqueda"))
+					{
+						Search();
+						contentFrame.addView(searchField);
+					}
+				else
+					{
+						Province();
+						contentFrame.addView(provinceTextName);
+					}
 				contentFrame.addView(scrollMain);
 				scrollMain.removeAllViews();
 				scrollMain.addView(linearInsideScroll);
@@ -405,18 +492,21 @@ public class Main extends SherlockActivity
 				int itemId = item.getItemId();
 				switch (itemId)
 					{
-					case android.R.id.home:
-						vibe.vibrate(60);
-						if (drawerLayout.isDrawerOpen(navList)) {
-							drawerLayout.closeDrawer(navList);
-						} else {
-							drawerLayout.openDrawer(navList);
-						}
-						break;
-					case R.id.reload:
-						vibe.vibrate(60);
-						startActivity(new Intent(this, DownloadXML.class));
-						finish();
+						case android.R.id.home:
+							vibe.vibrate(60);
+							if (drawerLayout.isDrawerOpen(navList))
+								{
+									drawerLayout.closeDrawer(navList);
+								}
+							else
+								{
+									drawerLayout.openDrawer(navList);
+								}
+							break;
+						case R.id.reload:
+							vibe.vibrate(60);
+							startActivity(new Intent(this, DownloadXML.class));
+							finish();
 					}
 
 				return true;
@@ -439,10 +529,11 @@ public class Main extends SherlockActivity
 		@Override
 		public boolean onKeyDown(int keyCode, KeyEvent event)
 			{
-				if (keyCode == KeyEvent.KEYCODE_BACK) {
-					moveTaskToBack(true);
-					return true;
-				}
+				if (keyCode == KeyEvent.KEYCODE_BACK)
+					{
+						moveTaskToBack(true);
+						return true;
+					}
 				return super.onKeyDown(keyCode, event);
 			}
 	}
