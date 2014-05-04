@@ -27,7 +27,7 @@ Special thanks to GitHub https://github.com/
 
 /* SITE */
 
-Last update: 26/06/2013 
+Last update: 04/05/2014 
 Standards: HTML - CSS3
 Components: Initializr, jQuery, PHP.
 Software: Sublime Text, Smaller, Photoshop CS6, GitHub
