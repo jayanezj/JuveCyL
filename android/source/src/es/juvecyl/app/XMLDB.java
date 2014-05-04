@@ -190,13 +190,15 @@ public class XMLDB
 					}
 				}
 			// //////////////////////////////////////////////////////////////////////////
-			// GUARDAMOS EL NOMBRE DE CADA ALOJAMIENTO
+			// GUARDAMOS EL NOMBRE Y LA PROVINCIA DE CADA ALOJAMIENTO
 			// //////////////////////////////////////////////////////////////////////////
 			for (int i = 0; i < this.totalLodgings; i++)
 				{
 				// ___________PADRE<list>________<atribute name="titulo_es">_____<string>__________<bloque CDATA>
 				title = root.item(i).getChildNodes().item(1).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-				Lodging newLodging = new Lodging(title, null, null, null, null, null);
+				// ________________PADRE<list>_______<atribute name="Provincia">____<string>_____________<Provincias>
+				province = root.item(i).getChildNodes().item(30).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
+				Lodging newLodging = new Lodging(title, province, null, null, null, null);
 				this.lodgings.add(newLodging);
 				}
 			}

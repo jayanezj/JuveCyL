@@ -15,6 +15,7 @@ import android.os.Vibrator;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.util.TypedValue;
@@ -39,6 +40,7 @@ import com.actionbarsherlock.view.MenuItem;
 
 public class Main extends SherlockActivity
 	{
+	private float scale;
 	private String targetProvince, provinceColor;
 	private MainNavMaker arrayAdapter;
 	private XMLDB db;
@@ -69,7 +71,10 @@ public class Main extends SherlockActivity
 		super.onCreate(savedInstanceState);
 		overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
 		setContentView(R.layout.provinces_layout);
-
+		// //////////////////////////////////////////////////////////////////////////
+		// PARA QUE LOS PIXELS SEAN EN FUNCIÓN DE LA DENSIDAD DE LA PANTALLA
+		// //////////////////////////////////////////////////////////////////////////
+		scale = getResources().getDisplayMetrics().density;
 		Bundle bundle = this.getIntent().getExtras();
 		targetProvince = bundle.getString("province");
 		actualcontext = this;
@@ -140,7 +145,7 @@ public class Main extends SherlockActivity
 		scrollMain = new ScrollView(actualcontext);
 		scrollMain.setId(1989);
 		RelativeLayout.LayoutParams scrollParams = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-		scrollParams.setMargins(0, 10, 0, 0);
+		scrollParams.setMargins(0, (int) (10 * scale + 0.5f), 0, 0);
 		scrollParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
 		scrollParams.addRule(RelativeLayout.BELOW, 1988);
 		scrollMain.setLayoutParams(scrollParams);
@@ -150,7 +155,7 @@ public class Main extends SherlockActivity
 		linearInsideScroll = new LinearLayout(actualcontext);
 		linearInsideScroll.setId(1990);
 		LinearLayout.LayoutParams linearInsideParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		linearInsideParams.topMargin = 40;
+		linearInsideParams.topMargin = (int) (40 * scale + 0.5f);
 		linearInsideScroll.setOrientation(LinearLayout.VERTICAL);
 		linearInsideScroll.setLayoutParams(linearInsideParams);
 
@@ -225,10 +230,12 @@ public class Main extends SherlockActivity
 		searchField.setSingleLine(true);
 		RelativeLayout.LayoutParams editTextParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		editTextParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
-		editTextParams.topMargin = 15;
-		searchField.setPadding(25, 20, 0, 5);
+		editTextParams.topMargin = (int) (15 * scale + 0.5f);
+		
+		searchField.setPadding((int) (10 * scale + 0.5f), (int) (10 * scale + 0.5f), 0, (int) (5 * scale + 0.5f));
 		searchField.setLayoutParams(editTextParams);
 		searchField.setGravity(Gravity.LEFT);
+		searchField.setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
 		searchField.setOnClickListener(new OnClickListener()
 			{
 				@Override
@@ -265,7 +272,6 @@ public class Main extends SherlockActivity
 					// //////////////////////////////////////////////////////////////////////////
 					if (searchString.length() > 2)
 						{
-						Log.d("busca", "busca");
 						scrollMain.removeAllViews();
 						scrollMain.addView(linearInsideScroll);
 						linearInsideScroll.removeAllViews();
@@ -339,11 +345,12 @@ public class Main extends SherlockActivity
 				}
 			GifView tripper = new GifView(actualcontext, "file:///android_asset/excur.gif");
 			tripper.setId(2009);
-			RelativeLayout.LayoutParams relativeWeb = new RelativeLayout.LayoutParams(300, 300);
-			relativeWeb.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+			RelativeLayout.LayoutParams relativeWeb = new RelativeLayout.LayoutParams((int)(300 * scale + 0.5f), (int)(300 * scale + 0.5f));
+			relativeWeb.addRule(RelativeLayout.CENTER_HORIZONTAL);
+			relativeWeb.setMargins((int) (10 * scale + 0.5f), 0, 0, 0);
 			tripper.setLayoutParams(relativeWeb);
 			tripper.setScrollContainer(false);
-			tripper.setInitialScale(100);
+			tripper.setInitialScale((int)(100 * scale + 0.5f));
 
 			// //////////////////////////////////////////////////////////////////////////
 			// METEMOS EL TEXTO
@@ -351,11 +358,10 @@ public class Main extends SherlockActivity
 			TextView results = new TextView(actualcontext);
 			RelativeLayout.LayoutParams textParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			textParams.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
-			textParams.setMargins(0, 10, 0, 10);
+			textParams.setMargins(0, (int) (10 * scale + 0.5f), 0, (int) (10 * scale + 0.5f));
 			textParams.addRule(RelativeLayout.BELOW, 2009);
 			results.setLayoutParams(textParams);
 			results.setText(getResources().getString(R.string.main_no_results));
-
 			// //////////////////////////////////////////////////////////////////////////
 			// AÑADIMOS TODO AL LAYOUT
 			// //////////////////////////////////////////////////////////////////////////
@@ -377,7 +383,7 @@ public class Main extends SherlockActivity
 					{
 					tv[counter] = new TextView(actualcontext);
 					LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-					prm.setMargins(0, 10, 0, 10);
+					prm.setMargins(0, (int)(5 * scale + 0.5f), 0, (int)(5 * scale + 0.5f));
 					tv[counter].setLayoutParams(prm);
 					tv[counter].setText(db.getLodgings().get(i).getTitle());
 					for (int j = 0; j < navdata.size(); j++)
@@ -389,7 +395,7 @@ public class Main extends SherlockActivity
 							}
 						}
 					tv[counter].setTextColor(Color.WHITE);
-					tv[counter].setPadding(10, 20, 10, 20);
+					tv[counter].setPadding((int)(10 * scale + 0.5f), (int)(20 * scale + 0.5f), (int)(10 * scale + 0.5f), (int)(20 * scale + 0.5f));
 					tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
 					tv[counter].setTypeface(null, Typeface.BOLD);
 					linearInsideScroll.addView(tv[counter]);
@@ -438,6 +444,7 @@ public class Main extends SherlockActivity
 		// MOSTRAR RESULTADOS DE LA PROVINCIA
 		// //////////////////////////////////////////////////////////////////////////
 		counter = 0;
+		Log.d("Error: ",db.getLodgings().size()+"");
 		for (int i = 0; i < db.getLodgings().size(); i++)
 			{
 			if (db.getLodgings().get(i).getProvince().equals(targetProvince))
@@ -453,12 +460,12 @@ public class Main extends SherlockActivity
 				{
 				tv[counter] = new TextView(actualcontext);
 				LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-				prm.setMargins(0, 10, 0, 10);
+				prm.setMargins(0, (int)(5 * scale + 0.5f), 0, (int)(5 * scale + 0.5f));
 				tv[counter].setLayoutParams(prm);
 				tv[counter].setText(db.getLodgings().get(i).getTitle());
 				tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
 				tv[counter].setTextColor(Color.WHITE);
-				tv[counter].setPadding(10, 20, 10, 20);
+				tv[counter].setPadding((int) (10 * scale + 0.5f), (int) (20 * scale + 0.5f), (int) (10 * scale + 0.5f), (int) (20 * scale + 0.5f));
 				tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
 				tv[counter].setTypeface(null, Typeface.BOLD);
 				linearInsideScroll.addView(tv[counter]);
