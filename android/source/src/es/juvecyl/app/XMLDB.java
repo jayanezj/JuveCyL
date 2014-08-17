@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -56,7 +55,7 @@ public class XMLDB {
 			this.provinces = new int[9];
 			for (int i = 0; i < this.totalLodgings; i++) {
 				title = null;
-				province = description = aux = title = phone =  loc = null;
+				province = description = aux = title = phone = loc = null;
 				array_phones = null;
 				phones = emails = new ArrayList<String>();
 				for (int j = 0; j < root.item(i).getChildNodes().getLength(); j++) {
@@ -117,19 +116,25 @@ public class XMLDB {
 
 					}
 					if (aux.equals("Telefono")) {
-						array_phones = root.item(i).getChildNodes().item(j).getChildNodes().item(0);
-						for (int x= 0; x < array_phones.getChildNodes().getLength(); x++)
+						array_phones = root.item(i).getChildNodes().item(j)
+								.getChildNodes().item(0);
+						for (int x = 0; x < array_phones.getChildNodes()
+								.getLength(); x++)
 							try {
-								phone = array_phones.getChildNodes().item(x).getChildNodes().item(0).getNodeValue();
+								phone = array_phones.getChildNodes().item(x)
+										.getChildNodes().item(0).getNodeValue();
 								phones.add(phone);
 							} catch (NullPointerException e) {
 							}
 					}
 					if (aux.equals("Email")) {
-						array_emails = root.item(i).getChildNodes().item(j).getChildNodes().item(0);
-						for (int x= 0; x < array_phones.getChildNodes().getLength(); x++)
+						array_emails = root.item(i).getChildNodes().item(j)
+								.getChildNodes().item(0);
+						for (int x = 0; x < array_phones.getChildNodes()
+								.getLength(); x++)
 							try {
-								email = array_emails.getChildNodes().item(x).getChildNodes().item(0).getNodeValue();
+								email = array_emails.getChildNodes().item(x)
+										.getChildNodes().item(0).getNodeValue();
 								emails.add(email);
 							} catch (NullPointerException e) {
 							}
