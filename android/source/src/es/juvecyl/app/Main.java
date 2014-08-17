@@ -32,6 +32,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -398,7 +399,15 @@ public class Main extends SherlockActivity
 					tv[counter].setPadding((int)(10 * scale + 0.5f), (int)(20 * scale + 0.5f), (int)(10 * scale + 0.5f), (int)(20 * scale + 0.5f));
 					tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
 					tv[counter].setTypeface(null, Typeface.BOLD);
+					tv[counter].setTag((Object) i);
 					linearInsideScroll.addView(tv[counter]);
+					tv[counter].setOnClickListener(new OnClickListener() {
+						
+						@Override
+						public void onClick(View v) {
+							Toast.makeText(actualcontext, "dale" +  v.getTag(), Toast.LENGTH_LONG).show();
+						}
+					});
 					counter++;
 					}
 				}

@@ -11,218 +11,147 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import android.content.Context;
 import android.util.Log;
 
-public class XMLDB
-	{
+public class XMLDB {
 	private Document dom;
 	private int totalLodgings;
 	private ArrayList<Lodging> lodgings;
 	private int[] provinces;
 
-	public int getTotalLodgings()
-		{
+	public int getTotalLodgings() {
 		return this.totalLodgings;
-		}
+	}
 
-	public ArrayList<Lodging> getLodgings()
-		{
+	public ArrayList<Lodging> getLodgings() {
 		return this.lodgings;
-		}
+	}
 
-	public int[] getProvinceCount()
-		{
+	public int[] getProvinceCount() {
 		return this.provinces;
-		}
+	}
 
-	public XMLDB(Context context, String targetLodging)
-		{
-		try
-			{
+	public XMLDB(Context context) {
+		try {
 			this.lodgings = new ArrayList<Lodging>();
 			FileInputStream dataBase = context.openFileInput("db.xml");
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilderFactory factory = DocumentBuilderFactory
+					.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			this.dom = builder.parse(dataBase);
-			NodeList root = this.dom.getDocumentElement().getElementsByTagName("element");
+			NodeList root = this.dom.getDocumentElement().getElementsByTagName(
+					"element");
 			this.totalLodgings = root.getLength();
-			String title, province, desc, loc;
-			ArrayList<String> phones, emails;
-			phones = new ArrayList<String>();
-			emails = new ArrayList<String>();
-			// //////////////////////////////////////////////////////////////////////////
-			// GUARDAMOS LOS DATOS DEL ALOJAMIENTO ESCOGIDO
-			// //////////////////////////////////////////////////////////////////////////
-			for (int i = 0; i < this.totalLodgings; i++)
-				{
-				// ___________PADRE<list>________<atribute name="titulo_es">_____<string>__________<bloque CDATA>
-				title = root.item(i).getChildNodes().item(1).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-				if (title.toLowerCase(Locale.ENGLISH).equals(targetLodging.toLowerCase(Locale.ENGLISH)))
-					{
-					// ________________PADRE<list>_______<atribute name="Provincia">____<string>_____________<Provincias>
-					province = root.item(i).getChildNodes().item(30).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-					// //////////////////////////////////////////////////////////////////////////
-					// COMPROBAMOS QUE HAYA AL MENOS UN EMAIL A GUARDAR
-					// SI NO AGREGAMOS UN EMAIL EN BLANCO
-					// //////////////////////////////////////////////////////////////////////////
-					// __________PADRE<list>_______<atribute name="email">____<array>_______________LONGITUD
-					if (root.item(i).getChildNodes().item(6).getChildNodes().item(0).getChildNodes().getLength() < 1)
-						{
-						emails.add("");
-						}
-					else
-						{
-						// ______________________PADRE<list>_______<atribute name="email">____<array>_______________LONGITUD
-						for (int j = 0; j < root.item(i).getChildNodes().item(6).getChildNodes().item(0).getChildNodes().getLength(); j++)
-							{
-							// _________________PADRE<list>___________<atribute name="email">____<array>______________<string>________________<bloque CDATA>
-							emails.add(root.item(i).getChildNodes().item(6).getChildNodes().item(0).getChildNodes().item(j).getChildNodes().item(0).getNodeValue());
-							}
-						}
-					// __________PADRE<list>________<atribute name="Descripcion_es">_____<text>______________<bloque CDATA>
-					desc = root.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-					// __________PADRE<list>________<atribute name="localizacion">_______<text>______________<bloque CDATA>
-					loc = root.item(i).getChildNodes().item(31).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-					// //////////////////////////////////////////////////////////////////////////
-					// COMPROBAMOS QUE HAYA AL MENOS UN TELEFONO A GUARDAR
-					// SI NO AGREGAMOS UN TELEFONO EN BLANCO
-					// //////////////////////////////////////////////////////////////////////////
-					// __________PADRE<list>______<atribute name="telefono">_________<array>__________LONGITUD
-					if (root.item(i).getChildNodes().item(4).getChildNodes().item(0).getChildNodes().getLength() < 1)
-						{
-						phones.add("");
-						}
-					else
-						{
-						// ______________________PADRE<list>_______<atribute name="telefono">____<array>_______________LONGITUD
-						for (int j = 0; j < root.item(i).getChildNodes().item(4).getChildNodes().item(0).getChildNodes().getLength(); j++)
-							{
-							// _________________PADRE<list>_______<atribute name="telefono">____<array>______________<string>________________<bloque CDATA>
-							phones.add(root.item(i).getChildNodes().item(4).getChildNodes().item(0).getChildNodes().item(j).getChildNodes().item(0).getNodeValue());
-							}
-						}
-					// //////////////////////////////////////////////////////////////////////////
-					// AGREGAMOS EL ALOJAMIENTO Y SALIMOS DEL BUCLE
-					// PUESTO QUE SOLO BUSCAMOS UN ALOJAMIENTO EN CONCRETO
-					// //////////////////////////////////////////////////////////////////////////
-					Lodging newLodging = new Lodging(title, province, desc, loc, emails, phones);
-					this.lodgings.add(newLodging);
-					break;
-					}
-				}
-			}
-		catch (FileNotFoundException e)
-			{
-			Log.e("FileNotFoundException", e.toString());
-			}
-		catch (IOException e)
-			{
-			Log.e("IOException", e.toString());
-			}
-		catch (ParserConfigurationException e)
-			{
-			Log.e("ParserConfigurationException", e.toString());
-			}
-		catch (SAXException e)
-			{
-			Log.e("SAXException", e.toString());
-			}
-		}
-
-	public XMLDB(Context context)
-		{
-		try
-			{
-			this.lodgings = new ArrayList<Lodging>();
-			FileInputStream dataBase = context.openFileInput("db.xml");
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			this.dom = builder.parse(dataBase);
-			NodeList root = this.dom.getDocumentElement().getElementsByTagName("element");
-			this.totalLodgings = root.getLength();
-			String title, province;
+			String title = null, province = null, description = null, aux = null, loc = null, phone = null, email = null;
+			ArrayList<String> phones = null, emails = null;
+			Node array_phones = null, array_emails = null;
 			// //////////////////////////////////////////////////////////////////////////
 			// GUARDAMOS EL NÚMERO DE ALOJAMIENTOS POR PROVINCIA
 			// //////////////////////////////////////////////////////////////////////////
 			this.provinces = new int[9];
-			for (int i = 0; i < this.totalLodgings; i++)
-				{
-				province = root.item(i).getChildNodes().item(30).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-				if (province.equals("Ávila"))
-					{
-					provinces[0] += 1;
+			for (int i = 0; i < this.totalLodgings; i++) {
+				title = null;
+				province = description = aux = title = phone =  loc = null;
+				array_phones = null;
+				phones = emails = new ArrayList<String>();
+				for (int j = 0; j < root.item(i).getChildNodes().getLength(); j++) {
+					aux = root.item(i).getChildNodes().item(j).getAttributes()
+							.getNamedItem("name").getNodeValue();
+					if (aux.equals("Provincia")) {
+						province = root.item(i).getChildNodes().item(j)
+								.getChildNodes().item(0).getChildNodes()
+								.item(0).getNodeValue();
+						if (province.equals("Ávila")) {
+							provinces[0] += 1;
+						}
+						if (province.equals("Burgos")) {
+							provinces[1] += 1;
+						}
+						if (province.equals("León")) {
+							provinces[2] += 1;
+						}
+						if (province.equals("Palencia")) {
+							provinces[3] += 1;
+						}
+						if (province.equals("Salamanca")) {
+							provinces[4] += 1;
+						}
+						if (province.equals("Segovia")) {
+							provinces[5] += 1;
+						}
+						if (province.equals("Soria")) {
+							provinces[6] += 1;
+						}
+						if (province.equals("Valladolid")) {
+							provinces[7] += 1;
+						}
+						if (province.equals("Zamora")) {
+							provinces[8] += 1;
+						}
 					}
-				if (province.equals("Burgos"))
-					{
-					provinces[1] += 1;
+					if (aux.equals("Titulo_es")) {
+						title = root.item(i).getChildNodes().item(j)
+								.getChildNodes().item(0).getChildNodes()
+								.item(0).getNodeValue();
 					}
-				if (province.equals("León"))
-					{
-					provinces[2] += 1;
+					if (aux.equals("Descripcion_es")) {
+						try {
+							description = root.item(i).getChildNodes().item(j)
+									.getChildNodes().item(0).getChildNodes()
+									.item(0).getNodeValue();
+						} catch (NullPointerException e) {
+						}
 					}
-				if (province.equals("Palencia"))
-					{
-					provinces[3] += 1;
+					if (aux.equals("Localizacion")) {
+						try {
+							loc = root.item(i).getChildNodes().item(j)
+									.getChildNodes().item(0).getChildNodes()
+									.item(0).getNodeValue();
+						} catch (NullPointerException e) {
+						}
+
 					}
-				if (province.equals("Salamanca"))
-					{
-					provinces[4] += 1;
+					if (aux.equals("Telefono")) {
+						array_phones = root.item(i).getChildNodes().item(j).getChildNodes().item(0);
+						for (int x= 0; x < array_phones.getChildNodes().getLength(); x++)
+							try {
+								phone = array_phones.getChildNodes().item(x).getChildNodes().item(0).getNodeValue();
+								phones.add(phone);
+							} catch (NullPointerException e) {
+							}
 					}
-				if (province.equals("Segovia"))
-					{
-					provinces[5] += 1;
-					}
-				if (province.equals("Soria"))
-					{
-					provinces[6] += 1;
-					}
-				if (province.equals("Valladolid"))
-					{
-					provinces[7] += 1;
-					}
-				if (province.equals("Zamora"))
-					{
-					provinces[8] += 1;
+					if (aux.equals("Email")) {
+						array_emails = root.item(i).getChildNodes().item(j).getChildNodes().item(0);
+						for (int x= 0; x < array_phones.getChildNodes().getLength(); x++)
+							try {
+								email = array_emails.getChildNodes().item(x).getChildNodes().item(0).getNodeValue();
+								emails.add(email);
+							} catch (NullPointerException e) {
+							}
 					}
 				}
-			// //////////////////////////////////////////////////////////////////////////
-			// GUARDAMOS EL NOMBRE Y LA PROVINCIA DE CADA ALOJAMIENTO
-			// //////////////////////////////////////////////////////////////////////////
-			for (int i = 0; i < this.totalLodgings; i++)
-				{
-				// ___________PADRE<list>________<atribute name="titulo_es">_____<string>__________<bloque CDATA>
-				title = root.item(i).getChildNodes().item(1).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-				// ________________PADRE<list>_______<atribute name="Provincia">____<string>_____________<Provincias>
-				province = root.item(i).getChildNodes().item(30).getChildNodes().item(0).getChildNodes().item(0).getNodeValue();
-				Lodging newLodging = new Lodging(title, province, null, null, null, null);
+				Lodging newLodging = new Lodging(title, province, description,
+						loc, phones, emails);
 				this.lodgings.add(newLodging);
-				}
 			}
-		catch (FileNotFoundException e)
-			{
+		} catch (FileNotFoundException e) {
 			Log.e("FileNotFoundException", e.toString());
-			}
-		catch (IOException e)
-			{
+		} catch (IOException e) {
 			Log.e("IOException", e.toString());
-			}
-		catch (ParserConfigurationException e)
-			{
+		} catch (ParserConfigurationException e) {
 			Log.e("ParserConfigurationException", e.toString());
-			}
-		catch (SAXException e)
-			{
+		} catch (SAXException e) {
 			Log.e("SAXException", e.toString());
-			}
 		}
-
-	public Document getDOM()
-		{
-		return this.dom;
-		}
-
 	}
+
+	public Document getDOM() {
+		return this.dom;
+	}
+
+}
