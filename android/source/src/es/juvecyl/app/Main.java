@@ -391,8 +391,12 @@ public class Main extends SherlockActivity {
 
 						@Override
 						public void onClick(View v) {
-							Toast.makeText(actualcontext, "dale" + v.getTag(),
-									Toast.LENGTH_LONG).show();
+							// TODO Auto-generated method stub
+							Intent intent = new Intent(Main.this, LodgingDetail.class);
+							Bundle b = new Bundle();
+							b.putString("lodging", v.getTag().toString());
+							intent.putExtras(b);
+							startActivity(intent);
 						}
 					});
 					counter++;
@@ -460,7 +464,22 @@ public class Main extends SherlockActivity {
 						(int) (20 * scale + 0.5f), (int) (10 * scale + 0.5f),
 						(int) (20 * scale + 0.5f));
 				tv[counter].setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
+				tv[counter].setTag((Object) i);
 				tv[counter].setTypeface(null, Typeface.BOLD);
+				
+				tv[counter].setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Intent intent = new Intent(Main.this, LodgingDetail.class);
+						Bundle b = new Bundle();
+						b.putString("lodging", v.getTag().toString());
+						intent.putExtras(b);
+						startActivity(intent);
+					}
+				});
+				
 				linearInsideScroll.addView(tv[counter]);
 				counter++;
 			}

@@ -3,11 +3,11 @@ package es.juvecyl.app;
 import java.util.ArrayList;
 
 public class Lodging {
-	private String title, province, desc, loc;
+	private String title, province, desc, loc, image;
 	private ArrayList<String> phones, emails;
 
 	public Lodging(String title, String province, String desc, String loc,
-			ArrayList<String> emails, ArrayList<String> phones) {
+			ArrayList<String> emails, ArrayList<String> phones, String image) {
 		super();
 		this.title = title;
 		this.province = province;
@@ -15,6 +15,15 @@ public class Lodging {
 		this.loc = loc;
 		this.emails = emails;
 		this.phones = phones;
+		this.image = image;
+	}
+
+	public String getImage() {
+		return this.image;
+	}
+
+	public void SetImage(String image) {
+		this.image = image;
 	}
 
 	public String getProvince() {
@@ -59,6 +68,14 @@ public class Lodging {
 
 	public ArrayList<String> getPhone() {
 		return this.phones;
+	}
+
+	public String getPhones() {
+		String output = "";
+		for (int i = 0; i < phones.size(); i++) {
+			output += phones.get(i) + "\n\t";
+		}
+		return output;
 	}
 
 	public void setPhone(ArrayList<String> phones) {

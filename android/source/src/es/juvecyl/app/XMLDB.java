@@ -46,7 +46,8 @@ public class XMLDB {
 			NodeList root = this.dom.getDocumentElement().getElementsByTagName(
 					"element");
 			this.totalLodgings = root.getLength();
-			String title = null, province = null, description = null, aux = null, loc = null, phone = null, email = null;
+			String title = null, province = null, description = null, image = null;
+			String aux = null, loc = null, phone = null, email = null;
 			ArrayList<String> phones = null, emails = null;
 			Node array_phones = null, array_emails = null;
 			// //////////////////////////////////////////////////////////////////////////
@@ -54,8 +55,7 @@ public class XMLDB {
 			// //////////////////////////////////////////////////////////////////////////
 			this.provinces = new int[9];
 			for (int i = 0; i < this.totalLodgings; i++) {
-				title = null;
-				province = description = aux = title = phone = loc = null;
+				image = province = description = aux = title = phone = loc = null;
 				array_phones = null;
 				phones = emails = new ArrayList<String>();
 				for (int j = 0; j < root.item(i).getChildNodes().getLength(); j++) {
@@ -92,6 +92,15 @@ public class XMLDB {
 						if (province.equals("Zamora")) {
 							provinces[8] += 1;
 						}
+					}
+					try{
+					if (aux.equals("Imagen")){
+						image = root.item(i).getChildNodes().item(j)
+								.getChildNodes().item(0).getChildNodes()
+								.item(2).getChildNodes().item(0).getNodeValue();
+					}}
+					catch (Exception e){
+						Log.d("FAIL", "Lodging without image");
 					}
 					if (aux.equals("Titulo_es")) {
 						title = root.item(i).getChildNodes().item(j)
@@ -141,7 +150,7 @@ public class XMLDB {
 					}
 				}
 				Lodging newLodging = new Lodging(title, province, description,
-						loc, phones, emails);
+						loc, phones, emails, image);
 				this.lodgings.add(newLodging);
 			}
 		} catch (FileNotFoundException e) {
