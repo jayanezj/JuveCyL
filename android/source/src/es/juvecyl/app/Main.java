@@ -32,8 +32,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
@@ -90,7 +88,8 @@ public class Main extends SherlockActivity {
 		// //////////////////////////////////////////////////////////////////////////
 		// CARGAMOS LOS DATOS
 		// //////////////////////////////////////////////////////////////////////////
-		db = new XMLDB(getBaseContext());
+		db = LodgingSingleton.getInstance(getApplicationContext()).getDB();
+		//db = new XMLDB(getBaseContext());
 		// //////////////////////////////////////////////////////////////////////////
 		// DECLARAMOS EL VIBRADOR
 		// //////////////////////////////////////////////////////////////////////////
@@ -540,6 +539,6 @@ public class Main extends SherlockActivity {
 			moveTaskToBack(true);
 			return true;
 		}
-		return super.onKeyDown(keyCode, event);
-	}
+        return super.onKeyDown(keyCode, event);
+    }
 }
