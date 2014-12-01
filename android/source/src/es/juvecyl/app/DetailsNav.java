@@ -23,6 +23,7 @@ public class DetailsNav
 						this.navDetail.add(new DetailsNav("Portada", "#4a4a4a"));
 						this.navDetail.add(new DetailsNav("Contacto", "#5b75c8"));
 						this.navDetail.add(new DetailsNav("Servicios", "#aead4f"));
+						this.navDetail.add(new DetailsNav("Favorito", "#aead4f"));
 						this.navDetail.add(new DetailsNav("Atrás", "#5bc1c8"));
 						break;
 

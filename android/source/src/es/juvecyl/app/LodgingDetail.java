@@ -2,6 +2,8 @@
 package es.juvecyl.app;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -29,6 +33,7 @@ import com.actionbarsherlock.view.MenuItem;
 public class LodgingDetail extends SherlockActivity {
     private float scale;
     private XMLDB db;
+    private HashSet<String> favs;
     private boolean isImageFitToScreen;
     private Lodging target;
     private TextView title, desc, phones;
@@ -37,6 +42,7 @@ public class LodgingDetail extends SherlockActivity {
     private DetailsNavMaker arrayAdapter;
     private Vibrator vibe;
     private DrawerLayout drawerLayout;
+    private String targetProvince;
     // ESCUCHADOR DEL MENU NAV
     private ArrayList<DetailsNav> navdata = new ArrayList<DetailsNav>();
     private ActionBarDrawerToggle navToggle;
@@ -59,7 +65,7 @@ public class LodgingDetail extends SherlockActivity {
         // CARGAMOS EL ALOJAMIENTO
         // //////////////////////////////////////////////////////////////////////////
         Bundle bundle = this.getIntent().getExtras();
-        String targetProvince = bundle.getString("lodging");
+        targetProvince = bundle.getString("lodging");
         LocateLodging(Integer.parseInt(targetProvince));
         // //////////////////////////////////////////////////////////////////////////
         // DECLARAMOS EL VIBRADOR
@@ -117,7 +123,42 @@ public class LodgingDetail extends SherlockActivity {
                 String selected = ((DetailsNav) a.getAdapter().getItem(pos))
                         .getTitle();
                 if (selected.equals("Atr‡s")) {
-                    moveTaskToBack(true);
+                    finish();
+                }
+                if (selected.equals("Favorito")){
+                    try{
+                    favs = (HashSet<String>) getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                            .getStringSet("favs", null);
+                    if(favs.contains(targetProvince)){
+                        Log.d("favoritos", targetProvince + " ya estaba");
+                        favs.remove(targetProvince);
+                        drawerLayout.closeDrawer(navList);
+                        Toast.makeText(getApplicationContext(),
+                                "Alojamiento eliminado", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                    else{
+                        favs.add(targetProvince);
+                        Log.d("favoritos", targetProvince + " a–adido");
+                        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                        .edit().putStringSet("favs", favs).commit();
+                        drawerLayout.closeDrawer(navList);
+                        Toast.makeText(getApplicationContext(),
+                                "Alojamiento a–adido", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                    }
+                    catch (NullPointerException e){
+                       favs = new HashSet<String>();
+                       favs.add(targetProvince);
+                       Log.d("favoritos", targetProvince + " a–adido en nueva lista");
+                       getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                       .edit().putStringSet("favs", favs).commit();
+                       drawerLayout.closeDrawer(navList);
+                       Toast.makeText(getApplicationContext(),
+                               "Alojamiento a–adido", Toast.LENGTH_SHORT)
+                               .show();
+                    }
                 }
                 /*
                  * if (selected.equals(targetProvince)) { // NOTHING } else { targetProvince =
@@ -184,8 +225,7 @@ public class LodgingDetail extends SherlockActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            moveTaskToBack(true);
-            return true;
+            finish();
         }
         return super.onKeyDown(keyCode, event);
     }
