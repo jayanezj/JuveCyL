@@ -3,7 +3,6 @@ package es.juvecyl.app;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,12 +17,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -50,7 +49,7 @@ public class LodgingDetail extends SherlockActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         setContentView(R.layout.details);
         // //////////////////////////////////////////////////////////////////////////
         // CARGAMOS LOS DATOS
@@ -201,10 +200,15 @@ public class LodgingDetail extends SherlockActivity {
                     drawerLayout.openDrawer(navList);
                 }
                 break;
+            case R.id.favs:
+                vibe.vibrate(60);
+                startActivity(new Intent(this, Favs.class));
+                break;
             case R.id.reload:
                 vibe.vibrate(60);
                 startActivity(new Intent(this, DownloadXML.class));
                 finish();
+                break;
         }
 
         return true;
@@ -225,6 +229,7 @@ public class LodgingDetail extends SherlockActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+            vibe.vibrate(60);
             finish();
         }
         return super.onKeyDown(keyCode, event);
@@ -248,6 +253,7 @@ public class LodgingDetail extends SherlockActivity {
         image.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibe.vibrate(60);
                 if (isImageFitToScreen) {
                     isImageFitToScreen = false;
                     image.setLayoutParams(new LinearLayout.LayoutParams(

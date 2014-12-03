@@ -512,10 +512,15 @@ public class Main extends SherlockActivity {
 				drawerLayout.openDrawer(navList);
 			}
 			break;
+		case R.id.favs:
+		    vibe.vibrate(60);
+            startActivity(new Intent(this, Favs.class));
+            break;
 		case R.id.reload:
 			vibe.vibrate(60);
 			startActivity(new Intent(this, DownloadXML.class));
 			finish();
+			break;
 		}
 
 		return true;

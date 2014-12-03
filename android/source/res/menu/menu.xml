@@ -6,4 +6,9 @@
         android:icon="@drawable/reload"
         android:showAsAction="always"
         android:title="@string/reloadbutton"/>
+    <item
+        android:id="@+id/favs"
+        android:icon="@drawable/favs"
+        android:showAsAction="always"
+        android:title="@string/favsbutton"/>
 </menu>
