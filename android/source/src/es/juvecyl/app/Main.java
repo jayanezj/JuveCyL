@@ -37,6 +37,13 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
+import es.juvecyl.app.navs.MainNav;
+import es.juvecyl.app.navs.MainNavMaker;
+import es.juvecyl.app.utils.GifView;
+import es.juvecyl.app.utils.LodgingDetail;
+import es.juvecyl.app.utils.LodgingSingleton;
+import es.juvecyl.app.utils.XMLDB;
+
 public class Main extends SherlockActivity {
 	private float scale;
 	private String targetProvince, provinceColor;

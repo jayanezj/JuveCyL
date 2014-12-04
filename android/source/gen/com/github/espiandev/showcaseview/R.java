@@ -8,16 +8,16 @@ package com.github.espiandev.showcaseview;
 
 public final class R {
 	public static final class attr {
-		public static final int showcaseViewStyle = 0x7f010009;
-		public static final int sv_backgroundColor = 0x7f010000;
-		public static final int sv_buttonBackgroundColor = 0x7f010003;
-		public static final int sv_buttonForegroundColor = 0x7f010004;
-		public static final int sv_buttonText = 0x7f010005;
-		public static final int sv_detailTextAppearance = 0x7f010006;
-		public static final int sv_detailTextColor = 0x7f010001;
-		public static final int sv_showcaseColor = 0x7f010008;
-		public static final int sv_titleTextAppearance = 0x7f010007;
-		public static final int sv_titleTextColor = 0x7f010002;
+		public static final int showcaseViewStyle = 0x7f010029;
+		public static final int sv_backgroundColor = 0x7f010020;
+		public static final int sv_buttonBackgroundColor = 0x7f010023;
+		public static final int sv_buttonForegroundColor = 0x7f010024;
+		public static final int sv_buttonText = 0x7f010025;
+		public static final int sv_detailTextAppearance = 0x7f010026;
+		public static final int sv_detailTextColor = 0x7f010021;
+		public static final int sv_showcaseColor = 0x7f010028;
+		public static final int sv_titleTextAppearance = 0x7f010027;
+		public static final int sv_titleTextColor = 0x7f010022;
 	}
 	public static final class drawable {
 		public static final int btn_cling_normal = 0x7f02007b;
@@ -25,33 +25,33 @@ public final class R {
 		public static final int cling = 0x7f02007f;
 		public static final int cling_bleached = 0x7f020080;
 		public static final int cling_button_bg = 0x7f020081;
-		public static final int hand = 0x7f020084;
+		public static final int hand = 0x7f02009e;
 	}
 	public static final class id {
-		public static final int showcase_button = 0x7f050000;
-		public static final int showcase_sub_text = 0x7f050002;
-		public static final int showcase_title_text = 0x7f050001;
+		public static final int showcase_button = 0x7f080014;
+		public static final int showcase_sub_text = 0x7f080016;
+		public static final int showcase_title_text = 0x7f080015;
 	}
 	public static final class layout {
 		public static final int handy = 0x7f030019;
-		public static final int showcase_button = 0x7f03001e;
+		public static final int showcase_button = 0x7f03001f;
 	}
 	public static final class string {
-		public static final int ok = 0x7f060000;
+		public static final int ok = 0x7f060023;
 	}
 	public static final class style {
-		public static final int ShowcaseButton = 0x7f070000;
-		public static final int ShowcaseView = 0x7f070002;
-		public static final int ShowcaseView_Light = 0x7f070001;
-		public static final int TextAppearance_ShowcaseView_Detail = 0x7f070004;
-		public static final int TextAppearance_ShowcaseView_Detail_Light = 0x7f070005;
-		public static final int TextAppearance_ShowcaseView_Title = 0x7f070003;
-		public static final int TextAppearance_ShowcaseView_Title_Light = 0x7f070006;
+		public static final int ShowcaseButton = 0x7f050005;
+		public static final int ShowcaseView = 0x7f050007;
+		public static final int ShowcaseView_Light = 0x7f050006;
+		public static final int TextAppearance_ShowcaseView_Detail = 0x7f050009;
+		public static final int TextAppearance_ShowcaseView_Detail_Light = 0x7f05000a;
+		public static final int TextAppearance_ShowcaseView_Title = 0x7f050008;
+		public static final int TextAppearance_ShowcaseView_Title_Light = 0x7f05000b;
 	}
 	public static final class styleable {
-		public static final int[] CustomTheme = { 0x7f010009 };
+		public static final int[] CustomTheme = { 0x7f010029 };
 		public static final int CustomTheme_showcaseViewStyle = 0;
-		public static final int[] ShowcaseView = { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008 };
+		public static final int[] ShowcaseView = { 0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027, 0x7f010028 };
 		public static final int ShowcaseView_sv_backgroundColor = 0;
 		public static final int ShowcaseView_sv_buttonBackgroundColor = 3;
 		public static final int ShowcaseView_sv_buttonForegroundColor = 4;

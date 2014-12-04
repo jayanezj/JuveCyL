@@ -1,7 +1,8 @@
-package es.juvecyl.app;
+package es.juvecyl.app.utils;
 
 import java.io.InputStream;
 import java.net.URL;
+
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

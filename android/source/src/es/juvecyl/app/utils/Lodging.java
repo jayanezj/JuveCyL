@@ -1,4 +1,4 @@
-package es.juvecyl.app;
+package es.juvecyl.app.utils;
 
 import java.util.ArrayList;
 
@@ -70,14 +70,31 @@ public class Lodging {
 		return this.phones;
 	}
 
-	public String getPhones() {
-		String output = "";
-		for (int i = 0; i < phones.size(); i++) {
-			output += phones.get(i) + "\n\t";
-		}
-		return output;
-	}
+    public String getPhones() {
+        String output = "";
+        for (int i = 0; i < phones.size(); i++) {
+            output += phones.get(i) + "\n\t";
+        }
+        return output;
+    }
 
+    public String getEmails() {
+        String output = "";
+        for (int i = 0; i < emails.size(); i++) {
+            output += emails.get(i) + "\n\t";
+        }
+        return output;
+    }
+
+   
+	public String getContactData(){
+	    String output = "Teléfono(s):\n";
+	    output += this.getPhones();
+	    output += "Email(s):\n";
+	    output += this.getEmails();
+	    return output;
+	}
+	
 	public void setPhone(ArrayList<String> phones) {
 		this.phones = phones;
 	}

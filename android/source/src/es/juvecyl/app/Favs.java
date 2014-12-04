@@ -25,6 +25,11 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
+import es.juvecyl.app.utils.Lodging;
+import es.juvecyl.app.utils.LodgingDetail;
+import es.juvecyl.app.utils.LodgingSingleton;
+import es.juvecyl.app.utils.XMLDB;
+
 public class Favs extends SherlockActivity {
     private float scale;
     private XMLDB db;

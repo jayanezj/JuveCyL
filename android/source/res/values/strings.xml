@@ -18,5 +18,14 @@
     <string name="tutorial_message">JuveCyL utiliza el menú lateral desplegable desde el lado izquierdo. Puedes sacarlo arrastrando el dedo desde el margen izquierdo</string>
     <string name="tutorial_message2">También puedes ocultar y mostrar el menú lateral tocando en la parte superior derecha de la barra de acción</string>
     <string name="main_no_results">No se han encontrado resultados</string>
-
+	
+    <string name="coding_search">Búsqueda</string>
+    <string name="coding_back">Atrás</string>
+    <string name="coding_fav">Favorito</string>
+    <string name="coding_contact">Contacto</string>
+    <string name="coding_desc">Descripción</string>
+    <string name="coding_loc">Localización</string>
+    
+    <string name="coding_new_fav_txt">Alojamiento añadido a favoritos</string>
+    <string name="coding_del_fav_txt">Alojamiento eliminado de favoritos</string>
 </resources>

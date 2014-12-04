@@ -15,6 +15,8 @@ import java.util.TimerTask;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
+import es.juvecyl.app.utils.LodgingSingleton;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -26,16 +28,14 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-public class DownloadXML extends SherlockActivity
-{
+public class DownloadXML extends SherlockActivity {
     private boolean firstrun;
     private Background bgtask;
     private Button downloadButton;
     private Timer limit;
     private ProgressBar pgb1;
 
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         setContentView(R.layout.download_xml_layout);
@@ -50,8 +50,7 @@ public class DownloadXML extends SherlockActivity
      * 
      * @author berik
      */
-    private class Background extends AsyncTask<Void, Integer, Boolean>
-    {
+    private class Background extends AsyncTask<Void, Integer, Boolean> {
 
         // TAREA A REALIZAR
         // DEVUELVE TRUE SI SE REALIZA CORRECTAMENTE
@@ -86,14 +85,12 @@ public class DownloadXML extends SherlockActivity
         }
 
         @Override
-        protected void onProgressUpdate(Integer... values)
-        {
+        protected void onProgressUpdate(Integer... values) {
             //
         }
 
         @Override
-        protected void onPreExecute()
-        {
+        protected void onPreExecute() {
             // MENSAJE DE ACTUALIZACIÓN
             Toast.makeText(DownloadXML.this,
                     "Actualizando la base de datos...",
@@ -101,10 +98,8 @@ public class DownloadXML extends SherlockActivity
             pgb1.setVisibility(View.VISIBLE);
             // INSTANCIAMOS UN TIMER PARA VER SI TARDA DEMASIADO EN
             // DESCARGAR
-            TimerTask tsk1 = new TimerTask()
-            {
-                public void run()
-                {
+            TimerTask tsk1 = new TimerTask() {
+                public void run() {
                     Log.e("Exceed", "Han pasado 8 segundos y no se ha descargado");
                     bgtask.cancel(false);
                 }
@@ -114,8 +109,7 @@ public class DownloadXML extends SherlockActivity
         }
 
         @Override
-        protected void onPostExecute(Boolean result)
-        {
+        protected void onPostExecute(Boolean result) {
             // DESCARGA SATISFACTORIA
             if (result) {
                 // DETENMOS EL TIMER
@@ -167,8 +161,7 @@ public class DownloadXML extends SherlockActivity
                     {
 
                         @Override
-                        public void onClick(View v)
-                        {
+                        public void onClick(View v) {
                             firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean(
                                     "firstrun", true);
                             if (firstrun) {
@@ -198,12 +191,9 @@ public class DownloadXML extends SherlockActivity
                     downloadButton = (Button) findViewById(R.id.downloadButton);
                     downloadButton.setText("Reintentar");
                     downloadButton.setVisibility(View.VISIBLE);
-                    downloadButton.setOnClickListener(new OnClickListener()
-                    {
-
+                    downloadButton.setOnClickListener(new OnClickListener() {
                         @Override
-                        public void onClick(View v)
-                        {
+                        public void onClick(View v) {
                             pgb1.setVisibility(View.VISIBLE);
                             downloadButton.setVisibility(View.INVISIBLE);
                             bgtask = new Background();
@@ -216,26 +206,24 @@ public class DownloadXML extends SherlockActivity
         }
 
         @Override
-        protected void onCancelled()
-        {
-            Toast.makeText(DownloadXML.this, "Cancelando...", Toast.LENGTH_SHORT).show();
-
+        protected void onCancelled() {
+            Toast.makeText(
+                    DownloadXML.this, "Cancelando...", Toast.LENGTH_SHORT).show();
             try {
                 @SuppressWarnings("unused")
                 FileInputStream dataBase = getBaseContext().openFileInput("db.xml");
                 downloadButton = (Button) findViewById(R.id.downloadButton);
                 downloadButton.setText("Usar datos locales");
                 downloadButton.setVisibility(View.VISIBLE);
-                downloadButton.setOnClickListener(new OnClickListener()
-                {
-
+                downloadButton.setOnClickListener(new OnClickListener() {
                     @Override
-                    public void onClick(View v)
-                    {
-                        firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean(
+                    public void onClick(View v) {
+                        firstrun = getSharedPreferences(
+                                "PREFERENCE", MODE_PRIVATE).getBoolean(
                                 "firstrun", true);
                         if (firstrun) {
-                            Intent intent = new Intent(DownloadXML.this, Cover.class);
+                            Intent intent = new Intent(
+                                    DownloadXML.this, Cover.class);
                             startActivity(intent);
                             finish();
                             // Save the state
@@ -257,12 +245,9 @@ public class DownloadXML extends SherlockActivity
                 downloadButton = (Button) findViewById(R.id.downloadButton);
                 downloadButton.setText("Reintentar");
                 downloadButton.setVisibility(View.VISIBLE);
-                downloadButton.setOnClickListener(new OnClickListener()
-                {
-
+                downloadButton.setOnClickListener(new OnClickListener() {
                     @Override
-                    public void onClick(View v)
-                    {
+                    public void onClick(View v) {
                         downloadButton.setVisibility(View.INVISIBLE);
                         bgtask = new Background();
                         bgtask.execute();

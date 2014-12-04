@@ -1,4 +1,4 @@
-package es.juvecyl.app;
+package es.juvecyl.app.utils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +14,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+
 import android.content.Context;
 import android.util.Log;
 
@@ -21,18 +22,14 @@ public class XMLDB {
 	private Document dom;
 	private int totalLodgings;
 	private ArrayList<Lodging> lodgings;
-	private int[] provinces;
-
+	private ArrayList<Province> provinces;
+	
 	public int getTotalLodgings() {
 		return this.totalLodgings;
 	}
 
 	public ArrayList<Lodging> getLodgings() {
 		return this.lodgings;
-	}
-
-	public int[] getProvinceCount() {
-		return this.provinces;
 	}
 
 	public XMLDB(Context context) {
@@ -53,7 +50,7 @@ public class XMLDB {
 			// //////////////////////////////////////////////////////////////////////////
 			// GUARDAMOS EL NÚMERO DE ALOJAMIENTOS POR PROVINCIA
 			// //////////////////////////////////////////////////////////////////////////
-			this.provinces = new int[9];
+			this.provinces = ProvinceSingleton.getInstance().getProvinces();
 			for (int i = 0; i < this.totalLodgings; i++) {
 				image = province = description = aux = title = phone = loc = null;
 				array_phones = null;
@@ -66,31 +63,31 @@ public class XMLDB {
 								.getChildNodes().item(0).getChildNodes()
 								.item(0).getNodeValue();
 						if (province.equals("Ávila")) {
-							provinces[0] += 1;
+						    provinces.get(0).addLodging();
 						}
 						if (province.equals("Burgos")) {
-							provinces[1] += 1;
+						    provinces.get(1).addLodging();
 						}
 						if (province.equals("León")) {
-							provinces[2] += 1;
+						    provinces.get(2).addLodging();
 						}
 						if (province.equals("Palencia")) {
-							provinces[3] += 1;
+						    provinces.get(3).addLodging();
 						}
 						if (province.equals("Salamanca")) {
-							provinces[4] += 1;
+						    provinces.get(4).addLodging();
 						}
 						if (province.equals("Segovia")) {
-							provinces[5] += 1;
+						    provinces.get(5).addLodging();
 						}
 						if (province.equals("Soria")) {
-							provinces[6] += 1;
+						    provinces.get(6).addLodging();
 						}
 						if (province.equals("Valladolid")) {
-							provinces[7] += 1;
+						    provinces.get(7).addLodging();
 						}
 						if (province.equals("Zamora")) {
-							provinces[8] += 1;
+						    provinces.get(8).addLodging();
 						}
 					}
 					try{

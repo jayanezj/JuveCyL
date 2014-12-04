@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/es/juvecyl/app/Cover.java=UTF-8
-encoding//src/es/juvecyl/app/DetailsNav.java=UTF-8
 encoding//src/es/juvecyl/app/DownloadXML.java=UTF-8
 encoding//src/es/juvecyl/app/Favs.java=UTF-8
 encoding//src/es/juvecyl/app/Main.java=UTF-8
-encoding//src/es/juvecyl/app/MainNav.java=UTF-8
-encoding//src/es/juvecyl/app/XMLDB.java=UTF-8
+encoding//src/es/juvecyl/app/navs/DetailsNav.java=UTF-8
+encoding//src/es/juvecyl/app/navs/MainNav.java=UTF-8
+encoding//src/es/juvecyl/app/utils/XMLDB.java=UTF-8

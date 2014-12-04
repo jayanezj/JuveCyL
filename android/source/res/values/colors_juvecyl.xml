@@ -19,4 +19,18 @@
 
 <resources>
     <color name="pressed_juvecyl">#CCE4E4E4</color>
+    <color name="back_color">#8eecfe</color>
+    <color name="contact_color">#cce4e4e4</color>
+    <color name="desc_color">#cce4e4e4</color>
+    <color name="fav_color">#facb2c</color>
+    <color name="search_color">#4a4a4a</color>
+    <color name="avila_color">#5b75c8</color>
+    <color name="burgos_color">#aead4f</color>
+    <color name="leon_color">#5bc1c8</color>
+    <color name="palencia_color">#aeaf73</color>
+    <color name="salamanca_color">#ae4f65</color>
+    <color name="segovia_color">#6499bf</color>
+    <color name="soria_color">#c38960</color>
+    <color name="valladolid_color">#9b78aa</color>
+    <color name="zamora_color">#724fae</color>
 </resources>
