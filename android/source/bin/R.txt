@@ -568,13 +568,14 @@ int string action_settings 0x7f060032
 int string app_name 0x7f060031
 int string close_drawer 0x7f06003c
 int string coding_back 0x7f060043
+int string coding_call_fail 0x7f06004c
 int string coding_contact 0x7f060045
-int string coding_del_fav_txt 0x7f06004d
+int string coding_del_fav_txt 0x7f06004e
 int string coding_desc 0x7f060049
 int string coding_fav 0x7f060044
 int string coding_loc 0x7f06004a
 int string coding_mails 0x7f060047
-int string coding_new_fav_txt 0x7f06004c
+int string coding_new_fav_txt 0x7f06004d
 int string coding_phones 0x7f060046
 int string coding_search 0x7f060042
 int string coding_send_mail 0x7f06004b

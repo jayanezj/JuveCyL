@@ -1,15 +1,20 @@
 
 package es.juvecyl.app;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -153,9 +158,8 @@ public class LodgingDetail extends SherlockActivity {
         target = db.getLodgings().get(id);
     }
 
-
     @SuppressLint("NewApi")
-    private void printContactInfo(){
+    private void printContactInfo() {
         detailsContainer.removeAllViews();
         //
         // DECLARACIÓN DEL CONTENEDOR CON SCROLL
@@ -249,10 +253,17 @@ public class LodgingDetail extends SherlockActivity {
 
                 @Override
                 public void onClick(View v) {
-                    String number = (String) v.getTag();
-                    Intent callIntent = new Intent(Intent.ACTION_CALL);
-                    callIntent.setData(Uri.parse("tel:" + number));
-                    startActivity(callIntent);
+                    try {
+                        String number = (String) v.getTag();
+                        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                        callIntent.setData(Uri.parse("tel:" + number));
+                        startActivity(callIntent);
+                    } catch (ActivityNotFoundException activityException) {
+                        Toast.makeText(
+                                getApplicationContext(),
+                                res.getString(R.string.coding_call_fail),
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
             });
             container.addView(phonesBtn[i]);
@@ -329,12 +340,12 @@ public class LodgingDetail extends SherlockActivity {
                     String mail = (String) v.getTag();
                     Intent mailIntent = new Intent(Intent.ACTION_SENDTO);
                     mailIntent.setData(Uri.fromParts(
-                          "mailto",
-                          mail,
-                          null));
+                            "mailto",
+                            mail,
+                            null));
                     mailIntent.putExtra(
-                          Intent.EXTRA_SUBJECT,
-                          res.getString(R.string.coding_send_mail));
+                            Intent.EXTRA_SUBJECT,
+                            res.getString(R.string.coding_send_mail));
                     startActivity(mailIntent);
                 }
             });
@@ -413,7 +424,7 @@ public class LodgingDetail extends SherlockActivity {
                     url = aux[0];
                     Intent linkIntent = new Intent(Intent.ACTION_VIEW);
                     if (!url.startsWith("http://") &&
-                        !url.startsWith("https://")){
+                            !url.startsWith("https://")) {
                         url = "http://" + url;
                     }
                     linkIntent.setData(Uri.parse(url));
@@ -472,14 +483,24 @@ public class LodgingDetail extends SherlockActivity {
                     R.layout.map, null);
             GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
                     .getMap();
-            LatLng sydney = new LatLng(-33.867, 151.206);
-
+            Geocoder geocoder = new Geocoder(getApplicationContext());
+            try {
+                List<Address> addresses = geocoder.getFromLocationName(output, 1);
+                if (addresses.size() > 0) {
+                    double latitude = addresses.get(0).getLatitude();
+                    double longitude = addresses.get(0).getLongitude();
+                    LatLng lodging = new LatLng(latitude, longitude);
+                    map.moveCamera(
+                            CameraUpdateFactory.newLatLngZoom(lodging, 13));
+                    map.addMarker(new MarkerOptions()
+                            .title(target.getTitle())
+                            .snippet(target.getProvince())
+                            .position(lodging));
+                }
+            } catch (IOException e) {
+                // NO PINTAMOS MARCADOR PORQUE NO LO HA ENCONTRADO
+            }
             map.setMyLocationEnabled(true);
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-            map.addMarker(new MarkerOptions()
-                    .title("Sydney")
-                    .snippet("The most populous city in Australia.")
-                    .position(sydney));
             detailsContainer.addView(child1);
         }
         else {

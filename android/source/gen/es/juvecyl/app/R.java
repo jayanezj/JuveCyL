@@ -1611,13 +1611,14 @@ containing a value of this type.
         public static final int app_name=0x7f060031;
         public static final int close_drawer=0x7f06003c;
         public static final int coding_back=0x7f060043;
+        public static final int coding_call_fail=0x7f06004c;
         public static final int coding_contact=0x7f060045;
-        public static final int coding_del_fav_txt=0x7f06004d;
+        public static final int coding_del_fav_txt=0x7f06004e;
         public static final int coding_desc=0x7f060049;
         public static final int coding_fav=0x7f060044;
         public static final int coding_loc=0x7f06004a;
         public static final int coding_mails=0x7f060047;
-        public static final int coding_new_fav_txt=0x7f06004c;
+        public static final int coding_new_fav_txt=0x7f06004d;
         public static final int coding_phones=0x7f060046;
         public static final int coding_search=0x7f060042;
         public static final int coding_send_mail=0x7f06004b;
