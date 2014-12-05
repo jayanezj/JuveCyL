@@ -44,17 +44,21 @@ public class XMLDB {
 					"element");
 			this.totalLodgings = root.getLength();
 			String title = null, province = null, description = null, image = null;
-			String aux = null, loc = null, phone = null, email = null;
-			ArrayList<String> phones = null, emails = null;
-			Node array_phones = null, array_emails = null;
+			String aux = null, loc = null, phone = null, email = null, web = null;
+			ArrayList<String> phones = null, emails = null, webs = null;
+			Node array_phones = null, array_emails = null, array_webs = null;
 			// //////////////////////////////////////////////////////////////////////////
 			// GUARDAMOS EL NÚMERO DE ALOJAMIENTOS POR PROVINCIA
 			// //////////////////////////////////////////////////////////////////////////
 			this.provinces = ProvinceSingleton.getInstance().getProvinces();
 			for (int i = 0; i < this.totalLodgings; i++) {
 				image = province = description = aux = title = phone = loc = null;
+				array_emails = null;
 				array_phones = null;
-				phones = emails = new ArrayList<String>();
+				array_webs = null;
+				webs = new ArrayList<String>();
+				phones = new ArrayList<String>();
+				emails = new ArrayList<String>();
 				for (int j = 0; j < root.item(i).getChildNodes().getLength(); j++) {
 					aux = root.item(i).getChildNodes().item(j).getAttributes()
 							.getNamedItem("name").getNodeValue();
@@ -121,22 +125,34 @@ public class XMLDB {
 						}
 
 					}
-					if (aux.equals("Telefono")) {
-						array_phones = root.item(i).getChildNodes().item(j)
-								.getChildNodes().item(0);
-						for (int x = 0; x < array_phones.getChildNodes()
-								.getLength(); x++)
-							try {
-								phone = array_phones.getChildNodes().item(x)
-										.getChildNodes().item(0).getNodeValue();
-								phones.add(phone);
-							} catch (NullPointerException e) {
-							}
-					}
+                    if (aux.equals("Telefono")) {
+                        array_phones = root.item(i).getChildNodes().item(j)
+                                .getChildNodes().item(0);
+                        for (int x = 0; x < array_phones.getChildNodes()
+                                .getLength(); x++)
+                            try {
+                                phone = array_phones.getChildNodes().item(x)
+                                        .getChildNodes().item(0).getNodeValue();
+                                phones.add(phone);
+                            } catch (NullPointerException e) {
+                            }
+                    }
+                    if (aux.equals("Web")) {
+                        array_webs = root.item(i).getChildNodes().item(j)
+                                .getChildNodes().item(0);
+                        for (int x = 0; x < array_webs.getChildNodes()
+                                .getLength(); x++)
+                            try {
+                                web = array_webs.getChildNodes().item(x)
+                                        .getChildNodes().item(0).getNodeValue();
+                                webs.add(web);
+                            } catch (NullPointerException e) {
+                            }
+                    }
 					if (aux.equals("Email")) {
 						array_emails = root.item(i).getChildNodes().item(j)
 								.getChildNodes().item(0);
-						for (int x = 0; x < array_phones.getChildNodes()
+						for (int x = 0; x < array_emails.getChildNodes()
 								.getLength(); x++)
 							try {
 								email = array_emails.getChildNodes().item(x)
@@ -147,7 +163,7 @@ public class XMLDB {
 					}
 				}
 				Lodging newLodging = new Lodging(title, province, description,
-						loc, phones, emails, image);
+						loc, emails, phones, webs, image);
 				this.lodgings.add(newLodging);
 			}
 		} catch (FileNotFoundException e) {

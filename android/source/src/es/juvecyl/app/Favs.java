@@ -26,7 +26,6 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
 import es.juvecyl.app.utils.Lodging;
-import es.juvecyl.app.utils.LodgingDetail;
 import es.juvecyl.app.utils.LodgingSingleton;
 import es.juvecyl.app.utils.XMLDB;
 
@@ -41,12 +40,11 @@ public class Favs extends SherlockActivity {
     // //////////////////////////////////////////////////////////////////////////
     // CAPAS DEL XML
     // //////////////////////////////////////////////////////////////////////////
-    private RelativeLayout contentFrame;
     // //////////////////////////////////////////////////////////////////////////
     // CAPAS DE LA ACTIVIDAD
     // //////////////////////////////////////////////////////////////////////////
     private ScrollView scrollMain;
-    private LinearLayout linearInsideScroll;
+    private LinearLayout contentFrame, linearInsideScroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +59,7 @@ public class Favs extends SherlockActivity {
         // //////////////////////////////////////////////////////////////////////////
         // RECOGEMOS DEL XML
         // //////////////////////////////////////////////////////////////////////////
-        contentFrame = (RelativeLayout) findViewById(R.id.main_favs_frame);
+        contentFrame = (LinearLayout) findViewById(R.id.main_favs_frame);
         // //////////////////////////////////////////////////////////////////////////
         // CARGAMOS LOS DATOS
         // //////////////////////////////////////////////////////////////////////////

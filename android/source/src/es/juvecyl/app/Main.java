@@ -32,6 +32,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
@@ -40,7 +41,6 @@ import com.actionbarsherlock.view.MenuItem;
 import es.juvecyl.app.navs.MainNav;
 import es.juvecyl.app.navs.MainNavMaker;
 import es.juvecyl.app.utils.GifView;
-import es.juvecyl.app.utils.LodgingDetail;
 import es.juvecyl.app.utils.LodgingSingleton;
 import es.juvecyl.app.utils.XMLDB;
 

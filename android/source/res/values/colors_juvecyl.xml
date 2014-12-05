@@ -18,6 +18,7 @@
 -->
 
 <resources>
+    <color name="pure_black">#000000</color>
     <color name="pressed_juvecyl">#CCE4E4E4</color>
     <color name="back_color">#8eecfe</color>
     <color name="contact_color">#cce4e4e4</color>

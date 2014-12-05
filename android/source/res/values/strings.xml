@@ -23,9 +23,12 @@
     <string name="coding_back">Atrás</string>
     <string name="coding_fav">Favorito</string>
     <string name="coding_contact">Contacto</string>
+    <string name="coding_phones">Teléfonos</string>
+    <string name="coding_mails">Correos</string>
+    <string name="coding_webs">Webs</string>
     <string name="coding_desc">Descripción</string>
     <string name="coding_loc">Localización</string>
-    
+    <string name="coding_send_mail">Contacto via JuveCyL</string>
     <string name="coding_new_fav_txt">Alojamiento añadido a favoritos</string>
     <string name="coding_del_fav_txt">Alojamiento eliminado de favoritos</string>
 </resources>

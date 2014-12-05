@@ -3,7 +3,7 @@ package es.juvecyl.app.utils;
 import java.io.InputStream;
 import java.net.URL;
 
-
+import es.juvecyl.app.LodgingDetail;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
