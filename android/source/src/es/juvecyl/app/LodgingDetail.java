@@ -6,17 +6,21 @@ import java.util.HashSet;
 import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.provider.Settings;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.DisplayMetrics;
@@ -112,10 +116,10 @@ public class LodgingDetail extends SherlockActivity {
         detailsContainer = (LinearLayout) findViewById(R.id.details_container);
         gMaps = LayoutInflater.from(this).inflate(
                 R.layout.map, null);
+        gMaps.setId(2525);
         map = (
                 (MapFragment) getFragmentManager().
                         findFragmentById(R.id.map)).getMap();
-        map.setMyLocationEnabled(true);
         title = (TextView) findViewById(R.id.details_title);
         image = (ImageView) findViewById(R.id.details_image);
         // /////////////////////////////////////////////////////////////////////
@@ -157,6 +161,26 @@ public class LodgingDetail extends SherlockActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         navToggle.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            if (findViewById(2525) != null) {
+                DisplayMetrics dm = new DisplayMetrics();
+                this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+                int width = dm.widthPixels;
+                int height = dm.heightPixels;
+                LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
+                        width, (int) (height * 0.7f));
+                gMaps.setLayoutParams(prmX);
+            }
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            DisplayMetrics dm = new DisplayMetrics();
+            this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+            int width = dm.widthPixels;
+            int height = dm.heightPixels;
+            LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
+                    width, (int) (height * 0.7f));
+            gMaps.setLayoutParams(prmX);
+
+        }
     }
 
     // /////////////////////////////////////////////////////////////////////////
@@ -543,11 +567,13 @@ public class LodgingDetail extends SherlockActivity {
             LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
                     width, (int) (height * 0.7f));
             gMaps.setLayoutParams(prmX);
+            checkLocation();
+            map.setMyLocationEnabled(true);
             try {
                 Geocoder geocoder = new Geocoder(getApplicationContext());
-                if (gMaps != null){
+                if (gMaps != null) {
                     ViewGroup parent = (ViewGroup) gMaps.getParent();
-                    if (parent != null){
+                    if (parent != null) {
                         parent.removeView(gMaps);
                     }
                 }
@@ -583,6 +609,51 @@ public class LodgingDetail extends SherlockActivity {
             linearInsideScroll.addView(detailsTarget);
             detailsContainer.addView(linearInsideScroll);
             detailsContainer.addView(detailsTarget);
+        }
+    }
+
+    private void checkLocation() {
+        LocationManager lm = null;
+        boolean gps_enabled = false, network_enabled = false;
+        if (lm == null)
+            lm = (LocationManager) getApplicationContext().getSystemService(
+                    Context.LOCATION_SERVICE);
+        try {
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        } catch (Exception ex) {
+        }
+        try {
+            network_enabled = lm.isProviderEnabled(
+                    LocationManager.NETWORK_PROVIDER);
+        } catch (Exception ex) {
+        }
+        if (!gps_enabled && !network_enabled) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(
+                    LodgingDetail.this);
+            dialog.setMessage(
+                    LodgingDetail.this.getResources().getString(
+                            R.string.gps_network_not_enabled));
+            dialog.setPositiveButton(
+                    LodgingDetail.this.getResources().getString(
+                            R.string.open_location_settings),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(
+                                DialogInterface paramDialogInterface, int paramInt) {
+                            Intent myIntent = new Intent(
+                                    Settings.ACTION_SECURITY_SETTINGS);
+                            LodgingDetail.this.startActivity(myIntent);
+                        }
+                    });
+            dialog.setNegativeButton(
+                    LodgingDetail.this.getString(R.string.coding_cancel),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(
+                                DialogInterface paramDialogInterface, int paramInt) {
+                        }
+                    });
+            dialog.show();
         }
     }
 
@@ -730,7 +801,9 @@ public class LodgingDetail extends SherlockActivity {
                                     edit().
                                     putStringSet("favs", favs).commit();
                             drawerLayout.closeDrawer(navList);
-                            long[] pattern = {60,0, 60};
+                            long[] pattern = {
+                                    60, 0, 60
+                            };
                             vibe.vibrate(pattern, -1);
                             Toast.makeText(
                                     getApplicationContext(),
@@ -746,7 +819,9 @@ public class LodgingDetail extends SherlockActivity {
                                 edit().
                                 putStringSet("favs", favs).commit();
                         drawerLayout.closeDrawer(navList);
-                        long[] pattern = {60,0, 60};
+                        long[] pattern = {
+                                60, 0, 60
+                        };
                         vibe.vibrate(pattern, -1);
                         Toast.makeText(
                                 getApplicationContext(),
@@ -775,4 +850,5 @@ public class LodgingDetail extends SherlockActivity {
                 };
         drawerLayout.setDrawerListener(navToggle);
     }
+
 }

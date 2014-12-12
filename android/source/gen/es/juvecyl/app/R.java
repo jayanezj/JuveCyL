@@ -1615,6 +1615,7 @@ containing a value of this type.
         public static final int close_drawer=0x7f06003d;
         public static final int coding_back=0x7f060045;
         public static final int coding_call_fail=0x7f060053;
+        public static final int coding_cancel=0x7f060058;
         public static final int coding_contact=0x7f060047;
         public static final int coding_db_failed=0x7f06004b;
         public static final int coding_db_update=0x7f060049;
@@ -1737,11 +1738,13 @@ containing a value of this type.
         public static final int favsbutton=0x7f060036;
         public static final int first_run_button=0x7f06003b;
         public static final int first_run_got_it=0x7f06003e;
+        public static final int gps_network_not_enabled=0x7f060056;
         public static final int img_first_arrow=0x7f06003a;
         public static final int imglodging=0x7f060035;
         public static final int main_no_results=0x7f060042;
         public static final int ok=0x7f060023;
         public static final int open_drawer=0x7f06003c;
+        public static final int open_location_settings=0x7f060057;
         public static final int pull_first_run=0x7f060039;
         public static final int reloadbutton=0x7f060034;
         public static final int store_picture_message=0x7f060001;

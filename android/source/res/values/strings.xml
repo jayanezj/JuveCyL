@@ -34,8 +34,11 @@
     <string name="coding_webs">Webs</string>
     <string name="coding_desc">Descripción</string>
     <string name="coding_loc">Localización</string>
-    <string name="coding_send_mail">Contacto via JuveCyL</string>
+    <string name="coding_send_mail">Contacto vía JuveCyL</string>
     <string name="coding_call_fail">No puedes realizar llamadas desde este dispositivo</string>
     <string name="coding_new_fav_txt">Alojamiento añadido a favoritos</string>
     <string name="coding_del_fav_txt">Alojamiento eliminado de favoritos</string>
+    <string name="gps_network_not_enabled">El GPS no está habilitado</string>
+    <string name="open_location_settings">Abrir opciones de localización</string>
+    <string name="coding_cancel">Cancelar</string>
 </resources>

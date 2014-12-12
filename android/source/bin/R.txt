@@ -572,6 +572,7 @@ int string close_button 0x7f060032
 int string close_drawer 0x7f06003d
 int string coding_back 0x7f060045
 int string coding_call_fail 0x7f060053
+int string coding_cancel 0x7f060058
 int string coding_contact 0x7f060047
 int string coding_db_failed 0x7f06004b
 int string coding_db_update 0x7f060049
@@ -623,11 +624,13 @@ int string decline 0x7f060003
 int string favsbutton 0x7f060036
 int string first_run_button 0x7f06003b
 int string first_run_got_it 0x7f06003e
+int string gps_network_not_enabled 0x7f060056
 int string img_first_arrow 0x7f06003a
 int string imglodging 0x7f060035
 int string main_no_results 0x7f060042
 int string ok 0x7f060023
 int string open_drawer 0x7f06003c
+int string open_location_settings 0x7f060057
 int string pull_first_run 0x7f060039
 int string reloadbutton 0x7f060034
 int string store_picture_message 0x7f060001

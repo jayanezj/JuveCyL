@@ -38,4 +38,7 @@
     <string name="coding_call_fail">You can\'t make calls from this device</string>
     <string name="coding_new_fav_txt">Lodging added to favourites</string>
     <string name="coding_del_fav_txt">Lodging dropped from favorites</string>
+    <string name="gps_network_not_enabled">GPS isn\'t enabled</string>
+    <string name="open_location_settings">Open location settings</string>
+    <string name="coding_cancel">Cancel</string>
 </resources>
