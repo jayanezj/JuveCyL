@@ -717,6 +717,7 @@ public class LodgingDetail extends SherlockActivity {
                         if (favs.contains(targetProvince)) {
                             favs.remove(targetProvince);
                             drawerLayout.closeDrawer(navList);
+                            vibe.vibrate(150);
                             Toast.makeText(
                                     getApplicationContext(),
                                     res.getString(R.string.coding_del_fav_txt),
@@ -729,6 +730,8 @@ public class LodgingDetail extends SherlockActivity {
                                     edit().
                                     putStringSet("favs", favs).commit();
                             drawerLayout.closeDrawer(navList);
+                            long[] pattern = {60,0, 60};
+                            vibe.vibrate(pattern, -1);
                             Toast.makeText(
                                     getApplicationContext(),
                                     res.getString(R.string.coding_new_fav_txt),
@@ -743,6 +746,8 @@ public class LodgingDetail extends SherlockActivity {
                                 edit().
                                 putStringSet("favs", favs).commit();
                         drawerLayout.closeDrawer(navList);
+                        long[] pattern = {60,0, 60};
+                        vibe.vibrate(pattern, -1);
                         Toast.makeText(
                                 getApplicationContext(),
                                 R.string.coding_new_fav_txt,

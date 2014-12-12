@@ -27,6 +27,7 @@ import com.actionbarsherlock.view.MenuItem;
 
 import es.juvecyl.app.utils.Lodging;
 import es.juvecyl.app.utils.LodgingSingleton;
+import es.juvecyl.app.utils.ProvinceSingleton;
 import es.juvecyl.app.utils.XMLDB;
 
 public class Favs extends SherlockActivity {
@@ -119,8 +120,13 @@ public class Favs extends SherlockActivity {
                         (int) (5 * scale + 0.5f));
                 tv[counter].setLayoutParams(prm);
                 tv[counter].setText(province.getTitle());
-                // tv[counter].setBackgroundColor(Color.parseColor(provinceColor));
-                tv[counter].setTextColor(Color.BLACK);
+                tv[counter].setBackgroundColor(
+                        getResources().getColor(ProvinceSingleton.
+                                getInstance().
+                                getProvince(province.getProvince()).
+                                getColor())
+                        );
+                tv[counter].setTextColor(Color.WHITE);
                 tv[counter].setPadding((int) (10 * scale + 0.5f),
                         (int) (20 * scale + 0.5f), (int) (10 * scale + 0.5f),
                         (int) (20 * scale + 0.5f));

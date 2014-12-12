@@ -402,7 +402,7 @@ public class Main extends SherlockActivity {
 
                         @Override
                         public void onClick(View v) {
-                            // TODO Auto-generated method stub
+                            vibe.vibrate(60);
                             Intent intent = new Intent(Main.this, LodgingDetail.class);
                             Bundle b = new Bundle();
                             b.putString("lodging", v.getTag().toString());
@@ -436,7 +436,12 @@ public class Main extends SherlockActivity {
         provinceTextName.setTextSize(getResources().getDimension(
                 R.dimen.small_font));
         provinceTextName.setTextColor(getResources().getColor(R.color.white));
-        provinceTextName.setBackgroundColor(Color.parseColor(provinceColor));
+        try{
+            provinceTextName.setBackgroundColor(Color.parseColor(provinceColor));
+        }
+        catch (Exception e){
+            Log.e("fail", "color fail");
+        }
         provinceTextName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
         provinceTextName.setTypeface(null, Typeface.BOLD);
     }
@@ -482,7 +487,7 @@ public class Main extends SherlockActivity {
 
                     @Override
                     public void onClick(View v) {
-                        // TODO Auto-generated method stub
+                        vibe.vibrate(60);
                         Intent intent = new Intent(Main.this, LodgingDetail.class);
                         Bundle b = new Bundle();
                         b.putString("lodging", v.getTag().toString());
