@@ -26,6 +26,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -544,6 +545,12 @@ public class LodgingDetail extends SherlockActivity {
             gMaps.setLayoutParams(prmX);
             try {
                 Geocoder geocoder = new Geocoder(getApplicationContext());
+                if (gMaps != null){
+                    ViewGroup parent = (ViewGroup) gMaps.getParent();
+                    if (parent != null){
+                        parent.removeView(gMaps);
+                    }
+                }
                 try {
                     map.clear();
                     List<Address> addresses = geocoder.getFromLocationName(output, 1);
