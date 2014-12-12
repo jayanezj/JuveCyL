@@ -23,7 +23,7 @@
     <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
         <item name="sv_backgroundColor">#cc5a33e5</item>
         <item name="sv_showcaseColor">#4a0796</item>
-        <item name="sv_buttonText">Cerrar</item>
+        <item name="sv_buttonText">@string/close_button</item>
         <item name="sv_titleTextAppearance">@style/CustomTitle</item>
         <item name="sv_buttonForegroundColor">#CF3119</item>
         <item name="sv_detailTextAppearance">@style/CustomDetail</item>

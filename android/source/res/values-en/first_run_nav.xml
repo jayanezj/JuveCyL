@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <string-array name="nav_options">
+        <item>This is the menu</item>
+        <item>You can choose</item>
+        <item>provinces</item>
+        <item>from here</item>
+    </string-array>
+ 
+</resources>

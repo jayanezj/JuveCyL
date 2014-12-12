@@ -1,7 +1,6 @@
 
 package es.juvecyl.app;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -20,6 +19,8 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -72,6 +73,8 @@ public class LodgingDetail extends SherlockActivity {
     private DrawerLayout drawerLayout;
     private String targetProvince;
     private ScrollView scrollMain;
+    private View gMaps;
+    private GoogleMap map;
     // ESCUCHADOR DEL MENU NAV
     private ArrayList<DetailsNav> navdata = new ArrayList<DetailsNav>();
     private ActionBarDrawerToggle navToggle;
@@ -106,7 +109,14 @@ public class LodgingDetail extends SherlockActivity {
         // /////////////////////////////////////////////////////////////////////
         drawerLayout = (DrawerLayout) findViewById(R.id.details_drawer_layout);
         detailsContainer = (LinearLayout) findViewById(R.id.details_container);
+        gMaps = LayoutInflater.from(this).inflate(
+                R.layout.map, null);
+        map = (
+                (MapFragment) getFragmentManager().
+                        findFragmentById(R.id.map)).getMap();
+        map.setMyLocationEnabled(true);
         title = (TextView) findViewById(R.id.details_title);
+        image = (ImageView) findViewById(R.id.details_image);
         // /////////////////////////////////////////////////////////////////////
         // LLAMADA PARA EL MENÚ SUPERIOR
         // /////////////////////////////////////////////////////////////////////
@@ -126,6 +136,7 @@ public class LodgingDetail extends SherlockActivity {
                 (int) (20 * scale + 0.5f),
                 (int) (10 * scale + 0.5f),
                 (int) (20 * scale + 0.5f));
+        Log.d("provincia", target.getProvince());
         title.setBackgroundColor(
                 res.getColor(ProvinceSingleton.
                         getInstance().
@@ -161,6 +172,9 @@ public class LodgingDetail extends SherlockActivity {
     @SuppressLint("NewApi")
     private void printContactInfo() {
         detailsContainer.removeAllViews();
+        DisplayMetrics dm = new DisplayMetrics();
+        this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
         //
         // DECLARACIÓN DEL CONTENEDOR CON SCROLL
         //
@@ -223,7 +237,7 @@ public class LodgingDetail extends SherlockActivity {
             phonesBtn[i] = new ImageButton(getApplicationContext());
             phonesOutput[i].setText(target.getPhone().get(i));
             LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
-                    (int) (300 * scale + 0.5f),
+                    (int) (width * 0.7f),
                     LayoutParams.WRAP_CONTENT);
             prmX.setMargins(0, (int) (5 * scale + 0.5f), 0,
                     (int) (5 * scale + 0.5f));
@@ -312,7 +326,7 @@ public class LodgingDetail extends SherlockActivity {
             mailsBtn[i] = new ImageButton(getApplicationContext());
             mailsOutput[i].setText(target.getEmail().get(i));
             LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
-                    (int) (300 * scale + 0.5f),
+                    (int) (width * 0.7f),
                     LayoutParams.WRAP_CONTENT);
             prmX.setMargins(0, (int) (5 * scale + 0.5f), 0,
                     (int) (5 * scale + 0.5f));
@@ -395,7 +409,7 @@ public class LodgingDetail extends SherlockActivity {
             websBtn[i] = new ImageButton(getApplicationContext());
             websOutput[i].setText(target.getWeb().get(i));
             LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
-                    (int) (300 * scale + 0.5f),
+                    (int) (width * 0.7f),
                     LayoutParams.WRAP_CONTENT);
             prmX.setMargins(0, (int) (5 * scale + 0.5f), 0,
                     (int) (5 * scale + 0.5f));
@@ -442,10 +456,32 @@ public class LodgingDetail extends SherlockActivity {
         String output = "";
         if (parameter.equals("contact")) {
             printContactInfo();
+            title.setVisibility(View.VISIBLE);
+            image.setVisibility(View.VISIBLE);
         }
         else if (parameter.equals("desc")) {
             output = target.getDesc();
+            title.setVisibility(View.VISIBLE);
+            image.setVisibility(View.VISIBLE);
             detailsContainer.removeAllViews();
+            //
+            // DECLARACIÓN DEL CONTENEDOR CON SCROLL
+            //
+            scrollMain = new ScrollView(getApplicationContext());
+            RelativeLayout.LayoutParams scrollParams = new RelativeLayout.LayoutParams(
+                    LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            scrollParams.setMargins(0, (int) (10 * scale + 0.5f), 0, 0);
+            scrollParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT,
+                    RelativeLayout.TRUE);
+            scrollMain.setLayoutParams(scrollParams);
+            //
+            // DECLARACIÓN DEL CONTENEDOR DENTRO DEL SCROLL
+            //
+            linearInsideScroll = new LinearLayout(getApplicationContext());
+            LinearLayout.LayoutParams linearInsideParams = new LinearLayout.LayoutParams(
+                    LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+            linearInsideScroll.setOrientation(LinearLayout.VERTICAL);
+            linearInsideScroll.setLayoutParams(linearInsideParams);
             LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT,
                     LayoutParams.WRAP_CONTENT);
@@ -459,10 +495,34 @@ public class LodgingDetail extends SherlockActivity {
                     (int) (20 * scale + 0.5f),
                     (int) (10 * scale + 0.5f),
                     (int) (20 * scale + 0.5f));
-            detailsContainer.addView(detailsTarget);
+            scrollMain.addView(detailsTarget);
+            detailsContainer.addView(scrollMain);
         }
         else if (parameter.equals("loc")) {
-
+            title.setVisibility(View.GONE);
+            image.setVisibility(View.GONE);
+            DisplayMetrics dm = new DisplayMetrics();
+            this.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
+            int width = dm.widthPixels;
+            int height = dm.heightPixels;
+            //
+            // DECLARACIÓN DEL CONTENEDOR CON SCROLL
+            //
+            scrollMain = new ScrollView(getApplicationContext());
+            RelativeLayout.LayoutParams scrollParams = new RelativeLayout.LayoutParams(
+                    LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+            scrollParams.setMargins(0, (int) (10 * scale + 0.5f), 0, 0);
+            scrollParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT,
+                    RelativeLayout.TRUE);
+            scrollMain.setLayoutParams(scrollParams);
+            //
+            // DECLARACIÓN DEL CONTENEDOR DENTRO DEL SCROLL
+            //
+            linearInsideScroll = new LinearLayout(getApplicationContext());
+            LinearLayout.LayoutParams linearInsideParams = new LinearLayout.LayoutParams(
+                    LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+            linearInsideScroll.setOrientation(LinearLayout.VERTICAL);
+            linearInsideScroll.setLayoutParams(linearInsideParams);
             output = target.getLoc();
             detailsContainer.removeAllViews();
             LinearLayout.LayoutParams prm = new LinearLayout.LayoutParams(
@@ -478,32 +538,43 @@ public class LodgingDetail extends SherlockActivity {
                     (int) (20 * scale + 0.5f),
                     (int) (10 * scale + 0.5f),
                     (int) (20 * scale + 0.5f));
-            detailsContainer.addView(detailsTarget);
-            View child1 = LayoutInflater.from(this).inflate(
-                    R.layout.map, null);
-            GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
-            Geocoder geocoder = new Geocoder(getApplicationContext());
+            linearInsideScroll.addView(detailsTarget);
+            LinearLayout.LayoutParams prmX = new LinearLayout.LayoutParams(
+                    width, (int) (height * 0.7f));
+            gMaps.setLayoutParams(prmX);
             try {
-                List<Address> addresses = geocoder.getFromLocationName(output, 1);
-                if (addresses.size() > 0) {
-                    double latitude = addresses.get(0).getLatitude();
-                    double longitude = addresses.get(0).getLongitude();
-                    LatLng lodging = new LatLng(latitude, longitude);
-                    map.moveCamera(
-                            CameraUpdateFactory.newLatLngZoom(lodging, 13));
-                    map.addMarker(new MarkerOptions()
-                            .title(target.getTitle())
-                            .snippet(target.getProvince())
-                            .position(lodging));
+                Geocoder geocoder = new Geocoder(getApplicationContext());
+                try {
+                    map.clear();
+                    List<Address> addresses = geocoder.getFromLocationName(output, 1);
+                    if (addresses.size() > 0) {
+                        double latitude = addresses.get(0).getLatitude();
+                        double longitude = addresses.get(0).getLongitude();
+                        LatLng lodging = new LatLng(latitude, longitude);
+                        map.moveCamera(
+                                CameraUpdateFactory.newLatLngZoom(lodging, 13));
+                        map.addMarker(new MarkerOptions()
+                                .title(target.getTitle())
+                                .snippet(target.getProvince())
+                                .position(lodging));
+                    }
+                } catch (Exception e) {
+                    // NO PINTAMOS MARCADOR PORQUE NO LO HA ENCONTRADO
                 }
-            } catch (IOException e) {
-                // NO PINTAMOS MARCADOR PORQUE NO LO HA ENCONTRADO
+                linearInsideScroll.addView(gMaps);
+            } catch (Exception e) {
+                Log.d("fail", e.toString());
+                Toast.makeText(
+                        getApplicationContext(),
+                        res.getString(R.string.coding_no_gmaps),
+                        Toast.LENGTH_LONG).show();
             }
-            map.setMyLocationEnabled(true);
-            detailsContainer.addView(child1);
+            scrollMain.addView(linearInsideScroll);
+            detailsContainer.addView(scrollMain);
         }
         else {
+            linearInsideScroll.addView(detailsTarget);
+            detailsContainer.addView(linearInsideScroll);
             detailsContainer.addView(detailsTarget);
         }
     }
@@ -526,9 +597,7 @@ public class LodgingDetail extends SherlockActivity {
     }
 
     public void updateBitmap(Bitmap image2) {
-        image = (ImageView) findViewById(R.id.details_image);
         image.setImageBitmap(image2);
-
         image.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

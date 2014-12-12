@@ -1399,34 +1399,36 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f0200a3;
         public static final int ic_plusone_standard_off_client=0x7f0200a4;
         public static final int ic_plusone_tall_off_client=0x7f0200a5;
-        public static final int list_focused_juvecyl=0x7f0200a6;
-        public static final int menu_dropdown_panel_juvecyl=0x7f0200a7;
-        public static final int no_image=0x7f0200a8;
-        public static final int powered_by_google_dark=0x7f0200a9;
-        public static final int powered_by_google_light=0x7f0200aa;
-        public static final int pressed_background_juvecyl=0x7f0200ab;
-        public static final int progress_bg_juvecyl=0x7f0200ac;
-        public static final int progress_horizontal_juvecyl=0x7f0200ad;
-        public static final int progress_primary_juvecyl=0x7f0200ae;
-        public static final int progress_secondary_juvecyl=0x7f0200af;
-        public static final int reload=0x7f0200b0;
-        public static final int search_box=0x7f0200b1;
-        public static final int selectable_background_juvecyl=0x7f0200b2;
-        public static final int spinner_ab_default_juvecyl=0x7f0200b3;
-        public static final int spinner_ab_disabled_juvecyl=0x7f0200b4;
-        public static final int spinner_ab_focused_juvecyl=0x7f0200b5;
-        public static final int spinner_ab_pressed_juvecyl=0x7f0200b6;
-        public static final int spinner_background_ab_juvecyl=0x7f0200b7;
-        public static final int tab_indicator_ab_juvecyl=0x7f0200b8;
-        public static final int tab_selected_focused_juvecyl=0x7f0200b9;
-        public static final int tab_selected_juvecyl=0x7f0200ba;
-        public static final int tab_selected_pressed_juvecyl=0x7f0200bb;
-        public static final int tab_unselected_focused_juvecyl=0x7f0200bc;
-        public static final int tab_unselected_juvecyl=0x7f0200bd;
-        public static final int tab_unselected_pressed_juvecyl=0x7f0200be;
-        public static final int tfno_btn=0x7f0200bf;
-        public static final int tutorial_helper=0x7f0200c0;
-        public static final int web_btn=0x7f0200c1;
+        public static final int juvecyl_alt=0x7f0200a6;
+        public static final int juvecyl_icon=0x7f0200a7;
+        public static final int list_focused_juvecyl=0x7f0200a8;
+        public static final int menu_dropdown_panel_juvecyl=0x7f0200a9;
+        public static final int no_image=0x7f0200aa;
+        public static final int powered_by_google_dark=0x7f0200ab;
+        public static final int powered_by_google_light=0x7f0200ac;
+        public static final int pressed_background_juvecyl=0x7f0200ad;
+        public static final int progress_bg_juvecyl=0x7f0200ae;
+        public static final int progress_horizontal_juvecyl=0x7f0200af;
+        public static final int progress_primary_juvecyl=0x7f0200b0;
+        public static final int progress_secondary_juvecyl=0x7f0200b1;
+        public static final int reload=0x7f0200b2;
+        public static final int search_box=0x7f0200b3;
+        public static final int selectable_background_juvecyl=0x7f0200b4;
+        public static final int spinner_ab_default_juvecyl=0x7f0200b5;
+        public static final int spinner_ab_disabled_juvecyl=0x7f0200b6;
+        public static final int spinner_ab_focused_juvecyl=0x7f0200b7;
+        public static final int spinner_ab_pressed_juvecyl=0x7f0200b8;
+        public static final int spinner_background_ab_juvecyl=0x7f0200b9;
+        public static final int tab_indicator_ab_juvecyl=0x7f0200ba;
+        public static final int tab_selected_focused_juvecyl=0x7f0200bb;
+        public static final int tab_selected_juvecyl=0x7f0200bc;
+        public static final int tab_selected_pressed_juvecyl=0x7f0200bd;
+        public static final int tab_unselected_focused_juvecyl=0x7f0200be;
+        public static final int tab_unselected_juvecyl=0x7f0200bf;
+        public static final int tab_unselected_pressed_juvecyl=0x7f0200c0;
+        public static final int tfno_btn=0x7f0200c1;
+        public static final int tutorial_helper=0x7f0200c2;
+        public static final int web_btn=0x7f0200c3;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f08004c;
@@ -1607,22 +1609,29 @@ containing a value of this type.
          */
         public static final int abs__shareactionprovider_share_with_application=0x7f06002b;
         public static final int accept=0x7f060002;
-        public static final int action_settings=0x7f060032;
+        public static final int action_settings=0x7f060033;
         public static final int app_name=0x7f060031;
-        public static final int close_drawer=0x7f06003c;
-        public static final int coding_back=0x7f060043;
-        public static final int coding_call_fail=0x7f06004c;
-        public static final int coding_contact=0x7f060045;
-        public static final int coding_del_fav_txt=0x7f06004e;
-        public static final int coding_desc=0x7f060049;
-        public static final int coding_fav=0x7f060044;
-        public static final int coding_loc=0x7f06004a;
-        public static final int coding_mails=0x7f060047;
-        public static final int coding_new_fav_txt=0x7f06004d;
-        public static final int coding_phones=0x7f060046;
-        public static final int coding_search=0x7f060042;
-        public static final int coding_send_mail=0x7f06004b;
-        public static final int coding_webs=0x7f060048;
+        public static final int close_button=0x7f060032;
+        public static final int close_drawer=0x7f06003d;
+        public static final int coding_back=0x7f060045;
+        public static final int coding_call_fail=0x7f060053;
+        public static final int coding_contact=0x7f060047;
+        public static final int coding_db_failed=0x7f06004b;
+        public static final int coding_db_update=0x7f060049;
+        public static final int coding_db_updated=0x7f06004a;
+        public static final int coding_del_fav_txt=0x7f060055;
+        public static final int coding_desc=0x7f060050;
+        public static final int coding_fav=0x7f060046;
+        public static final int coding_loc=0x7f060051;
+        public static final int coding_mails=0x7f06004e;
+        public static final int coding_new_fav_txt=0x7f060054;
+        public static final int coding_no_gmaps=0x7f060043;
+        public static final int coding_phones=0x7f060048;
+        public static final int coding_retry=0x7f06004d;
+        public static final int coding_search=0x7f060044;
+        public static final int coding_send_mail=0x7f060052;
+        public static final int coding_use_local_data=0x7f06004c;
+        public static final int coding_webs=0x7f06004f;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
         public static final int common_android_wear_notification_needs_update_text=0x7f060009;
@@ -1725,27 +1734,27 @@ containing a value of this type.
         public static final int create_calendar_message=0x7f060005;
         public static final int create_calendar_title=0x7f060004;
         public static final int decline=0x7f060003;
-        public static final int favsbutton=0x7f060035;
-        public static final int first_run_button=0x7f06003a;
-        public static final int first_run_got_it=0x7f06003d;
-        public static final int img_first_arrow=0x7f060039;
-        public static final int imglodging=0x7f060034;
-        public static final int main_no_results=0x7f060041;
+        public static final int favsbutton=0x7f060036;
+        public static final int first_run_button=0x7f06003b;
+        public static final int first_run_got_it=0x7f06003e;
+        public static final int img_first_arrow=0x7f06003a;
+        public static final int imglodging=0x7f060035;
+        public static final int main_no_results=0x7f060042;
         public static final int ok=0x7f060023;
-        public static final int open_drawer=0x7f06003b;
-        public static final int pull_first_run=0x7f060038;
-        public static final int reloadbutton=0x7f060033;
+        public static final int open_drawer=0x7f06003c;
+        public static final int pull_first_run=0x7f060039;
+        public static final int reloadbutton=0x7f060034;
         public static final int store_picture_message=0x7f060001;
         public static final int store_picture_title=0x7f060000;
-        public static final int thanks_first_run=0x7f060037;
-        public static final int tutorial_message=0x7f06003f;
-        public static final int tutorial_message2=0x7f060040;
-        public static final int tutorial_title=0x7f06003e;
+        public static final int thanks_first_run=0x7f060038;
+        public static final int tutorial_message=0x7f060040;
+        public static final int tutorial_message2=0x7f060041;
+        public static final int tutorial_title=0x7f06003f;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
         public static final int wallet_buy_button_place_holder=0x7f060022;
-        public static final int welcome_first_run=0x7f060036;
+        public static final int welcome_first_run=0x7f060037;
     }
     public static final class style {
         public static final int ActionBar_Solid_Juvecyl=0x7f05006c;
@@ -3290,7 +3299,7 @@ containing a value of this type.
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x0101041f
+            0x01010262, 0x010102ac, 0x010102ad, 0x01010534
         };
         /**
           <p>

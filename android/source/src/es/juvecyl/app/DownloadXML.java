@@ -93,15 +93,15 @@ public class DownloadXML extends SherlockActivity {
         protected void onPreExecute() {
             // MENSAJE DE ACTUALIZACIÓN
             Toast.makeText(DownloadXML.this,
-                    "Actualizando la base de datos...",
+                    getResources().getText(R.string.coding_db_update),
                     Toast.LENGTH_SHORT).show();
             pgb1.setVisibility(View.VISIBLE);
             // INSTANCIAMOS UN TIMER PARA VER SI TARDA DEMASIADO EN
             // DESCARGAR
             TimerTask tsk1 = new TimerTask() {
                 public void run() {
-                    Log.e("Exceed", "Han pasado 8 segundos y no se ha descargado");
-                    bgtask.cancel(false);
+                    Log.e("Exceed", "Failed");
+                    bgtask.cancel(true);
                 }
             };
             limit = new Timer();
@@ -116,13 +116,16 @@ public class DownloadXML extends SherlockActivity {
                 limit.cancel();
                 pgb1.setVisibility(View.INVISIBLE);
                 // MENSAJE DE ACTUALIZADO
-                Toast.makeText(DownloadXML.this, "Base de datos actualizada", Toast.LENGTH_SHORT)
-                        .show();
+                Toast.makeText(
+                        DownloadXML.this,
+                        getResources().getText(R.string.coding_db_updated),
+                        Toast.LENGTH_SHORT).show();
                 // COMPROBAMOS SI ES LA PRIMERA EJECUCIÓN DE LA APP
                 // SI ES LA PRIMERA VEZ APARECERÁ UNA ACTIVIDAD DE
                 // TUTORIAL
-                firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun",
-                        true);
+                firstrun = getSharedPreferences(
+                        "PREFERENCE", MODE_PRIVATE).getBoolean(
+                        "firstrun", true);
                 if (firstrun) {
                     LodgingSingleton.getInstance(getApplicationContext()).setDB();
                     Intent intent = new Intent(DownloadXML.this, Cover.class);
@@ -138,7 +141,10 @@ public class DownloadXML extends SherlockActivity {
                     LodgingSingleton.getInstance(getApplicationContext()).setDB();
                     Intent intent = new Intent(DownloadXML.this, Main.class);
                     Bundle b = new Bundle();
-                    b.putString("province", "Búsqueda");
+                    b.putString(
+                            "province",
+                            getApplicationContext().getString(
+                                    R.string.coding_search));
                     intent.putExtras(b);
                     startActivity(intent);
                     finish();
@@ -148,35 +154,48 @@ public class DownloadXML extends SherlockActivity {
             else {
                 pgb1.setVisibility(View.INVISIBLE);
                 // INFORMAMOS DEL FALLO DE LA DESCARGA
-                Toast.makeText(DownloadXML.this, "Error en la actualización", Toast.LENGTH_SHORT)
-                        .show();
-                // COMPROBAMOS SI EL DISPOSITIVO TIENE UNA COPIA ANTIGUA DE LA BASE DE DATOS
+                Toast.makeText(
+                        DownloadXML.this,
+                        getResources().getText(R.string.coding_db_failed),
+                        Toast.LENGTH_SHORT).show();
+                // COMPROBAMOS SI EL DISPOSITIVO TIENE UNA COPIA ANTIGUA
+                // DE LA BASE DE DATOS
                 try {
                     @SuppressWarnings("unused")
-                    FileInputStream dataBase = getBaseContext().openFileInput("db.xml");
+                    FileInputStream dataBase = getBaseContext().openFileInput(
+                            "db.xml");
                     downloadButton = (Button) findViewById(R.id.downloadButton);
-                    downloadButton.setText("Usar datos locales");
+                    downloadButton.setText(
+                            getResources().getText(
+                                    R.string.coding_use_local_data));
                     downloadButton.setVisibility(View.VISIBLE);
-                    downloadButton.setOnClickListener(new OnClickListener()
-                    {
-
+                    downloadButton.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean(
+                            firstrun = getSharedPreferences(
+                                    "PREFERENCE", MODE_PRIVATE).getBoolean(
                                     "firstrun", true);
                             if (firstrun) {
-                                LodgingSingleton.getInstance(getApplicationContext()).setDB();
-                                Intent intent = new Intent(DownloadXML.this, Cover.class);
+                                LodgingSingleton.getInstance(
+                                        getApplicationContext()).setDB();
+                                Intent intent = new Intent(
+                                        DownloadXML.this, Cover.class);
                                 startActivity(intent);
                                 finish();
                                 // Save the state
-                                getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                                getSharedPreferences(
+                                        "PREFERENCE", MODE_PRIVATE).edit()
                                         .putBoolean("firstrun", false).commit();
                             } else {
-                                LodgingSingleton.getInstance(getApplicationContext()).setDB();
-                                Intent intent = new Intent(DownloadXML.this, Main.class);
+                                LodgingSingleton.getInstance(
+                                        getApplicationContext()).setDB();
+                                Intent intent = new Intent(
+                                        DownloadXML.this, Main.class);
                                 Bundle b = new Bundle();
-                                b.putString("province", "Búsqueda");
+                                b.putString(
+                                        "province",
+                                        getApplicationContext().getString(
+                                                R.string.coding_search));
                                 intent.putExtras(b);
                                 startActivity(intent);
                                 finish();
@@ -185,11 +204,12 @@ public class DownloadXML extends SherlockActivity {
                     });
 
                 }
-                // SI NO LA TIENE MOSTRAMOS UN BOTON DE REINTENTAR PARA QUE VUELVA A PROBAR LA
-                // DESCARGA
+                // SI NO LA TIENE MOSTRAMOS UN BOTON DE REINTENTAR PARA QUE
+                // VUELVA A PROBAR LA DESCARGA
                 catch (FileNotFoundException e) {
                     downloadButton = (Button) findViewById(R.id.downloadButton);
-                    downloadButton.setText("Reintentar");
+                    downloadButton.setText(
+                            getResources().getText(R.string.coding_retry));
                     downloadButton.setVisibility(View.VISIBLE);
                     downloadButton.setOnClickListener(new OnClickListener() {
                         @Override
@@ -208,12 +228,16 @@ public class DownloadXML extends SherlockActivity {
         @Override
         protected void onCancelled() {
             Toast.makeText(
-                    DownloadXML.this, "Cancelando...", Toast.LENGTH_SHORT).show();
+                    DownloadXML.this,
+                    getResources().getText(R.string.coding_db_failed),
+                    Toast.LENGTH_SHORT).show();
             try {
                 @SuppressWarnings("unused")
                 FileInputStream dataBase = getBaseContext().openFileInput("db.xml");
                 downloadButton = (Button) findViewById(R.id.downloadButton);
-                downloadButton.setText("Usar datos locales");
+                downloadButton.setText(
+                        getResources().getText(
+                                R.string.coding_use_local_data));
                 downloadButton.setVisibility(View.VISIBLE);
                 downloadButton.setOnClickListener(new OnClickListener() {
                     @Override
@@ -233,7 +257,10 @@ public class DownloadXML extends SherlockActivity {
                             LodgingSingleton.getInstance(getApplicationContext()).setDB();
                             Intent intent = new Intent(DownloadXML.this, Main.class);
                             Bundle b = new Bundle();
-                            b.putString("province", "Búsqueda");
+                            b.putString(
+                                    "province",
+                                    getApplicationContext().getString(
+                                            R.string.coding_search));
                             intent.putExtras(b);
                             startActivity(intent);
                             finish();
@@ -243,7 +270,8 @@ public class DownloadXML extends SherlockActivity {
 
             } catch (FileNotFoundException e) {
                 downloadButton = (Button) findViewById(R.id.downloadButton);
-                downloadButton.setText("Reintentar");
+                downloadButton.setText(
+                        getResources().getText(R.string.coding_retry));
                 downloadButton.setVisibility(View.VISIBLE);
                 downloadButton.setOnClickListener(new OnClickListener() {
                     @Override

@@ -25,6 +25,7 @@
         <item name="popupMenuStyle">@style/PopupMenu.Juvecyl</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Juvecyl</item>
         <item name="actionBarTabStyle">@style/ActionBarTabStyle.Juvecyl</item>
+        <item name="android:icon">@drawable/juvecyl_alt</item>
         <item name="actionDropDownStyle">@style/DropDownNav.Juvecyl</item>
         <item name="actionBarStyle">@style/ActionBar.Solid.Juvecyl</item>
         <item name="actionModeBackground">@drawable/cab_background_top_juvecyl</item>
@@ -36,6 +37,7 @@
         <item name="background">@drawable/ab_solid_juvecyl</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_juvecyl</item>
         <item name="backgroundSplit">@drawable/ab_bottom_solid_juvecyl</item>
+        <item name="android:icon">@drawable/juvecyl_alt</item>
         <item name="progressBarStyle">@style/ProgressBar.Juvecyl</item>
         <item name="titleTextStyle">@style/Widget.Juvecyl.TitleTextStyle</item>
         <item name="android:titleTextStyle">@style/Widget.Juvecyl.TitleTextStyle</item>
