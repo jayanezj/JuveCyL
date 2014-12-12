@@ -4,7 +4,7 @@
     <item
         android:id="@+id/reload"
         android:icon="@drawable/reload"
-        android:showAsAction="always"
+        android:showAsAction="ifRoom"
         android:title="@string/reloadbutton"/>
     <item
         android:id="@+id/favs"
