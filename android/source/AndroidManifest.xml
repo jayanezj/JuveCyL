@@ -45,7 +45,7 @@
             android:name="es.juvecyl.app.Cover"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Juvecyl" />
+            android:theme="@style/SampleTheme" />
         <activity
             android:name="es.juvecyl.app.LodgingDetail"
             android:configChanges="orientation|screenSize"
